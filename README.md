@@ -21,6 +21,10 @@ Throughout the game, there will be the option for the user to leave the game and
 
 These logic flow diagrams are what I have used to base the code of the game on.
 
+### Start Page
+
+The start of the game prints out a logo with the game's name "Sea Conquest." Immediately afterwords, the game asks the user for their name. Username validation occurs, as the game asks only for letters. If any numbers or special characters are entered, an error message appears telling the user that the input is invalid. The user will then be prompted againt to enter a name. Once a valid name has been given, the game will welcome the user.
+
 ### Future Features
 
 ## Testing
