@@ -51,7 +51,24 @@ def validate_user_name(name):
   else:
     return name
 
+def display_instructions():
+  """
+  If the user decides to read the instructions before playing, the following
+  text is shown, explaining the rules of the game and giving the user a background story.
+  Once the instructions are displayed, the user will be given the choice to continue
+  to game play, or exit back to the starting page.
+  """
+  print("[purple4]Ocean Voyagers vs Sea Guardians")
+  print("Tensions between the rival [bright_red]Sea Guardians[/bright_red] and the [gold3]Ocean Voyagers[/gold3] (that's us!) have reached a boiling point. We have to take back what is our rightful sea! As the commander of our naval forces, the [gold3]Ocean Voyagers[/gold3] are putting their trust in you to defeat the [bright_red]Sea Guardian's[/bright_red] ships.")
+  print("Get ready to lead the [gold3]Ocean Voyagers[/gold3] to victory!")
+  print()
+  print("[purple4]Instructions")
+  print("Both you and the enemy will have a grid where your ships shall be placed. The objective of the game is to sink all of the [bright_red]Sea Guardian's[/bright_red] ships before they sink ours. We are not able to see the enemy ships, nor will they see ours.")
+  print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the point of a ship have been hit, it will sink.")
+  print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?")
+
 
 
 get_user_name()
-clear_terminal()
+display_instructions()
+# clear_terminal()
