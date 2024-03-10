@@ -37,3 +37,5 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 ## Credits
 
+- The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
+

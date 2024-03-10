@@ -3,6 +3,7 @@ from rich import print
 
 print()
 print((35 * " ") + "Welcome to" + (35 * " "))
+# Website used to create logo art: https://www.ascii-art-generator.org/
 print("""[dodger_blue3]
 
   _|_|_|                            _|_|_|                                                                _|      
