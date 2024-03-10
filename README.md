@@ -42,4 +42,5 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 ## Credits
 
 - The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
+- The code to clear the python terminal was adapted from [Coding Ninjas](https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python)
 
