@@ -25,6 +25,10 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 ## Testing
 
+## Ongoing Testing
+
+Throughout the creation of the game, I would check my code using [Python Tutor](https://pythontutor.com/) to ensure that my code was working as I wanted it to. For example, to create the while loop at the start of the game which validates the user's name on input.
+
 ### Manual Testing
 
 ### Bugs
