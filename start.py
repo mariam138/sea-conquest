@@ -1,5 +1,7 @@
 # Allows the content in the terminal to be printed in colour 
 from rich import print
+# Clears the terminal when the function is called
+from clear import clear_terminal
 
 print()
 print((35 * " ") + "Welcome to" + (35 * " "))
@@ -52,3 +54,4 @@ def validate_user_name(name):
 
 
 get_user_name()
+clear_terminal()
