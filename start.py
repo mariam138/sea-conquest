@@ -36,22 +36,6 @@ def get_user_name():
       print(f"Welcome aboard {user_name}!")
       print("Are you ready to take the seas and win the Sea Conquest?\n")
       break
-  
-  print("Would you like to read the instructions or start playing?")
-  print("Type 'I' for instructions or 'S' to start the game.")
-
-  try:
-    start_choice = input("Enter 'I' or 'S': ").lower()
-    if start_choice != 'i' and start_choice != 's':
-        raise Exception
-    elif start_choice == 'i':
-        clear_terminal()
-        display_instructions()
-    elif start_choice == "s":
-        clear_terminal()
-        print("Hello")
-  except Exception:
-    print('That is not a valid input. Please try again.')
 
 def validate_user_name(name):
   """
@@ -82,8 +66,31 @@ def display_instructions():
   print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the points of a ship have been hit, it will sink.")
   print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?")
 
+def game_start_prompt():
+  """
+  This will give the user the choice of either starting the game straight
+  away, or asking to read the instructions first. The user is asked to input either 's' for starting the game, or 'i' to get the instructions. If any other input is given, the terminal will tell the user that the input is invalid. Using the while loop, this will keep prompting the user for an input until a valid one is given.
+  """
+  print("Would you like to read the instructions or start playing?")
+  print("Type 'I' for instructions or 'S' to start the game.")
+
+  while True:
+    try:
+      start_choice = input("Enter 'I' or 'S': ").lower()
+      if start_choice != 'i' and start_choice != 's':
+          raise Exception
+      elif start_choice == 'i':
+        clear_terminal()
+        display_instructions()
+        break
+      elif start_choice == "s":
+        clear_terminal()
+        print("Hello")
+        break
+    except Exception:
+      print('That is not a valid input. Please try again.')
+
 
 
 get_user_name()
-# display_instructions()
-# clear_terminal()
+game_start_prompt()
