@@ -37,6 +37,17 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 ### Bugs
 
+1. At the start of the game after entering the name, I wanted to give the user a choice of either immediately starting the game or reading the instructions first. To do this, I set up and if/elif statement:
+
+    ` if start_choice == "I" or "i":
+        clear_terminal()
+        display_instructions()
+    elif start_choice == "S" or "s":
+        clear_terminal()
+        print("Hello") `
+    
+    However, when testing in my local terminal, this didn't seem to work as typing any letter would show the instructions regardless.
+
 ## Deployment
 
 ## Credits

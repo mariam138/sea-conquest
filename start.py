@@ -45,7 +45,9 @@ def get_user_name():
   if start_choice == "I" or "i":
     clear_terminal()
     display_instructions()
-
+  elif start_choice == "S" or "s":
+    clear_terminal()
+    print("Hello")
 
 def validate_user_name(name):
   """
