@@ -34,8 +34,17 @@ def get_user_name():
     if validate_user_name(user_name):
       print()
       print(f"Welcome aboard {user_name}!")
-      print("Are you ready to take the seas and win the Sea Conquest?")
+      print("Are you ready to take the seas and win the Sea Conquest?\n")
       break
+  
+  print("Would you like to read the instructions or start playing?")
+  print("Type 'I' for instructions or 'S' to start the game.")
+  start_choice = input("Enter 'I' or 'S': ")
+
+  # will clear the terminal and display the instructions whether input is upper or lower case
+  if start_choice == "I" or "i":
+    clear_terminal()
+    display_instructions()
 
 
 def validate_user_name(name):
@@ -64,11 +73,11 @@ def display_instructions():
   print()
   print("[purple4]Instructions")
   print("Both you and the enemy will have a grid where your ships shall be placed. The objective of the game is to sink all of the [bright_red]Sea Guardian's[/bright_red] ships before they sink ours. We are not able to see the enemy ships, nor will they see ours.")
-  print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the point of a ship have been hit, it will sink.")
+  print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the points of a ship have been hit, it will sink.")
   print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?")
 
 
 
 get_user_name()
-display_instructions()
+# display_instructions()
 # clear_terminal()
