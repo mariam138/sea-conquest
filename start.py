@@ -66,6 +66,12 @@ def display_instructions():
   print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the points of a ship have been hit, it will sink.")
   print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?")
 
+def start_game():
+  """
+  If the user inputs "s" into the terminal, it will trigger this function to be called which will start the game. The board will be created, and the ships for both the computer and the user will be generated on the board.
+  """
+  print("Game is starting...")
+
 def game_start_prompt():
   """
   This will give the user the choice of either starting the game straight
@@ -85,7 +91,7 @@ def game_start_prompt():
         break
       elif start_choice == "s":
         clear_terminal()
-        print("Hello")
+        start_game()
         break
     except Exception:
       print('That is not a valid input. Please try again.')
