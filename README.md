@@ -46,7 +46,23 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
         clear_terminal()
         print("Hello") `
     
-    However, when testing in my local terminal, this didn't seem to work as typing any letter would show the instructions regardless.
+    However, when testing in my local terminal, this didn't seem to work as typing any letter would show the instructions regardless. To fix this bug, I instead put the code into a 'try except' block:
+
+    ` try:
+    start_choice = input("Enter 'I' or 'S': ").lower()
+    if start_choice != 'i' and start_choice != 's':
+        raise Exception
+    elif start_choice == 'i':
+        clear_terminal()
+        display_instructions()
+    elif start_choice == "s":
+        clear_terminal()
+        print("Hello")
+  except Exception:
+    print('That is not a valid input. Please try again.')
+    `
+
+    This then fixed the issue of the instructions showing regardless of the letter input.
 
 ## Deployment
 
