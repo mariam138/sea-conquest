@@ -39,15 +39,19 @@ def get_user_name():
   
   print("Would you like to read the instructions or start playing?")
   print("Type 'I' for instructions or 'S' to start the game.")
-  start_choice = input("Enter 'I' or 'S': ")
 
-  # will clear the terminal and display the instructions whether input is upper or lower case
-  if start_choice == "I" or "i":
-    clear_terminal()
-    display_instructions()
-  elif start_choice == "S" or "s":
-    clear_terminal()
-    print("Hello")
+  try:
+    start_choice = input("Enter 'I' or 'S': ").lower()
+    if start_choice != 'i' and start_choice != 's':
+        raise Exception
+    elif start_choice == 'i':
+        clear_terminal()
+        display_instructions()
+    elif start_choice == "s":
+        clear_terminal()
+        print("Hello")
+  except Exception:
+    print('That is not a valid input. Please try again.')
 
 def validate_user_name(name):
   """
