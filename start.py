@@ -99,7 +99,7 @@ def game_start_prompt():
 
 def main():
   """
-  Contains all function calls into one function
+  Contains all function calls into main function
   """
   get_user_name()
   game_start_prompt()
