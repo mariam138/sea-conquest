@@ -97,6 +97,11 @@ def game_start_prompt():
       print('That is not a valid input. Please try again.')
 
 
+def main():
+  """
+  Contains all function calls into one function
+  """
+  get_user_name()
+  game_start_prompt()
 
-get_user_name()
-game_start_prompt()
+main()
