@@ -103,5 +103,3 @@ def main():
   """
   get_user_name()
   game_start_prompt()
-
-main()
