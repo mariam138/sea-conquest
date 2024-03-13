@@ -52,31 +52,6 @@ def validate_user_name(name):
   else:
     return name
 
-def start_or_quit_game():
-  """
-  After reading the instructions, the user is then asked to enter either "S" to start the game or "Q" to quit and go back to the start page
-  """
-  print("Would you like to start the game or go back to the start page?")
-  print("Type 'S' to start the game or 'Q' to quit.")
-  
-  while True:
-    try:
-      start_or_quit = input("Enter 'S' or 'Q':\n").lower()
-      if start_or_quit != 'q' and start__or_quit != 's':
-          raise Exception
-      elif start_choice == 'q':
-        clear_terminal()
-        print_banner()
-        get_user_name()
-        game_start_prompt()
-        break
-      elif start_choice == "s":
-        clear_terminal()
-        start_game()
-        break
-    except Exception:
-      print('That is not a valid input. Please try again.')
-
 def display_instructions():
   """
   If the user decides to read the instructions before playing, the following
@@ -93,8 +68,6 @@ def display_instructions():
   print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the points of a ship have been hit, it will sink.")
   print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?\n")
 
-  start__or_quit()
-
 def start_game():
   """
   If the user inputs "s" into the terminal, it will trigger this function to be called which will start the game. The board will be created, and the ships for both the computer and the user will be generated on the board.
@@ -106,22 +79,26 @@ def game_start_prompt():
   This will give the user the choice of either starting the game straight
   away, or asking to read the instructions first. The user is asked to input either 's' for starting the game, or 'i' to get the instructions. If any other input is given, the terminal will tell the user that the input is invalid. Using the while loop, this will keep prompting the user for an input until a valid one is given.
   """
-  print("Would you like to read the instructions or start playing?")
-  print("Type 'I' for instructions or 'S' to start the game.")
 
   while True:
+    print("Would you like to read the instructions or start playing?")
+    print("Type 'I' for instructions or 'S' to start the game. Type 'Q' to quit the game.")
     try:
-      start_choice = input("Enter 'I' or 'S':\n").lower()
-      if start_choice != 'i' and start_choice != 's':
+      start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
+      if start_choice != 'i' and start_choice != 's' and start_choice != 'q':
           raise Exception
       elif start_choice == 'i':
         clear_terminal()
         display_instructions()
-        break
       elif start_choice == "s":
         clear_terminal()
         start_game()
         break
+      elif start_choice == "q":
+        clear_terminal()
+        main()
+        break
+
     except Exception:
       print('That is not a valid input. Please try again.')
 
