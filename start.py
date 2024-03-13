@@ -56,6 +56,9 @@ def start_or_quit_game():
   """
   After reading the instructions, the user is then asked to enter either "S" to start the game or "Q" to quit and go back to the start page
   """
+  print("Would you like to start the game or go back to the start page?")
+  print("Type 'S' to start the game or 'Q' to quit.")
+  
   while True:
     try:
       start_or_quit = input("Enter 'S' or 'Q':\n").lower()
