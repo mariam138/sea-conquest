@@ -66,6 +66,25 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 ## Deployment
 
+The project was deployed to Heroku using the following steps:
+
+1. Sign in to Heroku and access the dashboard
+2. In the top right corner, click the "New" dropdown menu and then click "Create new app"
+3. Choose a name for your app, then change your region accordingly (for me, it was Europe)
+4. Click "Create app"
+5. On the next page that loads after clicking "Create app", click "Settings" in the top navigation bar
+6. Click on "Reveal Config Vars"
+7. Add a new Config Var: type 'PORT' in the 'KEY' section, and type '8000' into the 'VALUE' section, then click "Add"
+8. Next, scroll down to the "Buildpack" section and click "Add buildpack"
+9. First add "Python", then add "nodejs" - they **must** be in this order
+10. In the top navigation bar, click the "Deploy" tab
+11. In the "Deployment Method" section, click on *GitHub* to connect to your GitHub account
+12. After logging into your GitHub account, search for your GitHub repository name (for this project, it was "sea-conquest")
+13. Click on the repository once found to connect it
+14. Scroll down to the section "Automatic Deploys" and click on the "Enable Automatic Deploys" button
+15. Then underneath, make sure the branch for the project is "main" and click on the "Deploy" button
+16. Wait for Heroku to display that the app was deployed successfully
+
 ## Credits
 
 - The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
