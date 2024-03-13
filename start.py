@@ -3,19 +3,22 @@ from rich import print
 # Clears the terminal when the function is called
 from clear import clear_terminal
 
-print()
-print((35 * " ") + "Welcome to" + (35 * " "))
-# Website used to create logo art: https://www.ascii-art-generator.org/
-print(r"""[dodger_blue3]
+def print_banner():
+  """
+  Prints out the game's banner whenever the game is started
+  """
+  print()
+  print((35 * " ") + "Welcome to" + (35 * " "))
+  # Website used to create logo art: https://www.ascii-art-generator.org/
+  print(r"""[dodger_blue3]
 
-  ___|               ___|                                   |   
-\___ \   _ \  _` |  |      _ \  __ \   _` | |   |  _ \  __| __| 
-      |  __/ (   |  |     (   | |   | (   | |   |  __/\__ \ |   
-_____/ \___|\__,_| \____|\___/ _|  _|\__, |\__,_|\___|____/\__| 
-                                         _|                     
+    ___|               ___|                                   |   
+  \___ \   _ \  _` |  |      _ \  __ \   _` | |   |  _ \  __| __| 
+        |  __/ (   |  |     (   | |   | (   | |   |  __/\__ \ |   
+  _____/ \___|\__,_| \____|\___/ _|  _|\__, |\__,_|\___|____/\__| 
+                                          _|                     
 
-""")
-
+  """)
 
 def get_user_name():
   """
@@ -100,5 +103,6 @@ def main():
   """
   Contains all function calls into main function
   """
+  print_banner()
   get_user_name()
   game_start_prompt()
