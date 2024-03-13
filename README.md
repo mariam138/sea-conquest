@@ -64,7 +64,7 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
     This then fixed the issue of the instructions showing regardless of the letter input.
 
-2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named
+2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. 
 
 ## Deployment
 

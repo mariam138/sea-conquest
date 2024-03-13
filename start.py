@@ -29,7 +29,7 @@ def get_user_name():
   while True:
     print("Type your name below.")
     print("Please use only letters.\n")
-    user_name = input("Enter your name: ")
+    user_name = input("Enter your name:\n")
 
     if validate_user_name(user_name):
       print()
@@ -82,7 +82,7 @@ def game_start_prompt():
 
   while True:
     try:
-      start_choice = input("Enter 'I' or 'S': ").lower()
+      start_choice = input("Enter 'I' or 'S':\n").lower()
       if start_choice != 'i' and start_choice != 's':
           raise Exception
       elif start_choice == 'i':
