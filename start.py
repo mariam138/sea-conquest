@@ -52,6 +52,28 @@ def validate_user_name(name):
   else:
     return name
 
+def start_or_quit_game():
+  """
+  After reading the instructions, the user is then asked to enter either "S" to start the game or "Q" to quit and go back to the start page
+  """
+  while True:
+    try:
+      start_or_quit = input("Enter 'S' or 'Q':\n").lower()
+      if start_or_quit != 'q' and start__or_quit != 's':
+          raise Exception
+      elif start_choice == 'q':
+        clear_terminal()
+        print_banner()
+        get_user_name()
+        game_start_prompt()
+        break
+      elif start_choice == "s":
+        clear_terminal()
+        start_game()
+        break
+    except Exception:
+      print('That is not a valid input. Please try again.')
+
 def display_instructions():
   """
   If the user decides to read the instructions before playing, the following
@@ -66,7 +88,9 @@ def display_instructions():
   print("[purple4]Instructions")
   print("Both you and the enemy will have a grid where your ships shall be placed. The objective of the game is to sink all of the [bright_red]Sea Guardian's[/bright_red] ships before they sink ours. We are not able to see the enemy ships, nor will they see ours.")
   print("Starting with you, you will take the first turn in trying to sink the enemy's ships. The [bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we hit one of their fleet, or 'Miss' if not. Once all the points of a ship have been hit, it will sink.")
-  print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?")
+  print("To win the game, we must sink the enemy's ships first. Are you ready for the challenge, commander?\n")
+
+  start__or_quit()
 
 def start_game():
   """
