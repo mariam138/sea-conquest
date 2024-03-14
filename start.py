@@ -2,6 +2,8 @@
 from rich import print
 # Clears the terminal when the function is called
 from clear import clear_terminal
+# Allows delay in code execution when called
+import time
 
 def print_banner():
   """
@@ -95,6 +97,9 @@ def game_start_prompt():
         start_game()
         break
       elif start_choice == "q":
+        print()
+        print("Goodbye for now commander, us [gold3]Ocean Voyagers[/gold3] are waiting for you!")
+        time.sleep(5)
         clear_terminal()
         main()
         break

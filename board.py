@@ -21,8 +21,7 @@ class Board:
             for _ in range(self.dimensions):
                 row.append("~")
             self.board.append(row)
-        
-    
+
     def print_board(self):
         for row in self.board:
             for cell in row:
