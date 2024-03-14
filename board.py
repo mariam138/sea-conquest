@@ -5,6 +5,8 @@ class Board:
     
     def __init__(self, dimensions):
         self.dimensions = dimensions
+        # Creates an empty list to print out the board and append to
+        self.board = []
 
     horizontal_coords = [" ", "A", "B", "C", "D", "E", "F", "G", "H"]
 
@@ -16,10 +18,18 @@ class Board:
         print(" ".join(self.horizontal_coords))
         # 'end = " "' overrides print function's default '\n' at the end
         for i in range(1, self.dimensions + 1):
-            print(i, end=" ")
+            # Creates an empty list for each row
+            rows = []
+            # Each vertical coordinate is printed and placed into the empty rows list
+            rows.append(print(i, end=" "))
+            # A nested for loop uses a _ variable to print '~' a specified number of times
+            # Then append this row of '~' to the rows list
             for _ in range(self.dimensions):
-                print("~", end=" ")
+                rows.append(print("~", end=" "))
             print()
+            # After an iteration, the rows list is appended to the empty self.board list
+            # This creates a nested list, allowing each "coordinate" of the board to be accessed by indexing
+            self.board.append(rows)
         
 
 game_board = Board(8)
