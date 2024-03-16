@@ -66,9 +66,11 @@ class Board:
                 break
             elif (row_coord < 1) or (row_coord > self.dimensions):
                 print("That is not a valid coordinate. Please try again.")
+            elif row_coord.isnumeric() is False:
+                print("That is not a number. Please try again.")
 
 
         
-game_board = Board(8)
-game_board.convert_coord_to_index()
-game_board.validate_number_coord()
+# game_board = Board(8)
+# game_board.convert_coord_to_index()
+# game_board.validate_number_coord()

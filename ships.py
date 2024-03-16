@@ -29,14 +29,16 @@ class Ships:
 
         ship_names = ship_length.keys()
         ship_lengths = ship_length.values()
+        print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.\n")
         for name, length in zip(ship_names, ship_lengths):
-            print(f"The {name} has a length of {length}")
-        print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.")
+            print(f"The {name} has a length of {length}.")
+       
 
-    def player_place_ships(self):
-        # Converts letter coordinate to index and validates input
-        Board.convert_coord_to_index()
-        
+    # def player_place_ships(self):
+    #     # Converts letter coordinate to index and validates input
+    #     Board.convert_coord_to_index()
+    #     Board.validate_number_coord()
+
 
     
 
@@ -45,5 +47,5 @@ class Ships:
     # Board.convert_coord_to_index(vertical_coord)
     
   
-game_board = Board(8)
-game_board.print_board()
+# game_board = Board(8)
+# game_board.print_board()

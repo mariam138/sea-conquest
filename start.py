@@ -92,13 +92,32 @@ def display_instructions():
     print("Are you ready for the challenge, commander?\n")
 
 
+def game_setup():
+    # Gets Board class and stores it in a variable to call its methods
+    game_board = Board(8)
+    # Creates the board and then prints it to the terminal
+    game_board.create_board()
+    game_board.print_board()
+
+    # Gets Ships class and stores it into a variable to call its methods
+    game_ships = Ships(2)
+    # Prints out each ship and their length for the user
+    game_ships.print_ship_information()
+
+    # Call player_place_ships() after board creation
+    # game_ships.player_place_ships()
+    game_board.convert_coord_to_index()
+    game_board.validate_number_coord()
+
+    
+
+
 def start_game():
     """
     If the user inputs "s" into the terminal, it will trigger this function to
     be called which will start the game. The board will be created, and the
     ships for both the computer and the user will be generated on the board.
     """
-    print("Game is starting...")
     # Get user to position ships onto board
     # Create board
     # Create ships
@@ -111,16 +130,10 @@ def start_game():
     # Create two more boards - hidden board for computers ships, blank board for user
     # Add computers ships to board
     # For user, display blank board and their board side by side
+    game_setup()
 
-    # Gets Board class and stores it in a variable to call its methods
-    game_board = Board(8)
-    # Creates the board and then prints it to the terminal
-    game_board.create_board()
-    game_board.print_board()
-    # Gets Ships class and stores it into a variable to call its methods
-    game_ships = Ships(2)
-    # Prints out each ship and their length for the user
-    game_ships.print_ship_information()
+  
+   
 
 
 def game_start_prompt():
@@ -152,7 +165,7 @@ def game_start_prompt():
                 print()
                 print("Goodbye for now commander, us ")
                 print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
-                time.sleep(5)
+                time.sleep(4)
                 clear_terminal()
                 main()
                 break
