@@ -30,6 +30,7 @@ class Board:
             for cell in row:
                 print(cell, end = " ")
             print()
+        print()
     
     def convert_coord_to_index(self, vertical_coord):
         """

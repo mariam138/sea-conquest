@@ -25,6 +25,11 @@ class Ships:
         ship_lengths = ship_length.values()
         for name, length in zip(ship_names, ship_lengths):
             print(f"The {name} has a length of {length}")
+        print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.")
+
+    def player_place_ships(self):
+        
+    
 
     # Converts letter input to uppercase and stores it into vertical_coord variable
     # vertical_coord = (input("Enter vertical coordinate:\n")).upper()
