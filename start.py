@@ -112,9 +112,15 @@ def start_game():
     # Add computers ships to board
     # For user, display blank board and their board side by side
 
+    # Gets Board class and stores it in a variable to call its methods
     game_board = Board(8)
+    # Creates the board and then prints it to the terminal
     game_board.create_board()
     game_board.print_board()
+    # Gets Ships class and stores it into a variable to call its methods
+    game_ships = Ships(2)
+    # Prints out each ship and their length for the user
+    game_ships.print_ship_information()
 
 
 def game_start_prompt():
