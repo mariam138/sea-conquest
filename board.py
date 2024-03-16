@@ -45,7 +45,4 @@ class Board:
             print(col)
         
 
-game_board = Board(8)
-game_board.create_board()
-game_board.print_board()
 # game_board.convert_coord_to_index()

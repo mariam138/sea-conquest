@@ -12,16 +12,23 @@ class Ships:
     def __init__(self, length):
         self.length = length
     
-    # Defines each ship length in a dictionary to be used in other methods
-    ship_length = {
-        "Battleship": 4,
-        "Destroyer": 3,
-        "Submarine": 2
-    }
+
+    def print_ship_information(self):
+        # Defines each ship length in a dictionary to be used in other methods
+        ship_length = {
+            "Battleship": 4,
+            "Destroyer": 3,
+            "Submarine": 2
+        }
+
+        ship_names = ship_length.keys()
+        ship_lengths = ship_length.values()
+        for name, length in zip(ship_names, ship_lengths):
+            print(f"The {name} has a length of {length}")
 
     # Converts letter input to uppercase and stores it into vertical_coord variable
-    vertical_coord = (input("Enter vertical coordinate:\n")).upper()
-    Board.convert_coord_to_index(vertical_coord)
+    # vertical_coord = (input("Enter vertical coordinate:\n")).upper()
+    # Board.convert_coord_to_index(vertical_coord)
     
   
 game_board = Board(8)

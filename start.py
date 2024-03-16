@@ -4,6 +4,10 @@ from rich import print
 from clear import clear_terminal
 # Allows delay in code execution when called
 import time
+# Imports Board class to allow printing of board to terminal
+from board import Board
+# To get information from Ships class to start game
+from ships import Ships
 
 
 def print_banner():
@@ -108,6 +112,10 @@ def start_game():
     # Add computers ships to board
     # For user, display blank board and their board side by side
 
+    game_board = Board(8)
+    game_board.create_board()
+    game_board.print_board()
+
 
 def game_start_prompt():
     """
@@ -125,24 +133,23 @@ def game_start_prompt():
         print("Type 'Q' to quit the game.")
         try:
             start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
-        if start_choice != 'i' and start_choice != 's' and start_choice != 'q':
-            raise Exception
-        elif start_choice == 'i':
-            clear_terminal()
-            display_instructions()
-        elif start_choice == "s":
-            clear_terminal()
-            start_game()
-            break
-        elif start_choice == "q":
-            print()
-            print("Goodbye for now commander, us ")
-            print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
-            time.sleep(5)
-            clear_terminal()
-            main()
-            break
-
+            if start_choice != 'i' and start_choice != 's' and start_choice != 'q':
+                raise Exception
+            elif start_choice == 'i':
+                clear_terminal()
+                display_instructions()
+            elif start_choice == "s":
+                clear_terminal()
+                start_game()
+                break
+            elif start_choice == "q":
+                print()
+                print("Goodbye for now commander, us ")
+                print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
+                time.sleep(5)
+                clear_terminal()
+                main()
+                break
         except Exception:
             print('That is not a valid input. Please try again.')
 
