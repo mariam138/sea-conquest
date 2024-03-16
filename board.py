@@ -44,15 +44,31 @@ class Board:
 
         #  Checks if vertical_coord is a key in the letter_coord_dict and if so, "converts" it into its value
         while True:
-            vertical_coord = input("Please enter a vertical coordinate:\n").upper()
-            if vertical_coord in letter_coord_dict:
-                col = letter_coord_dict[vertical_coord]
+            column_coord = input("Please enter a column coordinate as a letter:\n").upper()
+            if column_coord in letter_coord_dict:
+                col = letter_coord_dict[column_coord]
                 break
             else:
                 print("That is not a valid coordinate. Please try again.")
                 
     def validate_number_coord(self):
+        """
+        This method will ask the user to input a row coordinate.
+        It will validate whether the number inputted is within
+        the board dimensions. If not, the user is asked to try again.
+        """
+        while True:
+            # Converts the input into an integer for comparisons in
+            # the if/elif statement
+            row_coord = int(input("Please enter a row coordinate as an number:\n"))
+            if (1 <= row_coord <= self.dimensions):
+                row = row_coord
+                break
+            elif (row_coord < 1) or (row_coord > self.dimensions):
+                print("That is not a valid coordinate. Please try again.")
+
 
         
 game_board = Board(8)
 game_board.convert_coord_to_index()
+game_board.validate_number_coord()
