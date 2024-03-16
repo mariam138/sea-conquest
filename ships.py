@@ -34,6 +34,7 @@ class Ships:
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.")
 
     def player_place_ships(self):
+        
 
     
 

@@ -32,7 +32,7 @@ class Board:
             print()
         print()
     
-    def convert_coord_to_index(self, vertical_coord):
+    def convert_coord_to_index(self):
         """
         When the user is prompted to input a letter coordinate for the game, this method converts it into its corresponding index as set up by the nested list used to create the board.
         """
@@ -41,9 +41,14 @@ class Board:
         letter_coord_dict = {"A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8}
 
         #  Checks if vertical_coord is a key in the letter_coord_dict and if so, "converts" it into its value
-        if vertical_coord in letter_coord_dict:
-            col = letter_coord_dict[vertical_coord]
-            print(col)
+        while True:
+            vertical_coord = input("Please enter a vertical coordinate:\n").upper()
+            if vertical_coord in letter_coord_dict:
+                col = letter_coord_dict[vertical_coord]
+                break
+            else:
+                print("That is not a valid coordinate. Please try again.")
+                
         
-
-# game_board.convert_coord_to_index()
+game_board = Board(8)
+game_board.convert_coord_to_index()
