@@ -14,6 +14,12 @@ class Ships:
     
 
     def print_ship_information(self):
+        """
+        Sets the length of each type of ship in a dictionary.
+        Using the dictionary, this method will print out
+        each type of ship and the length that each are. It will
+        also tell the user how many of each type of ship they have.
+        """
         # Defines each ship length in a dictionary to be used in other methods
         ship_length = {
             "Battleship": 4,
@@ -28,7 +34,7 @@ class Ships:
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.")
 
     def player_place_ships(self):
-        
+
     
 
     # Converts letter input to uppercase and stores it into vertical_coord variable
