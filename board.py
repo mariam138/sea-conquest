@@ -31,7 +31,7 @@ class Board:
                 print(cell, end = " ")
             print()
     
-    def convert_coord_to_index(self):
+    def convert_coord_to_index(self, vertical_coord):
         """
         When the user is prompted to input a letter coordinate for the game, this method converts it into its corresponding index as set up by the nested list used to create the board.
         """
@@ -39,16 +39,13 @@ class Board:
         # A dictionary which contains the letter coordinate as its corresponding number index
         letter_coord_dict = {"A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8}
 
-        # Converts letter input to uppercase and stores it into vertical_coord variable
-        vertical_coord = (input("Enter vertical coordinate:\n")).upper()
-
         #  Checks if vertical_coord is a key in the letter_coord_dict and if so, "converts" it into its value
         if vertical_coord in letter_coord_dict:
-            coord = letter_coord_dict[vertical_coord]
-            print(coord)
+            col = letter_coord_dict[vertical_coord]
+            print(col)
         
 
 game_board = Board(8)
 game_board.create_board()
 game_board.print_board()
-game_board.convert_coord_to_index()
+# game_board.convert_coord_to_index()
