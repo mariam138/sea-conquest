@@ -68,6 +68,8 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 3. In my **game_start_prompt()** function, I have set up a while loop which only breaks when a valid choice has been entered for either starting the game, reading the instructions or quitting the game. When I had set this up initially, I tested out the loop with several valid and invalid inputs before allowing the loop to break. I found that occasionally, when I had looped a few times, when entering **"S"** to start the game, the print statement which asks the user to select a choice would still appear underneath when it should not. I fixed this bug by adding a simple **"break"** statement if the user chooses to quit the game, as originally I had not. 
 
+4. When creating the board in the **board.py** module, I had initially set up the function to create the board as a nested list of the coordinates but using print statements. When I ran this through **Python Tutor**, each value when creating the board would show as **"None"** rather than either the number/letter coordinates or the "~" symbol. To fix this, I instead made separate functions for creating the board and then printing out the board. After running this through **Python Tutor** again, each list element showed their value rather than **"None"**.
+
 ## Deployment
 
 The project was deployed to Heroku using the following steps:
