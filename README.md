@@ -66,6 +66,8 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. Although I used the commant `pip3 freeze > requirements.txt` to make sure all my dependencies were in place before deployment, the **rich** module did not seem to add. Therefore, I manually added it into the .txt file. This fixed the issue and the app deployed properly.
 
+3. In my **game_start_prompt()** function, I have set up a while loop which only breaks when a valid choice has been entered for either starting the game, reading the instructions or quitting the game. When I had set this up initially, I tested out the loop with several valid and invalid inputs before allowing the loop to break. I found that occasionally, when I had looped a few times, when entering **"S"** to start the game, the print statement which asks the user to select a choice would still appear underneath when it should not. I fixed this bug by adding a simple **"break"** statement if the user chooses to quit the game, as originally I had not. 
+
 ## Deployment
 
 The project was deployed to Heroku using the following steps:
