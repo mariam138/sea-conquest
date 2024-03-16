@@ -34,7 +34,9 @@ class Ships:
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.")
 
     def player_place_ships(self):
+        # Converts letter coordinate to index and validates input
         Board.convert_coord_to_index()
+        
 
     
 

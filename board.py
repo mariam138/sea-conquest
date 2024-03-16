@@ -35,6 +35,8 @@ class Board:
     def convert_coord_to_index(self):
         """
         When the user is prompted to input a letter coordinate for the game, this method converts it into its corresponding index as set up by the nested list used to create the board.
+        It then validates that the inputted letter coordinate is in
+        the dictionary. If not, the user is asked to try again.
         """
 
         # A dictionary which contains the letter coordinate as its corresponding number index
@@ -49,6 +51,8 @@ class Board:
             else:
                 print("That is not a valid coordinate. Please try again.")
                 
+    def validate_number_coord(self):
+
         
 game_board = Board(8)
 game_board.convert_coord_to_index()
