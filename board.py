@@ -27,7 +27,17 @@ class Board:
             for cell in row:
                 print(cell, end = " ")
             print()
+    
+    def convert_coord_to_index(self):
+        letter_coord_dict = {"a": 1, "b": 2, "c": 3, "d" : 4, "e": 5, "f": 6, "g": 7, "h": 8}
+
+        vertical_coord = (input("Enter vertical coordinate:\n")).lower()
+
+        if vertical_coord in letter_coord_dict:
+            coord = letter_coord_dict[vertical_coord]
+            print(coord)
 
 game_board = Board(8)
 game_board.create_board()
 game_board.print_board()
+game_board.convert_coord_to_index()
