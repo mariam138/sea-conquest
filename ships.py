@@ -64,8 +64,9 @@ class Ships:
                 else:
                     for i in range(self.length):
                         game_board.board[row][col + i] = "S"
+                    clear_terminal()
                     game_board.print_board()
-                    break
+                    continue
                 
 
        
