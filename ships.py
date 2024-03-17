@@ -34,7 +34,7 @@ class Ships:
             print(f"The {name} has a length of {length}.")
     
 
-    def player_place_ships(self):
+    def player_place_ships(self, game_board):
         """ Code that will be used to ask the player to choose
         starting coordinates for their ship to be placed.
         Player will be asked if they want their ship horizontally
@@ -42,8 +42,27 @@ class Ships:
         is placed to ensure it fits on the board and doesn't
         overlap with other ships placed.
         """
+        print("You will now place your ships.")
+        print("Please enter your starting co-ordinate")
+        col = game_board.convert_coord_to_index()
+        row = game_board.validate_number_coord()
+        
+
+        print("Which direction do you want your ship to be placed?")
+        while True:
+            direction = input("Please enter 'horizontal' or 'vertical:\n")
+            if direction != "horizontal" and direction != "vertical":
+                print("That is not a valid input. Please try again.")
+            elif direction == "horizontal":
+                if length > game_board.dimensions:
+                    print("The ship doesn't fit. Please try again.")
+                
+
        
     
   
-# game_board = Board(8)
-# game_board.print_board()
+game_board = Board(8)
+game_board.create_board()
+game_board.print_board()
+battleship = Ships(4)
+battleship.player_place_ships(game_board)
