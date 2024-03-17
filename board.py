@@ -71,6 +71,6 @@ class Board:
 
 
         
-# game_board = Board(8)
-# game_board.convert_coord_to_index()
-# game_board.validate_number_coord()
+game_board = Board(8)
+game_board.convert_coord_to_index()
+game_board.validate_number_coord()
