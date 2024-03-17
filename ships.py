@@ -50,44 +50,46 @@ class Ships:
         
 
         print("You will now place your ships.")
-        while True:
-            print(f"Placing [dodger_blue3]{self.name}....")
-            print("Please enter your starting co-ordinate")
-            col = game_board.convert_coord_to_index()
-            row = game_board.validate_number_coord()
-            print("Which direction do you want your ship to be placed?")
-            print("Type 'h' for horizontal or 'v' for vertical.")
-            direction = input("Please enter 'h' or 'v':\n")
-            if direction != "h" and direction != "v":
-                print("That is not a valid input. Please try again.")
-            elif direction == "h":
-                if (self.length + col) > (game_board.dimensions + 1):
-                    print("The ship doesn't fit. Please try again.")
-                else:
-                    for i in range(self.length):
-                        if game_board.board[row][col + i] != "~":
-                            print("The ship overlaps with another ship. Please try again.")
-                            break
-                        else:
-                            for i in range(self.length):
-                                game_board.board[row][col + i] = "S"
-                        clear_terminal()
-                        game_board.print_board()
-                        continue
-            elif direction == "v":
-                if (self.length + row) > (game_board.dimensions + 1):
-                    print("The ship doesn't fit. Please try again.")
-                else:
-                    for i in range(self.length):
-                        if game_board.board[row + i][col] != "~":
-                            print("The ship overlaps with another ship. Please try again.")
-                            break
-                        else:
-                            for i in range(self.length):
-                                game_board.board[row + i][col] = "S"
-                        clear_terminal()
-                        game_board.print_board()
-                        continue
+        # i = 0
+        # while i in range(len(player_ships)):
+        print(f"Placing [dodger_blue3]{self.name}....")
+        print("Please enter your starting co-ordinate")
+        col = game_board.convert_coord_to_index()
+        row = game_board.validate_number_coord()
+        print("Which direction do you want your ship to be placed?")
+        print("Type 'h' for horizontal or 'v' for vertical.")
+        direction = input("Please enter 'h' or 'v':\n")
+        if direction != "h" and direction != "v":
+            print("That is not a valid input. Please try again.")
+        elif direction == "h":
+            if (self.length + col) > (game_board.dimensions + 1):
+                print("The ship doesn't fit. Please try again.")
+            else:
+                for i in range(self.length):
+                    if game_board.board[row][col + i] != "~":
+                        print("The ship overlaps with another ship. Please try again.")
+                        break
+                    else:
+                        for i in range(self.length):
+                            game_board.board[row][col + i] = "S"
+                    clear_terminal()
+                    game_board.print_board()
+                    break
+        elif direction == "v":
+            if (self.length + row) > (game_board.dimensions + 1):
+                print("The ship doesn't fit. Please try again.")
+            else:
+                for i in range(self.length):
+                    if game_board.board[row + i][col] != "~":
+                        print("The ship overlaps with another ship. Please try again.")
+                        break
+                    else:
+                        for i in range(self.length):
+                            game_board.board[row + i][col] = "S"
+                    clear_terminal()
+                    game_board.print_board()
+                    break
+            # i += 1
                 
 
        
@@ -96,5 +98,13 @@ class Ships:
 game_board = Board(8)
 game_board.create_board()
 game_board.print_board()
+# battleship = Ships("Battleship", 4)
 battleship = Ships("Battleship", 4)
-battleship.player_place_ships(game_board)
+destroyer_one = Ships("Destroyer 1", 3)
+destroyer_two = Ships("Destroyer 2", 3)
+submarine_one = Ships("Submarine 1", 2)
+submarine_two = Ships("Submarine 2", 2)
+# Place each ship instance into a list for looping
+player_ships = [battleship, destroyer_one, destroyer_two, submarine_one,submarine_two]
+for ship in player_ships:
+    ship.player_place_ships(game_board)
