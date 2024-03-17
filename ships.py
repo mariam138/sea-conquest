@@ -77,6 +77,17 @@ class Ships:
             elif direction == "v":
                 if (self.length + row) > (game_board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
+                else:
+                    for i in range(self.length):
+                        if game_board.board[row + i][col] != "~":
+                            print("The ship overlaps with another ship. Please try again.")
+                            break
+                        else:
+                            for i in range(self.length):
+                                game_board.board[row + i][col] = "S"
+                        clear_terminal()
+                        game_board.print_board()
+                        continue
                 
 
        
