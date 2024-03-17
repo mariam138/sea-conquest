@@ -50,6 +50,7 @@ class Ships:
 
         print("You will now place your ships.")
         while True:
+            print(f"Placing {self.name}.")
             print("Please enter your starting co-ordinate")
             col = game_board.convert_coord_to_index()
             row = game_board.validate_number_coord()
