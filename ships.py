@@ -1,6 +1,7 @@
 # Imports Board class from board.py module
 from board import Board
 from clear import clear_terminal
+from rich import print
 
 class Ships:
     """
@@ -50,7 +51,7 @@ class Ships:
 
         print("You will now place your ships.")
         while True:
-            print(f"Placing {self.name}.")
+            print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
             col = game_board.convert_coord_to_index()
             row = game_board.validate_number_coord()
@@ -64,10 +65,15 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                 else:
                     for i in range(self.length):
-                        game_board.board[row][col + i] = "S"
-                    clear_terminal()
-                    game_board.print_board()
-                    continue
+                        if game_board.board[row][col + i] != "~":
+                            print("The ship overlaps with another ship. Please try again.")
+                            break
+                        else:
+                            for i in range(self.length):
+                                game_board.board[row][col + i] = "S"
+                        clear_terminal()
+                        game_board.print_board()
+                        continue
                 
 
        
