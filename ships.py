@@ -1,5 +1,6 @@
 # Imports Board class from board.py module
 from board import Board
+from clear import clear_terminal
 
 class Ships:
     """
