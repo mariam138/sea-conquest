@@ -61,8 +61,9 @@ class Ships:
                 if (self.length + col) > (game_board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
                 else:
-                    for cell in game_board.board[col]:
-                        print("S", end = " ")
+                    for i in range(self.length):
+                        game_board.board[row][col + i] = "S"
+                    game_board.print_board()
                     break
                 
 
