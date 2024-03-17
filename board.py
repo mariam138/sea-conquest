@@ -47,6 +47,7 @@ class Board:
             column_coord = input("Please enter a column coordinate as a letter:\n").upper()
             if column_coord in letter_coord_dict:
                 col = letter_coord_dict[column_coord]
+                return col
                 break
             else:
                 print("That is not a valid coordinate. Please try again.")
@@ -64,6 +65,7 @@ class Board:
                 row_coord = int(input("Please enter a row coordinate as an number:\n"))
                 if (1 <= row_coord <= self.dimensions):
                     row = row_coord
+                    return row
                     return False
                 elif (row_coord < 1) or (row_coord > self.dimensions):
                     print("That is not a valid coordinate. Please try again.")
