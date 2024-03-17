@@ -104,14 +104,23 @@ def game_setup():
     # Prints out each ship and their length for the user
     game_ships.print_ship_information()
 
+    # Creates separate instances for each of the 5 ships the player has
+    battleship = Ships(4)
+    destroyer_one = Ships(3)
+    destroyer_two = Ships(3)
+    submarine_one = Ships(2)
+    submarine_two = Ships(2)
+
+    # Place each ship instance into a list for looping
+    player_ships = [battleship, destroyer_one, destroyer_two, submarine_one,
+     submarine_two]
+
     # Call player_place_ships() after board creation
     # game_ships.player_place_ships()
     game_board.convert_coord_to_index()
     game_board.validate_number_coord()
 
     
-
-
 def start_game():
     """
     If the user inputs "s" into the terminal, it will trigger this function to

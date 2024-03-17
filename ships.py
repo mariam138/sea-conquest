@@ -13,7 +13,7 @@ class Ships:
         self.length = length
     
 
-    def print_ship_information(self):
+    def print_ship_information(self): 
         """
         Sets the length of each type of ship in a dictionary.
         Using the dictionary, this method will print out
@@ -32,19 +32,17 @@ class Ships:
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.\n")
         for name, length in zip(ship_names, ship_lengths):
             print(f"The {name} has a length of {length}.")
-       
-
-    # def player_place_ships(self):
-    #     # Converts letter coordinate to index and validates input
-    #     Board.convert_coord_to_index()
-    #     Board.validate_number_coord()
-
-
     
 
-    # Converts letter input to uppercase and stores it into vertical_coord variable
-    # vertical_coord = (input("Enter vertical coordinate:\n")).upper()
-    # Board.convert_coord_to_index(vertical_coord)
+    def player_place_ships(self):
+        """ Code that will be used to ask the player to choose
+        starting coordinates for their ship to be placed.
+        Player will be asked if they want their ship horizontally
+        or vertically. Validation will be done before a ship
+        is placed to ensure it fits on the board and doesn't
+        overlap with other ships placed.
+        """
+       
     
   
 # game_board = Board(8)
