@@ -59,18 +59,20 @@ class Board:
         """
         while True:
             # Converts the input into an integer for comparisons in
-            # the if/elif statement
-            row_coord = int(input("Please enter a row coordinate as an number:\n"))
-            if (1 <= row_coord <= self.dimensions):
-                row = row_coord
-                break
-            elif (row_coord < 1) or (row_coord > self.dimensions):
-                print("That is not a valid coordinate. Please try again.")
-            elif row_coord.isnumeric() is False:
-                print("That is not a number. Please try again.")
-
-
-        
+            # the if/elif statement 
+            try:
+                row_coord = int(input("Please enter a row coordinate as an number:\n"))
+                if (1 <= row_coord <= self.dimensions):
+                    row = row_coord
+                    return False
+                elif (row_coord < 1) or (row_coord > self.dimensions):
+                    print("That is not a valid coordinate. Please try again.")
+                elif row_coord.isnumeric() is False:
+                    raise 
+            except ValueError:
+                print("That is not a valid input. Please enter a number.")
+            
+                 
 game_board = Board(8)
 game_board.convert_coord_to_index()
 game_board.validate_number_coord()
