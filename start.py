@@ -160,7 +160,7 @@ def game_start_prompt():
             elif start_choice == "s":
                 clear_terminal()
                 start_game()
-                break
+                return False
             elif start_choice == "q":
                 print()
                 print("Goodbye for now commander, us ")
@@ -168,7 +168,7 @@ def game_start_prompt():
                 time.sleep(4)
                 clear_terminal()
                 main()
-                break
+                return False
         except Exception:
             print('That is not a valid input. Please try again.')
 

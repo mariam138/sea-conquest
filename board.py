@@ -68,11 +68,11 @@ class Board:
                 elif (row_coord < 1) or (row_coord > self.dimensions):
                     print("That is not a valid coordinate. Please try again.")
                 elif row_coord.isnumeric() is False:
-                    raise 
+                    raise ValueError
             except ValueError:
                 print("That is not a valid input. Please enter a number.")
             
                  
-game_board = Board(8)
-game_board.convert_coord_to_index()
-game_board.validate_number_coord()
+# game_board = Board(8)
+# game_board.convert_coord_to_index()
+# game_board.validate_number_coord()
