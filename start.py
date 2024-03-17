@@ -127,14 +127,14 @@ def start_game():
     be called which will start the game. The board will be created, and the
     ships for both the computer and the user will be generated on the board.
     """
-    # Get user to position ships onto board
-    # Create board
-    # Create ships
+    # Get user to position ships onto board √
+    # Create board √
+    # Create ships √
     # Store ships and board somewhere
-    # For each ship, get location that user wants
-    # For each location, validate: input, if location is valid (does ship fit on board), does ship fit (doesn't overlap with other ships)
-    # If validation passes, add ship to board
-    # Repeat for other ships
+    # For each ship, get location that user wants √
+    # For each location, validate: input, if location is valid (does ship fit on board), does ship fit (doesn't overlap with other ships) √
+    # If validation passes, add ship to board √
+    # Repeat for other ships √
     # Once finished, start game
     # Create two more boards - hidden board for computers ships, blank board for user
     # Add computers ships to board

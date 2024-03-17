@@ -71,7 +71,7 @@ class Ships:
                                 game_board.board[row][col + i] = "S"
                         clear_terminal()
                         game_board.print_board()
-                        return False
+                        return game_board
             elif direction == "v":
                 if (self.length + row) > (game_board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
@@ -86,7 +86,7 @@ class Ships:
                                 game_board.board[row + i][col] = "S"
                         clear_terminal()
                         game_board.print_board()
-                        return False
+                        return game_board
                 
   
 game_board = Board(8)
@@ -100,5 +100,14 @@ submarine_one = Ships("Submarine 1", 2)
 submarine_two = Ships("Submarine 2", 2)
 # Place each ship instance into a list for looping
 player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
-for ship in player_ships:
-    ship.player_place_ships(game_board)
+
+# Iterates over each ship in the list and performs the while loop
+# Once each iteration has been successfully and all ships
+# Have been placed on the board, the for loop stores a copy
+# Of this board into player_board ready to be used for the game
+for index, ship in enumerate(player_ships):
+    player_board = []
+    ships_board = ship.player_place_ships(game_board)
+    if index == len(player_ships) - 1:
+        player_board.append(ships_board.board.copy())
+
