@@ -74,6 +74,9 @@ class Ships:
                         clear_terminal()
                         game_board.print_board()
                         continue
+            elif direction == "v":
+                if (self.length + row) > (game_board.dimensions + 1):
+                    print("The ship doesn't fit. Please try again.")
                 
 
        
