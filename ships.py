@@ -46,50 +46,50 @@ class Ships:
         is placed to ensure it fits on the board and doesn't
         overlap with other ships placed.
         """
-       
-        
-
         print("You will now place your ships.")
-        # i = 0
-        # while i in range(len(player_ships)):
-        print(f"Placing [dodger_blue3]{self.name}....")
-        print("Please enter your starting co-ordinate")
-        col = game_board.convert_coord_to_index()
-        row = game_board.validate_number_coord()
-        print("Which direction do you want your ship to be placed?")
-        print("Type 'h' for horizontal or 'v' for vertical.")
-        direction = input("Please enter 'h' or 'v':\n")
-        if direction != "h" and direction != "v":
-            print("That is not a valid input. Please try again.")
-        elif direction == "h":
-            if (self.length + col) > (game_board.dimensions + 1):
-                print("The ship doesn't fit. Please try again.")
-            else:
-                for i in range(self.length):
-                    if game_board.board[row][col + i] != "~":
-                        print("The ship overlaps with another ship. Please try again.")
+        i = 0
+        while i < len(player_ships):
+            ship = player_ships[i]
+            print(f"Placing [dodger_blue3]{self.name}....")
+            print("Please enter your starting co-ordinate")
+            col = game_board.convert_coord_to_index()
+            row = game_board.validate_number_coord()
+            print("Which direction do you want your ship to be placed?")
+            print("Type 'h' for horizontal or 'v' for vertical.")
+            direction = input("Please enter 'h' or 'v':\n")
+            if direction != "h" and direction != "v":
+                print("That is not a valid input. Please try again.")
+            elif direction == "h":
+                if (self.length + col) > (game_board.dimensions + 1):
+                    print("The ship doesn't fit. Please try again.")
+                    continue
+                else:
+                    for i in range(self.length):
+                        if game_board.board[row][col + i] != "~":
+                            print("The ship overlaps with another ship. Please try again.")
+                            break
+                        else:
+                            for i in range(self.length):
+                                game_board.board[row][col + i] = "S"
+                        clear_terminal()
+                        game_board.print_board()
                         break
-                    else:
-                        for i in range(self.length):
-                            game_board.board[row][col + i] = "S"
-                    clear_terminal()
-                    game_board.print_board()
-                    break
-        elif direction == "v":
-            if (self.length + row) > (game_board.dimensions + 1):
-                print("The ship doesn't fit. Please try again.")
-            else:
-                for i in range(self.length):
-                    if game_board.board[row + i][col] != "~":
-                        print("The ship overlaps with another ship. Please try again.")
+            elif direction == "v":
+                if (self.length + row) > (game_board.dimensions + 1):
+                    print("The ship doesn't fit. Please try again.")
+                    continue
+                else:
+                    for i in range(self.length):
+                        if game_board.board[row + i][col] != "~":
+                            print("The ship overlaps with another ship. Please try again.")
+                            break
+                        else:
+                            for i in range(self.length):
+                                game_board.board[row + i][col] = "S"
+                        clear_terminal()
+                        game_board.print_board()
                         break
-                    else:
-                        for i in range(self.length):
-                            game_board.board[row + i][col] = "S"
-                    clear_terminal()
-                    game_board.print_board()
-                    break
-            # i += 1
+            i += 1
                 
 
        
