@@ -97,4 +97,5 @@ The project was deployed to Heroku using the following steps:
 
 - The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
 - The code to clear the python terminal was adapted from [Coding Ninjas](https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python)
+- The code to use the enumerate function for the ships list was adapted from [Real Python](https://realpython.com/python-enumerate/)
 

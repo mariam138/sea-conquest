@@ -105,6 +105,7 @@ player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submari
 # Once each iteration has been successfully and all ships
 # Have been placed on the board, the for loop stores a copy
 # Of this board into player_board ready to be used for the game
+# Code to use enumerate function adapted from https://realpython.com/python-enumerate/
 for index, ship in enumerate(player_ships):
     player_board = []
     ships_board = ship.player_place_ships(game_board)
