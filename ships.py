@@ -16,7 +16,6 @@ class Ships:
         self.length = length
         
     
-
     def print_ship_information(self): 
         """
         Sets the length of each type of ship in a dictionary.
@@ -47,9 +46,8 @@ class Ships:
         overlap with other ships placed.
         """
         print("You will now place your ships.")
-        i = 0
-        while i < len(player_ships):
-            ship = player_ships[i]
+        
+        while True:
             print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
             col = game_board.convert_coord_to_index()
@@ -73,7 +71,7 @@ class Ships:
                                 game_board.board[row][col + i] = "S"
                         clear_terminal()
                         game_board.print_board()
-                        break
+                        return False
             elif direction == "v":
                 if (self.length + row) > (game_board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
@@ -88,12 +86,8 @@ class Ships:
                                 game_board.board[row + i][col] = "S"
                         clear_terminal()
                         game_board.print_board()
-                        break
-            i += 1
+                        return False
                 
-
-       
-    
   
 game_board = Board(8)
 game_board.create_board()
@@ -105,6 +99,6 @@ destroyer_two = Ships("Destroyer 2", 3)
 submarine_one = Ships("Submarine 1", 2)
 submarine_two = Ships("Submarine 2", 2)
 # Place each ship instance into a list for looping
-player_ships = [battleship, destroyer_one, destroyer_two, submarine_one,submarine_two]
+player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
 for ship in player_ships:
     ship.player_place_ships(game_board)
