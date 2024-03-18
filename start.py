@@ -110,8 +110,11 @@ def game_setup():
     submarine_one = Ships("Submarine 1", 2)
     submarine_two = Ships("Submarine 2", 2)
     # Place each ship instance into a list for looping
-    player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
-    #List to store all ship coords after placing all ships onto board
+    player_ships = [
+        battleship, destroyer_one, destroyer_two,
+        submarine_one, submarine_two
+    ]
+    # List to store all ship coords after placing all ships onto board
     all_ship_coords = []
 
     # battleship.print_ship_information()
@@ -119,7 +122,8 @@ def game_setup():
     # Once each iteration has been successfully and all ships
     # Have been placed on the board, the for loop stores a copy
     # Of this board into player_board ready to be used for the game
-    # Code to use enumerate function adapted from https://realpython.com/python-enumerate/
+    # Code to use enumerate function adapted from:
+    # https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = []
@@ -128,7 +132,7 @@ def game_setup():
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
 
-    
+
 def start_game():
     """
     If the user inputs "s" into the terminal, it will trigger this function to
@@ -173,6 +177,7 @@ def game_start_prompt():
                 display_instructions()
                 return False
             elif start_choice == "s":
+                time.sleep(1)
                 clear_terminal()
                 start_game()
                 return False
