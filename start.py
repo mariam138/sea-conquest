@@ -114,18 +114,14 @@ def game_setup():
     #List to store all ship coords after placing all ships onto board
     all_ship_coords = []
 
-    # # Call player_place_ships() after board creation
-    # for ship in player_ships:
-    #     ship.player_place_ships()
-    # game_board.convert_coord_to_index()
-    # game_board.validate_number_coord()
-
+    # battleship.print_ship_information()
     # Iterates over each ship in the list and performs the while loop
     # Once each iteration has been successfully and all ships
     # Have been placed on the board, the for loop stores a copy
     # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
+        ship.print_ship_information()
         player_board = []
         ships_board = ship.player_place_ships(game_board)
         all_ship_coords.extend(ship.ship_coords)

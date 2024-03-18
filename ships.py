@@ -37,6 +37,7 @@ class Ships:
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.\n")
         for name, length in zip(ship_names, ship_lengths):
             print(f"The {name} has a length of {length}.")
+        print("\n")
     
 
     def player_place_ships(self, board):
@@ -91,12 +92,3 @@ class Ships:
                         board.print_board()
                         return board
                 
-  
-
-
-
-
-
-
-
-
