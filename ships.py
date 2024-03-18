@@ -3,6 +3,7 @@ from board import Board
 from clear import clear_terminal
 from rich import print
 
+
 class Ships:
     """
     Predefines the number of ships the player and computer gets.
@@ -14,11 +15,11 @@ class Ships:
     def __init__(self, name, length):
         self.name = name
         self.length = length
-        # Empty list which the ship's coordinates will be stored once placed on the board
+        # Empty list which the ship's coordinates will be stored
+        # once placed on the board
         self.ship_coords = []
-        
-    
-    def print_ship_information(self): 
+
+    def print_ship_information(self):
         """
         Sets the length of each type of ship in a dictionary.
         Using the dictionary, this method will print out
@@ -38,7 +39,6 @@ class Ships:
         for name, length in zip(ship_names, ship_lengths):
             print(f"The {name} has a length of {length}.")
         print("\n")
-    
 
     def player_place_ships(self, board):
         """ Code that will be used to ask the player to choose
@@ -66,7 +66,8 @@ class Ships:
                 else:
                     for i in range(self.length):
                         if board.board[row][col + i] != "~":
-                            print("The ship overlaps with another ship. Please try again.")
+                            print("The ship overlaps with another", end=" ")
+                            print("ship. Please try again.")
                             break
                         else:
                             for i in range(self.length):
@@ -82,7 +83,8 @@ class Ships:
                 else:
                     for i in range(self.length):
                         if board.board[row + i][col] != "~":
-                            print("The ship overlaps with another ship. Please try again.")
+                            print("The ship overlaps with another", end=" ")
+                            print("ship. Please try again.")
                             break
                         else:
                             for i in range(self.length):
@@ -91,4 +93,3 @@ class Ships:
                         clear_terminal()
                         board.print_board()
                         return board
-                
