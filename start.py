@@ -131,6 +131,8 @@ def game_setup():
         all_ship_coords.extend(ship.ship_coords)
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
+    
+    start_game()
 
 
 def start_game():
@@ -151,7 +153,6 @@ def start_game():
     # Create two more boards - hidden board for computers ships, blank board for user
     # Add computers ships to board
     # For user, display blank board and their board side by side
-    game_setup()
 
 
 def game_start_prompt():
@@ -180,7 +181,7 @@ def game_start_prompt():
             elif start_choice == "s":
                 time.sleep(1)
                 clear_terminal()
-                start_game()
+                game_setup()
                 return False
             elif start_choice == "q":
                 print()
