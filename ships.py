@@ -14,6 +14,8 @@ class Ships:
     def __init__(self, name, length):
         self.name = name
         self.length = length
+        # Empty list which the ship's coordinates will be stored once placed on the board
+        self.ship_coords = []
         
     
     def print_ship_information(self): 
@@ -46,7 +48,6 @@ class Ships:
         overlap with other ships placed.
         """
         print("You will now place your ships.")
-        
         while True:
             print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
@@ -69,6 +70,7 @@ class Ships:
                         else:
                             for i in range(self.length):
                                 game_board.board[row][col + i] = "S"
+                                self.ship_coords.append((row, col + i))
                         clear_terminal()
                         game_board.print_board()
                         return game_board
@@ -84,6 +86,7 @@ class Ships:
                         else:
                             for i in range(self.length):
                                 game_board.board[row + i][col] = "S"
+                                self.ship_coords.append((row + i, col))
                         clear_terminal()
                         game_board.print_board()
                         return game_board
@@ -100,6 +103,8 @@ submarine_one = Ships("Submarine 1", 2)
 submarine_two = Ships("Submarine 2", 2)
 # Place each ship instance into a list for looping
 player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
+#List to store all ship coords after placing all ships onto board
+all_ship_coords = []
 
 # Iterates over each ship in the list and performs the while loop
 # Once each iteration has been successfully and all ships
@@ -109,6 +114,11 @@ player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submari
 for index, ship in enumerate(player_ships):
     player_board = []
     ships_board = ship.player_place_ships(game_board)
+    all_ship_coords.extend(ship.ship_coords)
     if index == len(player_ships) - 1:
         player_board.append(ships_board.board.copy())
+
+
+
+
 
