@@ -99,26 +99,38 @@ def game_setup():
     game_board.create_board()
     game_board.print_board()
 
-    # Gets Ships class and stores it into a variable to call its methods
-    game_ships = Ships(2)
-    # Prints out each ship and their length for the user
-    game_ships.print_ship_information()
+    # # Gets Ships class and stores it into a variable to call its methods
+    # game_ships = Ships(2)
+    # # Prints out each ship and their length for the user
+    # game_ships.print_ship_information()
 
-    # Creates separate instances for each of the 5 ships the player has
-    battleship = Ships(4)
-    destroyer_one = Ships(3)
-    destroyer_two = Ships(3)
-    submarine_one = Ships(2)
-    submarine_two = Ships(2)
-
+    battleship = Ships("Battleship", 4)
+    destroyer_one = Ships("Destroyer 1", 3)
+    destroyer_two = Ships("Destroyer 2", 3)
+    submarine_one = Ships("Submarine 1", 2)
+    submarine_two = Ships("Submarine 2", 2)
     # Place each ship instance into a list for looping
-    player_ships = [battleship, destroyer_one, destroyer_two, submarine_one,
-     submarine_two]
+    player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
+    #List to store all ship coords after placing all ships onto board
+    all_ship_coords = []
 
     # Call player_place_ships() after board creation
-    # game_ships.player_place_ships()
-    game_board.convert_coord_to_index()
-    game_board.validate_number_coord()
+    for ship in player_ships:
+        ship.player_place_ships()
+    # game_board.convert_coord_to_index()
+    # game_board.validate_number_coord()
+
+    # Iterates over each ship in the list and performs the while loop
+    # Once each iteration has been successfully and all ships
+    # Have been placed on the board, the for loop stores a copy
+    # Of this board into player_board ready to be used for the game
+    # Code to use enumerate function adapted from https://realpython.com/python-enumerate/
+    for index, ship in enumerate(player_ships):
+        player_board = []
+        ships_board = ship.player_place_ships(game_board)
+        all_ship_coords.extend(ship.ship_coords)
+        if index == len(player_ships) - 1:
+            player_board.append(ships_board.board.copy())
 
     
 def start_game():
@@ -130,7 +142,7 @@ def start_game():
     # Get user to position ships onto board √
     # Create board √
     # Create ships √
-    # Store ships and board √ somewhere
+    # Store ships √ and board √ somewhere
     # For each ship, get location that user wants √
     # For each location, validate: input, if location is valid (does ship fit on board), does ship fit (doesn't overlap with other ships) √
     # If validation passes, add ship to board √

@@ -39,7 +39,7 @@ class Ships:
             print(f"The {name} has a length of {length}.")
     
 
-    def player_place_ships(self, game_board):
+    def player_place_ships(self, board):
         """ Code that will be used to ask the player to choose
         starting coordinates for their ship to be placed.
         Player will be asked if they want their ship horizontally
@@ -51,72 +51,50 @@ class Ships:
         while True:
             print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
-            col = game_board.convert_coord_to_index()
-            row = game_board.validate_number_coord()
+            col = board.convert_coord_to_index()
+            row = board.validate_number_coord()
             print("Which direction do you want your ship to be placed?")
             print("Type 'h' for horizontal or 'v' for vertical.")
             direction = input("Please enter 'h' or 'v':\n")
             if direction != "h" and direction != "v":
                 print("That is not a valid input. Please try again.")
             elif direction == "h":
-                if (self.length + col) > (game_board.dimensions + 1):
+                if (self.length + col) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
                     for i in range(self.length):
-                        if game_board.board[row][col + i] != "~":
+                        if board.board[row][col + i] != "~":
                             print("The ship overlaps with another ship. Please try again.")
                             break
                         else:
                             for i in range(self.length):
-                                game_board.board[row][col + i] = "S"
+                                board.board[row][col + i] = "S"
                                 self.ship_coords.append((row, col + i))
                         clear_terminal()
-                        game_board.print_board()
-                        return game_board
+                        board.print_board()
+                        return board
             elif direction == "v":
-                if (self.length + row) > (game_board.dimensions + 1):
+                if (self.length + row) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
                     for i in range(self.length):
-                        if game_board.board[row + i][col] != "~":
+                        if board.board[row + i][col] != "~":
                             print("The ship overlaps with another ship. Please try again.")
                             break
                         else:
                             for i in range(self.length):
-                                game_board.board[row + i][col] = "S"
+                                board.board[row + i][col] = "S"
                                 self.ship_coords.append((row + i, col))
                         clear_terminal()
-                        game_board.print_board()
-                        return game_board
+                        board.print_board()
+                        return board
                 
   
-game_board = Board(8)
-game_board.create_board()
-game_board.print_board()
-# battleship = Ships("Battleship", 4)
-battleship = Ships("Battleship", 4)
-destroyer_one = Ships("Destroyer 1", 3)
-destroyer_two = Ships("Destroyer 2", 3)
-submarine_one = Ships("Submarine 1", 2)
-submarine_two = Ships("Submarine 2", 2)
-# Place each ship instance into a list for looping
-player_ships = [battleship, destroyer_one, destroyer_two, submarine_one, submarine_two]
-#List to store all ship coords after placing all ships onto board
-all_ship_coords = []
 
-# Iterates over each ship in the list and performs the while loop
-# Once each iteration has been successfully and all ships
-# Have been placed on the board, the for loop stores a copy
-# Of this board into player_board ready to be used for the game
-# Code to use enumerate function adapted from https://realpython.com/python-enumerate/
-for index, ship in enumerate(player_ships):
-    player_board = []
-    ships_board = ship.player_place_ships(game_board)
-    all_ship_coords.extend(ship.ship_coords)
-    if index == len(player_ships) - 1:
-        player_board.append(ships_board.board.copy())
+
+
 
 
 
