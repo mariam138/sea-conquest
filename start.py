@@ -114,9 +114,9 @@ def game_setup():
     #List to store all ship coords after placing all ships onto board
     all_ship_coords = []
 
-    # Call player_place_ships() after board creation
-    for ship in player_ships:
-        ship.player_place_ships()
+    # # Call player_place_ships() after board creation
+    # for ship in player_ships:
+    #     ship.player_place_ships()
     # game_board.convert_coord_to_index()
     # game_board.validate_number_coord()
 
@@ -175,6 +175,7 @@ def game_start_prompt():
             elif start_choice == 'i':
                 clear_terminal()
                 display_instructions()
+                return False
             elif start_choice == "s":
                 clear_terminal()
                 start_game()
