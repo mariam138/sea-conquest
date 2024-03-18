@@ -21,7 +21,9 @@ def computer_place_ships():
         "A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8
     }
     letter_choices = ["A", "B", "C", "D", "E", "F", "G", "H"]
-    computer_col = random.choice(letter_choices)
+    computer_col_coord = random.choice(letter_choices)
+    if computer_col_coord in letter_coord_dict:
+                computer_col = letter_coord_dict[computer_col_coord]
     print(computer_col)
 
     # while True:
