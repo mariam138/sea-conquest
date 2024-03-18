@@ -170,7 +170,8 @@ def game_start_prompt():
         print("Type 'Q' to quit the game.")
         try:
             start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
-            if start_choice != 'i' and start_choice != 's' and start_choice != 'q':
+            if (start_choice != 'i' and start_choice != 's'
+             and start_choice != 'q'):
                 raise Exception
             elif start_choice == 'i':
                 clear_terminal()
