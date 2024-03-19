@@ -6,11 +6,11 @@ import random
 from board import Board
 
 # Place these into a main() later on
-# computer_board = Board(8)
+computer_board = Board(8)
 # computer_board.create_board()
 # computer_board.print_board()
 
-def computer_place_ships():
+def computer_place_ships(board):
     """
     Uses similar method from Ships to place ships onto board.
     The random module will be used to give a random column
@@ -24,8 +24,10 @@ def computer_place_ships():
     computer_col_coord = random.choice(letter_choices)
     if computer_col_coord in letter_coord_dict:
                 computer_col = letter_coord_dict[computer_col_coord]
-    print(computer_col)
+    # print(computer_col)
 
+    computer_row = random.randrange(1, board.dimensions)
+    print(computer_row)
     # while True:
     #     col = board.convert_coord_to_index()
     #     row = board.validate_number_coord()
@@ -69,4 +71,4 @@ def computer_place_ships():
     #                 board.print_board()
     #                 return board
 
-computer_place_ships()
+computer_place_ships(computer_board)
