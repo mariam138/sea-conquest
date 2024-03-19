@@ -10,12 +10,13 @@ computer_board = Board(8)
 # computer_board.create_board()
 # computer_board.print_board()
 
-def computer_place_ships(board):
+def random_column_coord():
     """
-    Uses similar method from Ships to place ships onto board.
-    The random module will be used to give a random column
-    and random row, a choice between horizontal and vertical
-    placement and use the same validation to make sure the ships fit onto the board and do not overlap.
+    A dictionary will be again defined for each letter
+    coordinate as its corresponding index number. A
+    list will then be made containing the letter choices which
+    will be chosen as random as the column coordinate. The letter
+    will be chosen using the built-in random module.
     """
     letter_coord_dict = {
         "A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8
@@ -25,6 +26,17 @@ def computer_place_ships(board):
     if computer_col_coord in letter_coord_dict:
                 computer_col = letter_coord_dict[computer_col_coord]
     print(computer_col)
+
+
+
+def computer_place_ships(board):
+    """
+    Uses similar method from Ships to place ships onto board.
+    The random module will be used to give a random column
+    and random row, a choice between horizontal and vertical
+    placement and use the same validation to make sure the ships fit onto the board and do not overlap.
+    """
+    
 
     computer_row = random.randrange(1, board.dimensions)
     print(computer_row)
@@ -79,4 +91,5 @@ def computer_place_ships(board):
     #                 board.print_board()
     #                 return board
 
-computer_place_ships(computer_board)
+# computer_place_ships(computer_board)
+random_column_coord()
