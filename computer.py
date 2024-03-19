@@ -28,6 +28,17 @@ def random_column_coord():
     print(computer_col)
 
 
+def random_row_coord(board):
+    """
+    Using the dimensions of the game board, a random number will
+    be generated within that range using the random module.
+    This will then be put into a variable representing the
+    row. This method will be used both for placing the computers'
+    ships and for guessing coordinates in game
+    """
+    computer_row = random.randrange(1, board.dimensions)
+    print(computer_row)
+
 
 def computer_place_ships(board):
     """
@@ -36,11 +47,6 @@ def computer_place_ships(board):
     and random row, a choice between horizontal and vertical
     placement and use the same validation to make sure the ships fit onto the board and do not overlap.
     """
-    
-
-    computer_row = random.randrange(1, board.dimensions)
-    print(computer_row)
-
     # Stores directions which ships can be placed
     # Into a list so that a random choice between the two
     # Can be chosen for random ship placement by the "computer"
@@ -93,3 +99,4 @@ def computer_place_ships(board):
 
 # computer_place_ships(computer_board)
 random_column_coord()
+random_row_coord(computer_board)
