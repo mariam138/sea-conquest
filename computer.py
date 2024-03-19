@@ -4,11 +4,14 @@ from clear import clear_terminal
 import random
 # To create a board for the computer
 from board import Board
+# To create the different ships
+from ships import Ships
 
 # Place these into a main() later on
 computer_board = Board(8)
-# computer_board.create_board()
-# computer_board.print_board()
+computer_board.create_board()
+computer_board.print_board()
+battleship = Ships("Battleship", 4)
 
 def random_column_coord():
     """
@@ -25,7 +28,8 @@ def random_column_coord():
     computer_col_coord = random.choice(letter_choices)
     if computer_col_coord in letter_coord_dict:
                 computer_col = letter_coord_dict[computer_col_coord]
-    print(computer_col)
+    
+    return computer_col
 
 
 def random_row_coord(board):
@@ -37,7 +41,7 @@ def random_row_coord(board):
     ships and for guessing coordinates in game
     """
     computer_row = random.randrange(1, board.dimensions)
-    print(computer_row)
+    return computer_row
 
 
 def random_ship_dir():
@@ -48,18 +52,44 @@ def random_ship_dir():
     """
     directions = ["h", "v"]
     comp_ship_direction = random.choice(directions)
-    print(comp_ship_direction)
+    return comp_ship_direction
 
-def computer_place_ships(board):
+def computer_place_ships(ship, board):
     """
     Uses similar method from Ships to place ships onto board.
-    The random module will be used to give a random column
-    and random row, a choice between horizontal and vertical
-    placement and use the same validation to make sure the ships fit onto the board and do not overlap.
+    Using the functions created above, the "computer" will place
+    its ships in random positions on the board. Similar validation
+    for the user will be used to make sure the ships fit onto
+    the board and do not overlap.
     """
-    # Stores directions which ships can be placed
-    # Into a list so that a random choice between the two
-    # Can be chosen for random ship placement by the "computer"
+
+    while True:
+        row = random_row_coord()
+        col = random_column_coord()
+        direction = random_ship_dir()
+
+        if direction == "h":
+            if (ship.length + col) > (board.dimensions + 1):
+                continue
+            else:
+                for i in range(ship.length):
+                    if board.board[row][col + i] != "~":
+                        break
+                    else:
+                        for i in range(ship.length):
+                            board.board[row][col + i] = "S"
+        elif direction == "v":
+            if (ship.length + row) > (board.dimensions + 1):
+                continue
+            else:
+                for i in range(ship.length):
+                    if board.board[row + i][col] != "~":
+                        break
+                    else:
+                        for i in range(ship.length):
+                            board.board[row + i][col] = "S"
+
+
 
     # while True:
     #     col = board.convert_coord_to_index()
