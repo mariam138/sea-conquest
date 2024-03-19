@@ -24,10 +24,10 @@ def computer_place_ships(board):
     computer_col_coord = random.choice(letter_choices)
     if computer_col_coord in letter_coord_dict:
                 computer_col = letter_coord_dict[computer_col_coord]
-    # print(computer_col)
+    print(computer_col)
 
     computer_row = random.randrange(1, board.dimensions)
-    # print(computer_row)
+    print(computer_row)
 
     # Stores directions which ships can be placed
     # Into a list so that a random choice between the two
