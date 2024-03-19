@@ -177,7 +177,7 @@ def game_start_prompt():
             elif start_choice == 'i':
                 clear_terminal()
                 display_instructions()
-                return False
+                # return False
             elif start_choice == "s":
                 time.sleep(1)
                 clear_terminal()
