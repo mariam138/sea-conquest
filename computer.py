@@ -40,6 +40,16 @@ def random_row_coord(board):
     print(computer_row)
 
 
+def random_ship_dir():
+    """
+    A list containing the two choices of either "horizontal"
+    or "vertical" will be used to randomly pick a direction
+    for the computers' ships to be placed, using the random module.
+    """
+    directions = ["h", "v"]
+    comp_ship_direction = random.choice(directions)
+    print(comp_ship_direction)
+
 def computer_place_ships(board):
     """
     Uses similar method from Ships to place ships onto board.
@@ -50,9 +60,6 @@ def computer_place_ships(board):
     # Stores directions which ships can be placed
     # Into a list so that a random choice between the two
     # Can be chosen for random ship placement by the "computer"
-    directions = ["h", "v"]
-    comp_ship_direction = random.choice(directions)
-    print(comp_ship_direction)
 
     # while True:
     #     col = board.convert_coord_to_index()
@@ -100,3 +107,4 @@ def computer_place_ships(board):
 # computer_place_ships(computer_board)
 random_column_coord()
 random_row_coord(computer_board)
+random_ship_dir()
