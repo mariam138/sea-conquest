@@ -177,7 +177,6 @@ def game_start_prompt():
             elif start_choice == 'i':
                 clear_terminal()
                 display_instructions()
-                # return False
             elif start_choice == "s":
                 time.sleep(1)
                 clear_terminal()
@@ -187,7 +186,7 @@ def game_start_prompt():
                 print()
                 print("Goodbye for now commander, us ")
                 print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
-                time.sleep(4)
+                time.sleep(3)
                 clear_terminal()
                 main()
                 return False
