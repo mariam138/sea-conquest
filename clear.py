@@ -3,7 +3,7 @@
 import os
 
 def clear_terminal():
-    os.system("cls" if os.name === "nt" else "clear")
+    os.system("cls" if os.name == "nt" else "clear")
     
     # if os.name == "nt":
     #     _ = os.system("cls")
