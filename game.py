@@ -27,7 +27,15 @@ def computer_place_ships(board):
     # print(computer_col)
 
     computer_row = random.randrange(1, board.dimensions)
-    print(computer_row)
+    # print(computer_row)
+
+    # Stores directions which ships can be placed
+    # Into a list so that a random choice between the two
+    # Can be chosen for random ship placement by the "computer"
+    directions = ["h", "v"]
+    comp_ship_direction = random.choice(directions)
+    print(comp_ship_direction)
+
     # while True:
     #     col = board.convert_coord_to_index()
     #     row = board.validate_number_coord()
