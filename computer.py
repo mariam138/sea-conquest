@@ -61,7 +61,6 @@ def computer_place_ships(ship, board):
     the board and do not overlap.
     """
 
-    computer_ship_coords = []
     while True:
         row = random_row_coord(board)
         col = random_column_coord()
@@ -109,6 +108,7 @@ player_ships = [
     battleship, destroyer_one, destroyer_two,
     submarine_one, submarine_two
 ]
+computer_ship_coords = []
 all_comp_ship_coords = []
 
 # Store created random board into variable called computer_board
@@ -116,4 +116,4 @@ all_comp_ship_coords = []
 for ship in player_ships:
    computer_board = computer_place_ships(ship, random_board)
    all_comp_ship_coords.extend(computer_ship_coords)
-print(all_comp_ship_coords)
+
