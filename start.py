@@ -117,7 +117,6 @@ def game_setup():
     # List to store all ship coords after placing all ships onto board
     all_ship_coords = []
 
-    # battleship.print_ship_information()
     # Iterates over each ship in the list and performs the while loop
     # Once each iteration has been successfully and all ships
     # Have been placed on the board, the for loop stores a copy
@@ -131,7 +130,6 @@ def game_setup():
         all_ship_coords.extend(ship.ship_coords)
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
-    
     start_game()
 
 

@@ -8,8 +8,8 @@ from board import Board
 from ships import Ships
 
 # Place these into a main() later on
-computer_board = Board(8)
-computer_board.create_board()
+random_board = Board(8)
+random_board.create_board()
 
 def random_column_coord():
     """
@@ -61,6 +61,7 @@ def computer_place_ships(ship, board):
     the board and do not overlap.
     """
 
+    computer_ship_coords = []
     while True:
         row = random_row_coord(board)
         col = random_column_coord()
@@ -90,9 +91,11 @@ def computer_place_ships(ship, board):
             if direction == "h":
                 for i in range(ship.length):
                     board.board[row][col + i] = "S"
+                    computer_ship_coords.append((row, col + i))
             elif direction == "v":
                 for i in range(ship.length):
                     board.board[row + i][col] = "S"
+                    computer_ship_coords.append((row + i, col))
             return board
 
 
@@ -106,7 +109,11 @@ player_ships = [
     battleship, destroyer_one, destroyer_two,
     submarine_one, submarine_two
 ]
+all_comp_ship_coords = []
 
+# Store created random board into variable called computer_board
+# for game use
 for ship in player_ships:
-    computer_place_ships(ship, computer_board)
-
+   computer_board = computer_place_ships(ship, random_board)
+   all_comp_ship_coords.extend(computer_ship_coords)
+print(all_comp_ship_coords)
