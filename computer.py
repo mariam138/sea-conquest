@@ -10,8 +10,6 @@ from ships import Ships
 # Place these into a main() later on
 computer_board = Board(8)
 computer_board.create_board()
-computer_board.print_board()
-# battleship = Ships("Battleship", 4)
 
 def random_column_coord():
     """
@@ -95,7 +93,6 @@ def computer_place_ships(ship, board):
             elif direction == "v":
                 for i in range(ship.length):
                     board.board[row + i][col] = "S"
-            board.print_board()
             return board
 
 
