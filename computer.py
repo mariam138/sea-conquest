@@ -17,14 +17,14 @@ def random_column_coord():
     will be chosen using the built-in random module.
     """
     letter_coord_dict = {
-        "A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8
+        "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8
     }
     letter_choices = ["A", "B", "C", "D", "E", "F", "G", "H"]
     # Randomly picks a letter and stores it into a variable
     computer_col_coord = random.choice(letter_choices)
     # Sets the assigned value of the dictionary key to a variable
     if computer_col_coord in letter_coord_dict:
-                computer_col = letter_coord_dict[computer_col_coord]
+        computer_col = letter_coord_dict[computer_col_coord]
     return computer_col
 
 
@@ -50,6 +50,7 @@ def random_ship_dir():
     comp_ship_direction = random.choice(directions)
     return comp_ship_direction
 
+
 def computer_place_ships(ship, board):
     """
     Uses similar method from Ships to place ships onto board.
@@ -73,10 +74,10 @@ def computer_place_ships(ship, board):
             if (ship.length + col) > (board.dimensions + 1):
                 continue
             else:
-                # If the ship fits, it is then checked to make sure 
+                # If the ship fits, it is then checked to make sure
                 # it doesn't overlap with another ship.
                 # If it does, a False flag is given and the for loop breaks
-                # From the inner loop, the outer while loop is iterated over again
+                # After the break, the outer while loop is iterated over again
                 for i in range(ship.length):
                     if board.board[row][col + i] != "~":
                         ship_fits = False
@@ -96,7 +97,7 @@ def computer_place_ships(ship, board):
 
         if ship_fits:
             # If the ship fits horizontally, it's coordinates on the board
-            # are marked with an "S". It's coordinates are then stored 
+            # are marked with an "S". It's coordinates are then stored
             # as a tuple
             if direction == "h":
                 for i in range(ship.length):
@@ -114,7 +115,7 @@ def computer_place_ships(ship, board):
 def main():
     """
     Creates a board instance for the computer with the same
-    dimensions as for the player. Then after each ship instance 
+    dimensions as for the player. Then after each ship instance
     is created, each ship is placed onto the board using
     the computer_place_ships() function.
     """
