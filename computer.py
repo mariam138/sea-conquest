@@ -11,7 +11,7 @@ from ships import Ships
 computer_board = Board(8)
 computer_board.create_board()
 computer_board.print_board()
-battleship = Ships("Battleship", 4)
+# battleship = Ships("Battleship", 4)
 
 def random_column_coord():
     """
@@ -93,52 +93,21 @@ def computer_place_ships(ship, board):
                         board.print_board()
                         return board
 
+battleship = Ships("Battleship", 4)
+destroyer_one = Ships("Destroyer 1", 3)
+destroyer_two = Ships("Destroyer 2", 3)
+submarine_one = Ships("Submarine 1", 2)
+submarine_two = Ships("Submarine 2", 2)
+# Place each ship instance into a list for looping
+player_ships = [
+    battleship, destroyer_one, destroyer_two,
+    submarine_one, submarine_two
+]
 
-
-    # while True:
-    #     col = board.convert_coord_to_index()
-    #     row = board.validate_number_coord()
-    #     print("Which direction do you want your ship to be placed?")
-    #     print("Type 'h' for horizontal or 'v' for vertical.")
-    #     direction = input("Please enter 'h' or 'v':\n")
-    #     if direction != "h" and direction != "v":
-    #         print("That is not a valid input. Please try again.")
-    #     elif direction == "h":
-    #         if (self.length + col) > (board.dimensions + 1):
-    #             print("The ship doesn't fit. Please try again.")
-    #             continue
-    #         else:
-    #             for i in range(self.length):
-    #                 if board.board[row][col + i] != "~":
-    #                     print("The ship overlaps with another", end=" ")
-    #                     print("ship. Please try again.")
-    #                     break
-    #                 else:
-    #                     for i in range(self.length):
-    #                         board.board[row][col + i] = "S"
-    #                         self.ship_coords.append((row, col + i))
-    #                 clear_terminal()
-    #                 board.print_board()
-    #                 return board
-    #     elif direction == "v":
-    #         if (self.length + row) > (board.dimensions + 1):
-    #             print("The ship doesn't fit. Please try again.")
-    #             continue
-    #         else:
-    #             for i in range(self.length):
-    #                 if board.board[row + i][col] != "~":
-    #                     print("The ship overlaps with another", end=" ")
-    #                     print("ship. Please try again.")
-    #                     break
-    #                 else:
-    #                     for i in range(self.length):
-    #                         board.board[row + i][col] = "S"
-    #                         self.ship_coords.append((row + i, col))
-    #                 clear_terminal()
-    #                 board.print_board()
-    #                 return board
+for ship in player_ships:
+    computer_place_ships(ship, computer_board)
 
 # computer_place_ships(computer_board)
-computer_board_two = computer_place_ships(battleship, computer_board)
+# computer_place_ships(battleship, computer_board)
 # print(computer_board_two)
 
