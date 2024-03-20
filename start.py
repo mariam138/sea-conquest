@@ -148,10 +148,9 @@ def start_game():
     # If validation passes, add ship to board √
     # Repeat for other ships √
     # Once finished, start game
-    # Create two more boards - hidden board for computers ships, blank board for user
-    # Add computers ships to board
+    # Create two more boards - hidden board for computers ships √, blank board for user
+    # Add computers ships to board √
     # For user, display blank board and their board side by side
-
 
 def game_start_prompt():
     """
