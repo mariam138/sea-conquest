@@ -64,7 +64,7 @@ def computer_place_ships(ship, board):
     """
 
     while True:
-        row = random_row_coord()
+        row = random_row_coord(board)
         col = random_column_coord()
         direction = random_ship_dir()
 
@@ -78,6 +78,8 @@ def computer_place_ships(ship, board):
                     else:
                         for i in range(ship.length):
                             board.board[row][col + i] = "S"
+                        board.print_board()
+                        return board
         elif direction == "v":
             if (ship.length + row) > (board.dimensions + 1):
                 continue
@@ -88,6 +90,8 @@ def computer_place_ships(ship, board):
                     else:
                         for i in range(ship.length):
                             board.board[row + i][col] = "S"
+                        board.print_board()
+                        return board
 
 
 
@@ -135,6 +139,6 @@ def computer_place_ships(ship, board):
     #                 return board
 
 # computer_place_ships(computer_board)
-random_column_coord()
-random_row_coord(computer_board)
-random_ship_dir()
+computer_board_two = computer_place_ships(battleship, computer_board)
+# print(computer_board_two)
+
