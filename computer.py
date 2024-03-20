@@ -68,30 +68,36 @@ def computer_place_ships(ship, board):
         col = random_column_coord()
         direction = random_ship_dir()
 
+        ship_fits = True
+
         if direction == "h":
             if (ship.length + col) > (board.dimensions + 1):
                 continue
             else:
+                # ship_fits = True
                 for i in range(ship.length):
                     if board.board[row][col + i] != "~":
+                        ship_fits = False
                         break
-                    else:
-                        for i in range(ship.length):
-                            board.board[row][col + i] = "S"
-                        board.print_board()
-                        return board
         elif direction == "v":
             if (ship.length + row) > (board.dimensions + 1):
                 continue
             else:
+                # ship_fits = True
                 for i in range(ship.length):
                     if board.board[row + i][col] != "~":
-                        break
-                    else:
-                        for i in range(ship.length):
-                            board.board[row + i][col] = "S"
-                        board.print_board()
-                        return board
+                        ship_fits = False
+
+        if ship_fits:
+            if direction == "h":
+                for i in range(ship.length):
+                    board.board[row][col + i] = "S"
+            elif direction == "v":
+                for i in range(ship.length):
+                    board.board[row + i][col] = "S"
+            board.print_board()
+            return board
+
 
 battleship = Ships("Battleship", 4)
 destroyer_one = Ships("Destroyer 1", 3)
@@ -106,8 +112,4 @@ player_ships = [
 
 for ship in player_ships:
     computer_place_ships(ship, computer_board)
-
-# computer_place_ships(computer_board)
-# computer_place_ships(battleship, computer_board)
-# print(computer_board_two)
 
