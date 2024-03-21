@@ -106,11 +106,11 @@ def game_setup():
     # # Prints out each ship and their length for the user
     # game_ships.print_ship_information()
 
-    battleship = Ships("Battleship", 4)
-    destroyer_one = Ships("Destroyer 1", 3)
-    destroyer_two = Ships("Destroyer 2", 3)
-    submarine_one = Ships("Submarine 1", 2)
-    submarine_two = Ships("Submarine 2", 2)
+    battleship = Ships("Battleship", 4, "dark red")
+    destroyer_one = Ships("Destroyer 1", 3, "green 4")
+    destroyer_two = Ships("Destroyer 2", 3, "yellow 4")
+    submarine_one = Ships("Submarine 1", 2, "dodger blue 1")
+    submarine_two = Ships("Submarine 2", 2, "blue violet")
     # Place each ship instance into a list for looping
     player_ships = [
         battleship, destroyer_one, destroyer_two,
