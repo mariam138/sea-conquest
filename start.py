@@ -131,7 +131,8 @@ def game_setup():
         global player_board
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
-        return player_board
+        # return player_board
+    # print(player_board)
 
     # An empty list to store a ship's coordinates
     computer_ship_coords = []
