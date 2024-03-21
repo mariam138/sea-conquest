@@ -10,7 +10,6 @@ from board import Board
 from ships import Ships
 # Imports the computer module to access its functions
 import computer
-import pdb
 
 def print_banner():
     """
@@ -134,6 +133,7 @@ def game_setup():
     # To be accessed during the game
     all_comp_ship_coords = [] 
 
+    print(f"Let the games begin, commander {user_name}!")
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
