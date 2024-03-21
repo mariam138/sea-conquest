@@ -40,6 +40,7 @@ def get_user_name():
     while True:
         print("Type your name below.")
         print("Please use only letters.\n")
+        # Allows the username to be accessible outside the function
         global user_name
         user_name = input("Enter your name:\n")
 
@@ -134,7 +135,7 @@ def game_setup():
     # To be accessed during the game
     all_comp_ship_coords = [] 
 
-    print(f"Let the games begin, commander [gold3]{user_name}[/gold3]!")
+    print(f"Let the conquest begin, commander [gold3]{user_name}[/gold3]!")
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
