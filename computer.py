@@ -125,19 +125,3 @@ def main(all_comp_ship_coords, ships, computer_ship_coords):
     for ship in ships:
         computer_board = computer_place_ships(ship, random_board, computer_ship_coords)
         all_comp_ship_coords.extend(computer_ship_coords)
-    computer_board.print_board()
-
-# battleship = Ships("Battleship", 4)
-# destroyer_one = Ships("Destroyer 1", 3)
-# destroyer_two = Ships("Destroyer 2", 3)
-# submarine_one = Ships("Submarine 1", 2)
-# submarine_two = Ships("Submarine 2", 2)
-# # Place each ship instance into a list for looping
-# player_ships = [
-#     battleship, destroyer_one, destroyer_two,
-#     submarine_one, submarine_two
-# ]
-# computer_ship_coords = []
-# all_comp_ship_coords = []
-
-# main()
