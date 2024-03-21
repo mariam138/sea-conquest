@@ -12,9 +12,11 @@ class Ships:
     2 x Destroyer (length = 3)
     2 x Submarine (length = 2)
     """
-    def __init__(self, name, length):
+    def __init__(self, name, length, colour, health):
         self.name = name
         self.length = length
+        self.colour = colour
+        self.health = length
         # Empty list which the ship's coordinates will be stored
         # once placed on the board
         self.ship_coords = []
