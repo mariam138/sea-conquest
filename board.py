@@ -35,7 +35,7 @@ class Board:
         """
         for row in self.board:
             for cell in row:
-                print(cell, end=" ")
+                print(cell,   end=" ")
             print()
         print()
 

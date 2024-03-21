@@ -101,16 +101,11 @@ def game_setup():
     game_board.create_board()
     game_board.print_board()
 
-    # # Gets Ships class and stores it into a variable to call its methods
-    # game_ships = Ships(2)
-    # # Prints out each ship and their length for the user
-    # game_ships.print_ship_information()
-
-    battleship = Ships("Battleship", 4, "dark red")
-    destroyer_one = Ships("Destroyer 1", 3, "green 4")
-    destroyer_two = Ships("Destroyer 2", 3, "yellow 4")
-    submarine_one = Ships("Submarine 1", 2, "dodger blue 1")
-    submarine_two = Ships("Submarine 2", 2, "blue violet")
+    battleship = Ships("Battleship", 4, "dark_red", 4)
+    destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
+    destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+    submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+    submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
     # Place each ship instance into a list for looping
     player_ships = [
         battleship, destroyer_one, destroyer_two,
@@ -132,7 +127,6 @@ def game_setup():
         all_ship_coords.extend(ship.ship_coords)
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
-    # start_game()
 
     # An empty list to store a ship's coordinates
     computer_ship_coords = []
@@ -142,7 +136,6 @@ def game_setup():
 
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
-    # breakpoint()
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
 
 
@@ -188,6 +181,7 @@ def game_start_prompt():
                 clear_terminal()
                 display_instructions()
             elif start_choice == "s":
+                # breakpoint()
                 time.sleep(1)
                 clear_terminal()
                 game_setup()
