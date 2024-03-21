@@ -58,7 +58,7 @@ class Ships:
             print("Type 'h' for horizontal or 'v' for vertical.")
             direction = input("Please enter 'h' or 'v':\n")
             if direction != "h" and direction != "v":
-                print("That is not a valid input. Please try again.")
+                print("Invalid direction. Please try again.")
             elif direction == "h":
                 if (self.length + col) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")

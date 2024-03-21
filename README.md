@@ -78,6 +78,8 @@ After checking the **validate_number_coord** function separately in the *board* 
 ![Screenshot 2024-03-20 at 17 18 38](https://github.com/mariam138/sea-conquest/assets/150139337/85d2262c-b9e7-4b06-8bb9-23a09d619309)
 To fix this, I separated out the nested if/else statements and added True/False flags for whether the ship fits and doesn't overlap. If the ship fits on the board, but overlaps with another ship, **ship_fits** is **False**. The code will then repeat until the whole ship fits, so **ship_fits** remains **True**. Once **True**, then, depending on whether the direction was randomly chosen as horizontal or vertical, the ship would be placed onto the board. 
 
+
+
 ## Deployment
 
 The project was deployed to Heroku using the following steps:

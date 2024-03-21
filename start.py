@@ -8,7 +8,9 @@ import time
 from board import Board
 # To get information from Ships class to start game
 from ships import Ships
-
+# Imports the computer module to access its functions
+import computer
+import pdb
 
 def print_banner():
     """
@@ -130,7 +132,18 @@ def game_setup():
         all_ship_coords.extend(ship.ship_coords)
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
-    start_game()
+    # start_game()
+
+    # An empty list to store a ship's coordinates
+    computer_ship_coords = []
+    # All the ships coordinates' are then stored in this list
+    # To be accessed during the game
+    all_comp_ship_coords = [] 
+
+    # Calls all the functions from the computer module necessary
+    # To create the computer generated board
+    # breakpoint()
+    computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
 
 
 def start_game():

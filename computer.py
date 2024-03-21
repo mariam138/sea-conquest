@@ -49,7 +49,7 @@ def random_ship_dir():
     return comp_ship_direction
 
 
-def computer_place_ships(ship, board):
+def computer_place_ships(ship, board, computer_ship_coords):
     """
     Uses similar method from Ships to place ships onto board.
     Using the functions created above, the "computer" will place
@@ -57,6 +57,7 @@ def computer_place_ships(ship, board):
     for the user will be used to make sure the ships fit onto
     the board and do not overlap.
     """
+    # computer_ship_coords = []
 
     while True:
         row = random_row_coord(board)
@@ -110,7 +111,7 @@ def computer_place_ships(ship, board):
             return board
 
 
-def main():
+def main(all_comp_ship_coords, ships, computer_ship_coords):
     """
     Creates a board instance for the computer with the same
     dimensions as for the player. Then after each ship instance
@@ -121,26 +122,22 @@ def main():
     random_board.create_board()
     # Store created random board into variable called computer_board
     # for game use
-    for ship in player_ships:
-        computer_board = computer_place_ships(ship, random_board)
+    for ship in ships:
+        computer_board = computer_place_ships(ship, random_board, computer_ship_coords)
         all_comp_ship_coords.extend(computer_ship_coords)
+    computer_board.print_board()
 
+# battleship = Ships("Battleship", 4)
+# destroyer_one = Ships("Destroyer 1", 3)
+# destroyer_two = Ships("Destroyer 2", 3)
+# submarine_one = Ships("Submarine 1", 2)
+# submarine_two = Ships("Submarine 2", 2)
+# # Place each ship instance into a list for looping
+# player_ships = [
+#     battleship, destroyer_one, destroyer_two,
+#     submarine_one, submarine_two
+# ]
+# computer_ship_coords = []
+# all_comp_ship_coords = []
 
-# Create instances for each ship
-battleship = Ships("Battleship", 4)
-destroyer_one = Ships("Destroyer 1", 3)
-destroyer_two = Ships("Destroyer 2", 3)
-submarine_one = Ships("Submarine 1", 2)
-submarine_two = Ships("Submarine 2", 2)
-# Place each ship instance into a list for looping
-player_ships = [
-    battleship, destroyer_one, destroyer_two,
-    submarine_one, submarine_two
-]
-# An empty list to store a ship's coordinates
-computer_ship_coords = []
-# All the ships coordinates' are then stored in this list
-# To be accessed during the game
-all_comp_ship_coords = []
-
-main()
+# main()
