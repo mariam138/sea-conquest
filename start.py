@@ -11,6 +11,8 @@ from ships import Ships
 # Imports the computer module to access its functions
 import computer
 
+player_board = []
+
 def print_banner():
     """
      Prints out the game's banner whenever the game is started
@@ -123,11 +125,13 @@ def game_setup():
     # https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
-        player_board = []
+        # player_board = []
         ships_board = ship.player_place_ships(game_board)
         all_ship_coords.extend(ship.ship_coords)
+        global player_board
         if index == len(player_ships) - 1:
             player_board.append(ships_board.board.copy())
+        return player_board
 
     # An empty list to store a ship's coordinates
     computer_ship_coords = []

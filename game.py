@@ -1,7 +1,7 @@
 # Imports the Board class to create and print a new blank board
 from board import Board
 # Imports the necessary variables to be used to display the game
-import start
+from start import game_setup
 
 def print_blank_and_user_boards():
     """
@@ -14,5 +14,8 @@ def print_blank_and_user_boards():
     blank_board = Board(8)
     blank_board.create_board()
     blank_board.print_board()
+
+    player_board = game_setup()
+    print(player_board)
 
 print_blank_and_user_boards()
