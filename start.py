@@ -40,6 +40,7 @@ def get_user_name():
     while True:
         print("Type your name below.")
         print("Please use only letters.\n")
+        global user_name
         user_name = input("Enter your name:\n")
 
         if validate_user_name(user_name):
