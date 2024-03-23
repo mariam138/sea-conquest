@@ -155,15 +155,13 @@ def start_game():
     be called which will start the game. The board will be created, and the
     ships for both the computer and the user will be generated on the board.
     """
-
-    # breakpoint()
+    # Creates a blank board instance from the Board class
     blank_board = Board(8)
     blank_board = blank_board.create_board()
-
+    # Using the global variable player_board, the actual
+    # board object itself is stored into another variable
+    # To then be used to print both boards side by side
     user_board = player_board.board
-
-    # print(player_board.board)
-    # print(blank_board)
 
     game.print_blank_and_user_boards(blank_board, user_board)
 
