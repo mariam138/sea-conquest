@@ -11,14 +11,14 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     """
 
     print()
-    print(f"{' ' * 4}Computer{' ' * 40}{username}")
+    print(f"{' ' * 10}Computer{' ' * 50}{username}")
     print()
     for i in range(len(blank_board)):
         # print("Computer")
         print(" " * 4, end = " ")
         for cell in blank_board[i]:
             print(cell, end = " ")
-        print(" " * 40, end = " ")
+        print(" " * 38, end = " ")
         # print(username)
         for cell in player_board[i]:
             print(cell, end = " ")
