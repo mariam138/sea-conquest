@@ -165,6 +165,7 @@ def start_game():
     # To then be used to print both boards side by side
     user_board = player_board.board
 
+    # breakpoint()
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
 def game_start_prompt():
