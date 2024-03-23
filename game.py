@@ -14,19 +14,28 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     print(f"{' ' * 10}"
     f"[bright_red]Computer[/bright_red]"
     f"{' ' * 41}"
-    f"[gold3]{username}")
+    f"[gold3]{username}[/gold3]")
     print()
     for i in range(len(blank_board)):
-        # print("Computer")
-        print(" " * 4, end = " ")
-        for cell in blank_board[i]:
-            print(cell, end = " ")
-        print(" " * 30, end = " ")
-        # print(username)
-        for cell in player_board[i]:
-            print(cell, end = " ")
-        print(" " * 4, end = " ")
-        print()
+        if i == 0:
+            print(" " * 4, end=" ")
+            for cell in blank_board[i]:
+                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
+            print(" " * 30, end = " ")
+            for cell in player_board[i]:
+                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
+            # breakpoint()
+            print(" " * 4, end = " ")
+            print()
+        else:
+            print(" " * 4, end = " ")
+            for cell in blank_board[i]:
+                print(cell, end = " ")
+            print(" " * 30, end = " ")
+            for cell in player_board[i]:
+                print(cell, end = " ")
+            print(" " * 4, end = " ")
+            print()
     print()
 
 
