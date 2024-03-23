@@ -59,6 +59,18 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
+        elif i == 3:
+            print(" " * 4, end = " ")
+            for cell in blank_board[i]:
+                print(cell, end = " ")
+            print(" " * 8, end = " ")
+            print(f"[gold3]{username}[/gold3]:"
+            f" {computer_score}/5", end = " ")
+            print(" " * 9, end = " ")
+            for cell in player_board[i]:
+                print(cell, end = " ")
+            print(" " * 4, end = " ")
+            print()
         else:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
