@@ -16,6 +16,10 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     global user_score
     user_score = 0
 
+    # breakpoint()
+    width_between_boards = 30
+    total_width = width_between_boards - (len(username) + len(str(user_score) + "/5"))
+
     print()
     # Labels each board so user knows which board is which
     print(f"{' ' * 10}"
@@ -63,10 +67,13 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
                 print(cell, end = " ")
-            print(" " * 8, end = " ")
-            print(f"[gold3]{username}[/gold3]:"
-            f" {computer_score}/5", end = " ")
-            print(" " * 9, end = " ")
+            print(" " * (total_width // 2), end = " ")
+            if total_width % 2 == 0:
+                print(f"[gold3]{username}[/gold3]:"
+                f" {user_score}/5", end = " " * ((total_width // 2)-2))
+            else:
+                print(f"[gold3]{username}[/gold3]:"
+                f" {user_score}/5", end = " " * ((total_width // 2)-1))
             for cell in player_board[i]:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
