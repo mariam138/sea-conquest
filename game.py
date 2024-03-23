@@ -30,6 +30,17 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
             print(" " * 4, end = " ")
             print()
+        elif i == 2:
+            print(" " * 4, end = " ")
+            for cell in blank_board[i]:
+                print(cell, end = " ")
+            print(" " * 9, end = " ")
+            print("Ships sunk:", end = " ")
+            print(" " * 8, end = " ")
+            for cell in player_board[i]:
+                print(cell, end = " ")
+            print(" " * 4, end = " ")
+            print()
         else:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
