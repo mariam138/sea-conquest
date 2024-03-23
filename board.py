@@ -27,6 +27,7 @@ class Board:
             for _ in range(self.dimensions):
                 row.append("~")
             self.board.append(row)
+        return self.board
 
     def print_board(self):
         """
