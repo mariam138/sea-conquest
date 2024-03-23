@@ -29,9 +29,11 @@ The start of the game prints out a logo with the game's name "Sea Conquest." Imm
 
 ## Testing
 
-## Ongoing Testing
+### Ongoing Testing
 
 Throughout the creation of the game, I would check my code using [Python Tutor](https://pythontutor.com/) to ensure that my code was working as I wanted it to. For example, to create the while loop at the start of the game which validates the user's name on input.
+
+I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (ie, python3 board.py). Sometimes I would also use Python's built in **breakpoint()** function, which helped me step through certain bugs step by step and finding the specific error causing the bug.
 
 ### Manual Testing
 
