@@ -9,6 +9,12 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     Will also print how many of each player's ships have sunk,
     and this will be updated throughout the game.
     """
+    # Makes the scores global so that they can be accessed in a
+    # Different function later on in the module
+    global computer_score
+    computer_score = 0
+    global user_score
+    user_score = 0
 
     print()
     # Labels each board so user knows which board is which
@@ -30,13 +36,25 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
             print(" " * 4, end = " ")
             print()
-        elif i == 2:
+        elif i == 1:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
                 print(cell, end = " ")
             print(" " * 9, end = " ")
             print("Ships sunk:", end = " ")
             print(" " * 8, end = " ")
+            for cell in player_board[i]:
+                print(cell, end = " ")
+            print(" " * 4, end = " ")
+            print()
+        elif i == 2:
+            print(" " * 4, end = " ")
+            for cell in blank_board[i]:
+                print(cell, end = " ")
+            print(" " * 8, end = " ")
+            print(f"[bright_red]Computer[/bright_red]:"
+            f" {computer_score}/5", end = " ")
+            print(" " * 7, end = " ")
             for cell in player_board[i]:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
