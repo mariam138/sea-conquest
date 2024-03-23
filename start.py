@@ -119,6 +119,9 @@ def game_setup():
     # List to store all ship coords after placing all ships onto board
     all_ship_coords = []
 
+    # global player_board
+    # player_board = []
+    global player_board
     # Iterates over each ship in the list and performs the while loop
     # Once each iteration has been successfully and all ships
     # Have been placed on the board, the for loop stores a copy
@@ -127,14 +130,10 @@ def game_setup():
     # https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
-        # player_board = []
-        ships_board = ship.player_place_ships(game_board)
+        player_board = ship.player_place_ships(game_board)
         all_ship_coords.extend(ship.ship_coords)
-        global player_board
-        if index == len(player_ships) - 1:
-            player_board.append(ships_board.board.copy())
-        # return player_board
-    # print(player_board)
+        # if index == len(player_ships) - 1:
+        #     player_board.append(ships_board.board)
 
     # An empty list to store a ship's coordinates
     computer_ship_coords = []
@@ -156,10 +155,17 @@ def start_game():
     be called which will start the game. The board will be created, and the
     ships for both the computer and the user will be generated on the board.
     """
+
+    # breakpoint()
     blank_board = Board(8)
     blank_board = blank_board.create_board()
-    
-    game.print_blank_and_user_boards(blank_board, player_board)
+
+    user_board = player_board.board
+
+    # print(player_board.board)
+    # print(blank_board)
+
+    game.print_blank_and_user_boards(blank_board, user_board)
 
 def game_start_prompt():
     """

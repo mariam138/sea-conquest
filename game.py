@@ -10,21 +10,6 @@ def print_blank_and_user_boards(blank_board, player_board):
     and this will be updated throughout the game.
     """
 
-
-    # blank_board.print_board()
-
-    # player_board = [
-    #     [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-    #     ['1', 'S', 'S', 'S', 'S', '~', '~', '~', '~'],
-    #     ['2', 'S', 'S', 'S', '~', '~', '~', '~', '~'],
-    #     ['3', 'S', 'S', 'S', '~', '~', '~', '~', '~'],
-    #     ['4', 'S', 'S', '~', '~', '~', '~', '~', '~'],
-    #     ['5', 'S', 'S', '~', '~', '~', '~', '~', '~'],
-    #     ['6', '~', '~', '~', '~', '~', '~', '~', '~'],
-    #     ['7', '~', '~', '~', '~', '~', '~', '~', '~'],
-    #     ['8', '~', '~', '~', '~', '~', '~', '~', '~']
-    # ]
-
     print()
     for i in range(len(blank_board)):
         print(" " * 4, end = " ")
@@ -36,8 +21,6 @@ def print_blank_and_user_boards(blank_board, player_board):
         print(" " * 4, end = " ")
         print()
     print()
-    # player_board.print_board()
-    # print(blank_board)
-    # print(player_board)
+
 
 # print_blank_and_user_boards()
