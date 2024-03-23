@@ -65,6 +65,8 @@ def validate_user_name(name):
     """
     if name.isalpha() is False:
         print("That is not a valid input. Please try again.\n")
+    elif len(name) > 28:
+        print("The name is too long. Please enter a shorter name.\n")
     else:
         return name
 
