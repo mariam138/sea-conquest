@@ -50,8 +50,9 @@ def get_user_name():
 
         if validate_user_name(user_name):
             print()
-            print(f"Welcome aboard {user_name}!")
-            print("Are you ready to take the seas and win the Sea Conquest?\n")
+            print(f"Welcome aboard [gold3]{user_name}[/gold3]!")
+            print("Are you ready to take the seas and win", end = " ")
+            print("the [dodger_blue3]Sea Conquest[/dodger_blue3]?\n")
             break
 
 
@@ -66,7 +67,7 @@ def validate_user_name(name):
     if name.isalpha() is False:
         print("That is not a valid input. Please try again.\n")
     elif len(name) > 28:
-        print("The name is too long. Please enter a shorter name.\n")
+        print("This name is too long. Please enter a shorter name.\n")
     else:
         return name
 
@@ -195,7 +196,6 @@ def game_start_prompt():
                 clear_terminal()
                 display_instructions()
             elif start_choice == "s":
-                # breakpoint()
                 time.sleep(1)
                 clear_terminal()
                 game_setup()
