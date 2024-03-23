@@ -16,9 +16,10 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     global user_score
     user_score = 0
 
-    # breakpoint()
     width_between_boards = 30
-    total_width = width_between_boards - (len(username) + len(str(user_score) + "/5"))
+    total_width = (
+        width_between_boards - (len(username) + len(str(user_score) + "/5"))
+    )
 
     print()
     # Labels each board so user knows which board is which
@@ -93,5 +94,3 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print(" " * 4, end = " ")
             print()
     print()
-
-
