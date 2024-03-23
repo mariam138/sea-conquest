@@ -126,4 +126,5 @@ def main(all_comp_ship_coords, ships, computer_ship_coords):
         computer_board = (
             computer_place_ships(ship, random_board, computer_ship_coords)
         )
-        all_comp_ship_coords.extend(computer_ship_coords)
+    all_comp_ship_coords.extend(computer_ship_coords)
+

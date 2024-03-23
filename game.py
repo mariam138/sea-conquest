@@ -1,6 +1,6 @@
 # Imports the Board class to create and print a new blank board
 from board import Board
-# Imports the necessary variables to be used to display the game
+from rich import print
 
 def print_blank_and_user_boards(blank_board, player_board, username):
     """
@@ -11,14 +11,17 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     """
 
     print()
-    print(f"{' ' * 10}Computer{' ' * 50}{username}")
+    print(f"{' ' * 10}"
+    f"[bright_red]Computer[/bright_red]"
+    f"{' ' * 41}"
+    f"[gold3]{username}")
     print()
     for i in range(len(blank_board)):
         # print("Computer")
         print(" " * 4, end = " ")
         for cell in blank_board[i]:
             print(cell, end = " ")
-        print(" " * 34, end = " ")
+        print(" " * 30, end = " ")
         # print(username)
         for cell in player_board[i]:
             print(cell, end = " ")

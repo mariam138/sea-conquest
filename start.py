@@ -117,6 +117,7 @@ def game_setup():
         submarine_one, submarine_two
     ]
     # List to store all ship coords after placing all ships onto board
+    global all_ship_coords
     all_ship_coords = []
 
     # global player_board
@@ -139,7 +140,8 @@ def game_setup():
     computer_ship_coords = []
     # All the ships coordinates' are then stored in this list
     # To be accessed during the game
-    all_comp_ship_coords = [] 
+    global all_comp_ship_coords
+    all_comp_ship_coords = []
 
     print(f"Let the conquest begin, commander [gold3]{user_name}[/gold3]!")
     # Calls all the functions from the computer module necessary
@@ -165,8 +167,8 @@ def start_game():
     # To then be used to print both boards side by side
     user_board = player_board.board
 
-    # breakpoint()
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
+
 
 def game_start_prompt():
     """
