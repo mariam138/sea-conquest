@@ -146,6 +146,7 @@ def game_setup():
     # To create the computer generated board
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
 
+    time.sleep(2.5)
     start_game()
 
 
@@ -155,6 +156,7 @@ def start_game():
     be called which will start the game. The board will be created, and the
     ships for both the computer and the user will be generated on the board.
     """
+    clear_terminal()
     # Creates a blank board instance from the Board class
     blank_board = Board(8)
     blank_board = blank_board.create_board()
@@ -163,7 +165,7 @@ def start_game():
     # To then be used to print both boards side by side
     user_board = player_board.board
 
-    game.print_blank_and_user_boards(blank_board, user_board)
+    game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
 def game_start_prompt():
     """
