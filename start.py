@@ -202,7 +202,7 @@ def game_start_prompt():
                 return False
             elif start_choice == "q":
                 print()
-                print("Goodbye for now commander, us ")
+                print("Goodbye for now commander, us", end = " ")
                 print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
                 time.sleep(3)
                 clear_terminal()
