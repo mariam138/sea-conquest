@@ -67,13 +67,13 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
                 print(cell, end = " ")
-            print(" " * (total_width // 2), end = " ")
+            print(" " * ((total_width // 2) - 1), end = " ")
             if total_width % 2 == 0:
                 print(f"[gold3]{username}[/gold3]:"
-                f" {user_score}/5", end = " " * ((total_width // 2)-2))
+                f" {user_score}/5", end = " " * ((total_width // 2)-1))
             else:
                 print(f"[gold3]{username}[/gold3]:"
-                f" {user_score}/5", end = " " * ((total_width // 2)-1))
+                f" {user_score}/5", end = " " * (total_width // 2))
             for cell in player_board[i]:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
