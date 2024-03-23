@@ -11,12 +11,16 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     """
 
     print()
+    # Labels each board so user knows which board is which
     print(f"{' ' * 10}"
     f"[bright_red]Computer[/bright_red]"
     f"{' ' * 41}"
     f"[gold3]{username}[/gold3]")
     print()
+    # A nested for loop to print one row of the blank board
+    # Followed by one row of the user board side by side
     for i in range(len(blank_board)):
+        # Will print the letter coordinates row in colour
         if i == 0:
             print(" " * 4, end=" ")
             for cell in blank_board[i]:
@@ -24,7 +28,6 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print(" " * 30, end = " ")
             for cell in player_board[i]:
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
-            # breakpoint()
             print(" " * 4, end = " ")
             print()
         else:
