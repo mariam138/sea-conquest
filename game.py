@@ -40,6 +40,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
             print(" " * 4, end = " ")
             print()
+        # Prints "Ships sunk:" between the boards
         elif i == 1:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
@@ -51,6 +52,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
+        # Prints "Computer: 0/5" between the boards
         elif i == 2:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
@@ -63,6 +65,8 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
+        # Prints the username and the score between boards
+        # and centres it depending on the length of the username entered
         elif i == 3:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
@@ -78,6 +82,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
+        # Prints the rest of both boards as normal
         else:
             print(" " * 4, end = " ")
             for cell in blank_board[i]:
