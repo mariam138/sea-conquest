@@ -18,7 +18,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
         print(" " * 4, end = " ")
         for cell in blank_board[i]:
             print(cell, end = " ")
-        print(" " * 38, end = " ")
+        print(" " * 34, end = " ")
         # print(username)
         for cell in player_board[i]:
             print(cell, end = " ")
@@ -27,4 +27,3 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     print()
 
 
-# print_blank_and_user_boards()
