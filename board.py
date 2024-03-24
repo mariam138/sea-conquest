@@ -11,11 +11,14 @@ class Board:
 
     horizontal_coords = [" ", "A", "B", "C", "D", "E", "F", "G", "H"]
 
-    def __str__(self):
-        """
-        Returns a string representation of the board.
-        """
-        return str(self.board)
+    # def __str__(self):
+    #     """
+    #     Returns a string representation of the board.
+    #     """
+    #     return str(self.board)
+
+    def __getitem__(self, index):
+        return self.board[index]
 
     def create_board(self):
         """
