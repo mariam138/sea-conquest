@@ -1,4 +1,4 @@
-# Imports the Board class to create and print a new blank board
+# Imports the Board class to use its methods
 from board import Board
 from rich import print
 
@@ -30,7 +30,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     print()
     # A nested for loop to print one row of the blank board
     # Followed by one row of the user board side by side
-    for i in range(len(blank_board)):
+    for i in range(blank_board.dimensions):
         # Will print the letter coordinates row in colour
         if i == 0:
             print(" " * 4, end=" ")
@@ -94,3 +94,16 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print(" " * 4, end = " ")
             print()
     print()
+
+def player_shot(board):
+    """
+    Player will enter a valid letter and number coordinate
+    to make a guess on where the computer's ships are
+    placed. If it's a miss, the computer's board will show
+    an "M". If it is a hit, the board will show an "X". 
+    All guesses will be stored into a list to prevent repeat
+    guesses from being made.
+    """
+
+    row_guess = board.validate_number_coord()
+    col_guess = board.convert_coord_to_index()

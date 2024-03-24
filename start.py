@@ -164,13 +164,19 @@ def start_game():
     clear_terminal()
     # Creates a blank board instance from the Board class
     blank_board = Board(8)
-    blank_board = blank_board.create_board()
+    blank_board.create_board()
+
+
     # Using the global variable player_board, the actual
     # board object itself is stored into another variable
     # To then be used to print both boards side by side
     user_board = player_board.board
 
+    breakpoint()
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
+
+    # breakpoint()
+    game.player_shot(blank_board)
 
 
 def game_start_prompt():
