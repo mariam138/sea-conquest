@@ -11,6 +11,12 @@ class Board:
 
     horizontal_coords = [" ", "A", "B", "C", "D", "E", "F", "G", "H"]
 
+    def __str__(self):
+        """
+        Returns a string representation of the board.
+        """
+        return str(self.board)
+
     def create_board(self):
         """
         Prints the horizontal_coords as a string for the horizontal heading
@@ -91,3 +97,8 @@ class Board:
                     raise ValueError
             except ValueError:
                 print("That is not a valid input. Please enter a number.")
+
+# board = Board(8)
+# board.create_board()
+# print(board)
+# print(board.board[4][3])
