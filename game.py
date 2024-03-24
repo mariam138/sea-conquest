@@ -30,40 +30,41 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     print()
     # A nested for loop to print one row of the blank board
     # Followed by one row of the user board side by side
-    for row_index in range(len(blank_board)):
-        row = blank_board[row_index]
+    for row in range(blank_board.dimensions + 1):
+        current_row = blank_board[row]
+        user_row = player_board[row]
         # Will print the letter coordinates row in colour
         if row == 0:
             print(" " * 4, end=" ")
-            for cell in row:
+            for cell in current_row:
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
             print(" " * 30, end = " ")
-            for cell in row:
+            for cell in user_row:
                 print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
             print(" " * 4, end = " ")
             print()
         # Prints "Ships sunk:" between the boards
         elif row == 1:
             print(" " * 4, end = " ")
-            for cell in blank_board[row]:
+            for cell in current_row:
                 print(cell, end = " ")
             print(" " * 9, end = " ")
             print("Ships sunk:", end = " ")
             print(" " * 8, end = " ")
-            for cell in player_board[row]:
+            for cell in user_row:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
         # Prints "Computer: 0/5" between the boards
         elif row == 2:
             print(" " * 4, end = " ")
-            for cell in blank_board[row]:
+            for cell in current_row:
                 print(cell, end = " ")
             print(" " * 8, end = " ")
             print(f"[bright_red]Computer[/bright_red]:"
             f" {computer_score}/5", end = " ")
             print(" " * 7, end = " ")
-            for cell in player_board[row]:
+            for cell in user_row:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
@@ -71,7 +72,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
         # and centres it depending on the length of the username entered
         elif row == 3:
             print(" " * 4, end = " ")
-            for cell in blank_board[row]:
+            for cell in current_row:
                 print(cell, end = " ")
             print(" " * ((total_width // 2) - 1), end = " ")
             if total_width % 2 == 0:
@@ -80,17 +81,17 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             else:
                 print(f"[gold3]{username}[/gold3]:"
                 f" {user_score}/5", end = " " * (total_width // 2))
-            for cell in player_board[row]:
+            for cell in user_row:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
         # Prints the rest of both boards as normal
         else:
             print(" " * 4, end = " ")
-            for cell in blank_board[row]:
+            for cell in current_row:
                 print(cell, end = " ")
             print(" " * 30, end = " ")
-            for cell in player_board[row]:
+            for cell in user_row:
                 print(cell, end = " ")
             print(" " * 4, end = " ")
             print()
