@@ -12,6 +12,16 @@ class Board:
     horizontal_coords = [" ", "A", "B", "C", "D", "E", "F", "G", "H"]
 
     def __getitem__(self, index):
+        """
+        A dunder method to be able to access class objects with
+        indices, as if it were an iterable object. This is used later
+        in the game when the blank computer board and player board
+        are printed side by side. Then the board methods are called to
+        enter a row and number to check if the shot is a hit or miss.
+        Code to add this dunder method is adapted from:
+        https://www.kdnuggets.com/2023/03/\
+        introduction-getitem-magic-method-python.html
+        """
         return self.board[index]
 
     def create_board(self):
@@ -94,8 +104,3 @@ class Board:
                     raise ValueError
             except ValueError:
                 print("That is not a valid input. Please enter a number.")
-
-# board = Board(8)
-# board.create_board()
-# print(board)
-# print(board.board[4][3])
