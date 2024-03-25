@@ -72,7 +72,7 @@ class Board:
         # so, "converts" it into its value
         while True:
             column_coord = (
-                input("Please enter a column coordinate as a letter:\n").upper()
+                input("Please enter a [deep_sky_blue3]column coordinate[/deep_sky_blue3] as a [green1]letter:\n").upper()
             )
             if column_coord in letter_coord_dict:
                 col = letter_coord_dict[column_coord]
@@ -92,7 +92,7 @@ class Board:
             # the if/elif statement
             try:
                 row_coord = (
-                    int(input("Please enter a row coordinate as an number:\n"))
+                    int(input("Please enter a [cyan1]row coordinate[/cyan1] as a [green1]number:\n"))
                 )
                 if (1 <= row_coord <= self.dimensions):
                     row = row_coord

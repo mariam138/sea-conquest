@@ -97,7 +97,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print()
     print()
 
-def player_shot(board):
+def player_shot(board, username):
     """
     Player will enter a valid letter and number coordinate
     to make a guess on where the computer's ships are
@@ -107,5 +107,8 @@ def player_shot(board):
     guesses from being made.
     """
 
+    print(f"It's our turn first, commander {username}!")
+    print("Take your best shot for the", end = " ")
+    print("[gold3]Ocean Voyagers[/gold3]!\n")
     row_guess = board.validate_number_coord()
     col_guess = board.convert_coord_to_index()
