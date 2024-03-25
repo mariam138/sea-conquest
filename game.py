@@ -117,7 +117,10 @@ def player_shot(board, username, computer_coords, ships):
         user_guess = (col_guess, row_guess)
         if user_guess in computer_coords:
             print("Hit!")
+            # Iterates through each ship in the player_ships list
             for ship in ships:
+                # if the guess is part of one of the ships coordinates
+                # the health will decrease by 1.
                 if user_guess in ship.ship_coords:
                     ship.health -= 1
                     print(f"The {ship.name} has lost 1 health.")
