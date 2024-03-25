@@ -96,7 +96,7 @@ def computer_place_ships(ship, board):
         if ship_fits:
             # If the ship fits horizontally, it's coordinates on the board
             # are marked with an "S". It's coordinates are then stored
-            # as a tuple
+            # as a tuple into the ship instance's ship_coords list
             if direction == "h":
                 for i in range(ship.length):
                     board.board[row][col + i] = "S"

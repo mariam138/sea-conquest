@@ -142,8 +142,8 @@ def game_setup():
         #     player_board.append(ships_board.board)
 
     # An empty list to store a ship's coordinates
-    global computer_ship_coords
-    computer_ship_coords = []
+    # global computer_ship_coords
+    # computer_ship_coords = []
     # All the ships coordinates' are then stored in this list
     # To be accessed during the game
     global all_comp_ship_coords
