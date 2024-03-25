@@ -113,8 +113,12 @@ def player_shot(board, username, computer_ship_coords):
     col_guess = board.convert_coord_to_index()
     row_guess = board.validate_number_coord()
 
-    user_guess = (col_guess, row_guess)
-    if user_guess in computer_ship_coords:
-        print("Hit!")
-    elif user_guess not in computer_ship_coords:
-        print("Miss :(")
+    user_guess = (col_guess, row_guess, ship)
+    while True:
+        if user_guess in computer_ship_coords:
+            print("Hit!")
+            # breakpoint()
+            ship.health -= 1
+            return False
+        elif user_guess not in computer_ship_coords:
+            print("Miss :(")

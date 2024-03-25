@@ -114,6 +114,8 @@ def game_setup():
     destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
     submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
     submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+
+    global player_ships
     # Place each ship instance into a list for looping
     player_ships = [
         battleship, destroyer_one, destroyer_two,
@@ -176,7 +178,8 @@ def start_game():
 
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
-    game.player_shot(blank_board, user_name, all_comp_ship_coords)
+    breakpoint()
+    game.player_shot(blank_board, user_name, all_comp_ship_coords, player_ships)
 
 
 def game_start_prompt():
