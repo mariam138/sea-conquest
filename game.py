@@ -110,10 +110,10 @@ def player_shot(board, username, computer_ship_coords):
     print(f"It's our turn first, commander {username}!")
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
-    row_guess = board.validate_number_coord()
     col_guess = board.convert_coord_to_index()
+    row_guess = board.validate_number_coord()
 
-    user_guess = (row_guess, col_guess)
+    user_guess = (col_guess, row_guess)
     if user_guess in computer_ship_coords:
         print("Hit!")
     elif user_guess not in computer_ship_coords:
