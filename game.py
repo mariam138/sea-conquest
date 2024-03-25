@@ -97,7 +97,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print()
     print()
 
-def player_shot(board, username):
+def player_shot(board, username, computer_ship_coords):
     """
     Player will enter a valid letter and number coordinate
     to make a guess on where the computer's ships are
@@ -112,3 +112,9 @@ def player_shot(board, username):
     print("[gold3]Ocean Voyagers[/gold3]!\n")
     row_guess = board.validate_number_coord()
     col_guess = board.convert_coord_to_index()
+
+    user_guess = (row_guess, col_guess)
+    if user_guess in computer_ship_coords:
+        print("Hit!")
+    elif user_guess not in computer_ship_coords:
+        print("Miss :(")

@@ -57,7 +57,6 @@ def computer_place_ships(ship, board, computer_ship_coords):
     for the user will be used to make sure the ships fit onto
     the board and do not overlap.
     """
-    # computer_ship_coords = []
 
     while True:
         row = random_row_coord(board)

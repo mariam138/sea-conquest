@@ -151,6 +151,8 @@ def game_setup():
     # To create the computer generated board
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
 
+    print(all_comp_ship_coords)
+
     time.sleep(2.5)
     start_game()
 
@@ -174,7 +176,7 @@ def start_game():
 
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
-    game.player_shot(blank_board, user_name)
+    game.player_shot(blank_board, user_name, all_comp_ship_coords)
 
 
 def game_start_prompt():
