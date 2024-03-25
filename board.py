@@ -1,3 +1,6 @@
+# To allow printing of certain words in colour to the terminal
+from rich import print
+
 class Board:
     """
     Takes in a number for the dimensions and will print a board out which
