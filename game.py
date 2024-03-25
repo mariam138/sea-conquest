@@ -97,7 +97,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print()
     print()
 
-def player_shot(board, username, computer_ship_coords):
+def player_shot(board, username, computer_ship_coords, ship):
     """
     Player will enter a valid letter and number coordinate
     to make a guess on where the computer's ships are
@@ -110,11 +110,11 @@ def player_shot(board, username, computer_ship_coords):
     print(f"It's our turn first, commander {username}!")
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
-    col_guess = board.convert_coord_to_index()
-    row_guess = board.validate_number_coord()
 
-    user_guess = (col_guess, row_guess, ship)
     while True:
+        col_guess = board.convert_coord_to_index()
+        row_guess = board.validate_number_coord()
+        user_guess = (col_guess, row_guess)
         if user_guess in computer_ship_coords:
             print("Hit!")
             # breakpoint()
@@ -122,3 +122,4 @@ def player_shot(board, username, computer_ship_coords):
             return False
         elif user_guess not in computer_ship_coords:
             print("Miss :(")
+            continue
