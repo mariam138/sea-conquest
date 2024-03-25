@@ -142,6 +142,7 @@ def game_setup():
         #     player_board.append(ships_board.board)
 
     # An empty list to store a ship's coordinates
+    global computer_ship_coords
     computer_ship_coords = []
     # All the ships coordinates' are then stored in this list
     # To be accessed during the game
@@ -153,7 +154,7 @@ def game_setup():
     # To create the computer generated board
     computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
 
-    print(all_comp_ship_coords)
+    # print(all_comp_ship_coords)
 
     time.sleep(2.5)
     start_game()
@@ -178,7 +179,7 @@ def start_game():
 
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
-    breakpoint()
+    # breakpoint()
     game.player_shot(blank_board, user_name, all_comp_ship_coords, player_ships)
 
 

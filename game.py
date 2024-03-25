@@ -97,7 +97,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             print()
     print()
 
-def player_shot(board, username, computer_ship_coords, ship):
+def player_shot(board, username, computer_coords, ships):
     """
     Player will enter a valid letter and number coordinate
     to make a guess on where the computer's ships are
@@ -115,11 +115,13 @@ def player_shot(board, username, computer_ship_coords, ship):
         col_guess = board.convert_coord_to_index()
         row_guess = board.validate_number_coord()
         user_guess = (col_guess, row_guess)
-        if user_guess in computer_ship_coords:
+        if user_guess in computer_coords:
             print("Hit!")
-            # breakpoint()
-            ship.health -= 1
+            for ship in ships:
+                if user_guess in ship.ship_coords:
+                    ship.health -= 1
+                    print(f"The {ship.name} has lost 1 health.")
             return False
-        elif user_guess not in computer_ship_coords:
+        elif user_guess not in computer_coords:
             print("Miss :(")
             continue

@@ -49,7 +49,7 @@ def random_ship_dir():
     return comp_ship_direction
 
 
-def computer_place_ships(ship, board, computer_ship_coords):
+def computer_place_ships(ship, board):
     """
     Uses similar method from Ships to place ships onto board.
     Using the functions created above, the "computer" will place
@@ -100,13 +100,13 @@ def computer_place_ships(ship, board, computer_ship_coords):
             if direction == "h":
                 for i in range(ship.length):
                     board.board[row][col + i] = "S"
-                    computer_ship_coords.append((row, col + i))
+                    ship.ship_coords.append((row, col + i))
             # Same method as above but instead for a ship which fits
             # vertically
             elif direction == "v":
                 for i in range(ship.length):
                     board.board[row + i][col] = "S"
-                    computer_ship_coords.append((row + i, col))
+                    ship.ship_coords.append((row + i, col))
             return board
 
 
@@ -123,7 +123,7 @@ def main(all_comp_ship_coords, ships, computer_ship_coords):
     # for game use
     for ship in ships:
         computer_board = (
-            computer_place_ships(ship, random_board, computer_ship_coords)
+            computer_place_ships(ship, random_board)
         )
-    all_comp_ship_coords.extend(computer_ship_coords)
+    all_comp_ship_coords.extend(ship.ship_coords)
 
