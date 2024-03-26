@@ -95,7 +95,6 @@ def computer_place_ships(ship, board):
                         ship_fits = False
 
         if ship_fits:
-            print(ship.ship_coords)
             # If the ship fits horizontally, it's coordinates on the board
             # are marked with an "S". It's coordinates are then stored
             # as a tuple into the ship instance's ship_coords list
@@ -120,7 +119,6 @@ def main(all_comp_ship_coords, ships):
     the computer_place_ships() function.
     """
 
-    # breakpoint()
     random_board = Board(8)
     random_board.create_board()
     # Store created random board into variable called computer_board
@@ -129,12 +127,7 @@ def main(all_comp_ship_coords, ships):
         comp_ship_coords = (
             computer_place_ships(ship, random_board)
         )
-        # return comp_ship_coords
-        print(comp_ship_coords)
         all_comp_ship_coords.extend(comp_ship_coords)
 
-    random_board.print_board()
-    # computer_board.print_board()
-    print(all_comp_ship_coords)
-    
+
 
