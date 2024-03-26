@@ -110,7 +110,7 @@ def computer_place_ships(ship, board):
             return board
 
 
-def main(all_comp_ship_coords, ships, computer_ship_coords):
+def main(all_comp_ship_coords, ships):
     """
     Creates a board instance for the computer with the same
     dimensions as for the player. Then after each ship instance

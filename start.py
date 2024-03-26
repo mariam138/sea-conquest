@@ -152,7 +152,8 @@ def game_setup():
     print(f"Let the sea conquest begin, commander [gold3]{user_name}[/gold3]!")
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
-    computer.main(all_comp_ship_coords, player_ships, computer_ship_coords)
+    breakpoint()
+    computer.main(all_comp_ship_coords, player_ships)
 
     # print(all_comp_ship_coords)
 

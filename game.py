@@ -123,8 +123,11 @@ def player_shot(board, username, computer_coords, ships):
                 # the health will decrease by 1.
                 if user_guess in ship.ship_coords:
                     ship.health -= 1
-                    print(f"The {ship.name} has lost 1 health.")
-            return False
+                    if ship.health == 0:
+                        user_score += 1
+                        print(f"You have sunk the {ship.name}")
+            # return False
+            continue
         elif user_guess not in computer_coords:
             print("Miss :(")
             continue
