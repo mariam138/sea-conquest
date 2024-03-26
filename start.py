@@ -13,7 +13,25 @@ import computer
 # Imports game module to use its methods
 import game
 
+# All ship instances to be used in the game
+battleship = Ships("Battleship", 4, "dark_red", 4)
+destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
+destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+
+player_ships = [
+    battleship, destroyer_one, destroyer_two,
+    submarine_one, submarine_two
+]
+
+computer_ships = [
+    battleship, destroyer_one, destroyer_two,
+    submarine_one, submarine_two
+]
+
 player_board = []
+all_comp_ship_coords = []
 
 def print_banner():
     """
@@ -101,7 +119,6 @@ def display_instructions():
     print("To win the game, we must sink the enemy's ships first.")
     print("Are you ready for the challenge, commander?\n")
 
-
 def game_setup():
     # Gets Board class and stores it in a variable to call its methods
     game_board = Board(8)
@@ -109,18 +126,12 @@ def game_setup():
     game_board.create_board()
     game_board.print_board()
 
-    battleship = Ships("Battleship", 4, "dark_red", 4)
-    destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
-    destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
-    submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
-    submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+
 
     global player_ships
     # Place each ship instance into a list for looping
-    player_ships = [
-        battleship, destroyer_one, destroyer_two,
-        submarine_one, submarine_two
-    ]
+    global computer_ships
+
     # List to store all ship coords after placing all ships onto board
     global all_ship_coords
     all_ship_coords = []
@@ -147,12 +158,12 @@ def game_setup():
     # All the ships coordinates' are then stored in this list
     # To be accessed during the game
     global all_comp_ship_coords
-    all_comp_ship_coords = []
 
     print(f"Let the sea conquest begin, commander [gold3]{user_name}[/gold3]!")
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
-    computer.main(all_comp_ship_coords, player_ships)
+    
+    computer.main(all_comp_ship_coords, computer_ships)
 
     # print(all_comp_ship_coords)
 
@@ -179,7 +190,6 @@ def start_game():
 
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
-    breakpoint()
     game.player_shot(blank_board, user_name, all_comp_ship_coords, player_ships)
 
 

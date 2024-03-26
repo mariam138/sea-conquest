@@ -58,6 +58,8 @@ def computer_place_ships(ship, board):
     the board and do not overlap.
     """
 
+    ship.ship_coords = []
+
     while True:
         row = random_row_coord(board)
         col = random_column_coord()
@@ -65,7 +67,6 @@ def computer_place_ships(ship, board):
 
         # Sets the ship_fits flag to True before validation
         ship_fits = True
-
         if direction == "h":
             # If the ship length extends the board horizontally, another
             # coordinate is generated randomly
@@ -94,6 +95,7 @@ def computer_place_ships(ship, board):
                         ship_fits = False
 
         if ship_fits:
+            print(ship.ship_coords)
             # If the ship fits horizontally, it's coordinates on the board
             # are marked with an "S". It's coordinates are then stored
             # as a tuple into the ship instance's ship_coords list
@@ -107,7 +109,7 @@ def computer_place_ships(ship, board):
                 for i in range(ship.length):
                     board.board[row + i][col] = "S"
                     ship.ship_coords.append((row + i, col))
-            return board
+            return ship.ship_coords
 
 
 def main(all_comp_ship_coords, ships):
@@ -117,13 +119,22 @@ def main(all_comp_ship_coords, ships):
     is created, each ship is placed onto the board using
     the computer_place_ships() function.
     """
+
+    # breakpoint()
     random_board = Board(8)
     random_board.create_board()
     # Store created random board into variable called computer_board
     # for game use
     for ship in ships:
-        computer_board = (
+        comp_ship_coords = (
             computer_place_ships(ship, random_board)
         )
-    all_comp_ship_coords.extend(ship.ship_coords)
+        # return comp_ship_coords
+        print(comp_ship_coords)
+        all_comp_ship_coords.extend(comp_ship_coords)
+
+    random_board.print_board()
+    # computer_board.print_board()
+    print(all_comp_ship_coords)
+    
 
