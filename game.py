@@ -2,6 +2,9 @@
 from board import Board
 from rich import print
 
+computer_score = 0
+user_score = 0
+
 def print_blank_and_user_boards(blank_board, player_board, username):
     """
     Will print a blank board to represent the computer's ships,
@@ -11,15 +14,16 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     """
     # Makes the scores global so that they can be accessed in a
     # Different function later on in the module
-    global computer_score
-    computer_score = 0
-    global user_score
-    user_score = 0
+    # global computer_score
+    # computer_score = 0
+    # # global user_score
+    # user_score = 0
 
     width_between_boards = 30
     total_width = (
         width_between_boards - (len(username) + len(str(user_score) + "/5"))
     )
+
 
     print()
     # Labels each board so user knows which board is which
@@ -107,6 +111,8 @@ def player_shot(board, username, computer_coords, ships):
     guesses from being made.
     """
 
+    global user_score
+    
     print(f"It's our turn first, commander {username}!")
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
