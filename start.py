@@ -193,6 +193,11 @@ def start_game():
     clear_terminal()
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
+    computer.computer_shot(player_board, all_ship_coords, ships)
+    time.sleep(1)
+    clear_terminal()
+    game.print_blank_and_user_boards(blank_board, user_board, user_name)
+
 
 def game_start_prompt():
     """
