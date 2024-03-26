@@ -3,7 +3,7 @@ from board import Board
 from rich import print
 import time
 
-computer_score = 0
+/
 user_score = 0
 
 def print_blank_and_user_boards(blank_board, player_board, username):
@@ -118,7 +118,6 @@ def player_shot(board, username, computer_coords, ships):
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
-    breakpoint()
     while True:
         col_guess = board.convert_coord_to_index()
         row_guess = board.validate_number_coord()

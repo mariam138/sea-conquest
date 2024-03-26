@@ -5,6 +5,7 @@ from board import Board
 # To create the different ships
 from ships import Ships
 
+computer_score = 0
 
 def random_column_coord():
     """
@@ -111,7 +112,7 @@ def computer_place_ships(ship, board):
             return ship.ship_coords
 
 
-def main(all_comp_ship_coords, ships):
+def create_hidden_comp_board(all_comp_ship_coords, ships):
     """
     Creates a board instance for the computer with the same
     dimensions as for the player. Then after each ship instance
@@ -128,6 +129,19 @@ def main(all_comp_ship_coords, ships):
             computer_place_ships(ship, random_board)
         )
         all_comp_ship_coords.extend(comp_ship_coords)
+
+def computer_shot():
+    """
+    Using random choices again, the computer will take a hit
+    at the player's ships. On the player's board,
+    a miss will be marked "M" and a hit will be marked "X".
+    All random guesses will then be stored into a list to
+    prevent repeat guesses.
+    """
+
+    comp_col_guess = random_column_coord()
+    comp_row_guess = random_row_coord()
+    comp_guess = (comp_col_guess, comp_row_guess)
 
 
 
