@@ -118,10 +118,9 @@ def player_shot(board, username, computer_coords, ships):
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
-    # while True:
     col_guess = board.convert_coord_to_index()
     row_guess = board.validate_number_coord()
-    user_guess = (col_guess, row_guess)
+    user_guess = (row_guess, col_guess)
     if user_guess in computer_coords:
         print("Hit!")
         # Iterates through each ship in the player_ships list
@@ -129,7 +128,7 @@ def player_shot(board, username, computer_coords, ships):
             # if the guess is part of one of the ships coordinates
             # the health will decrease by 1.
             if user_guess in ship.ship_coords:
-                board[col_guess][row_guess] = "X"
+                board[row_guess][col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
                     user_score += 1
@@ -138,5 +137,5 @@ def player_shot(board, username, computer_coords, ships):
         # continue
     elif user_guess not in computer_coords:
         print("Miss :(")
-        board[col_guess][row_guess] = "M"
+        board[row_guess][col_guess] = "M"
         return col_guess, row_guess
