@@ -20,15 +20,15 @@ destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
 submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
 submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
 
-player_ships = [
+ships = [
     battleship, destroyer_one, destroyer_two,
     submarine_one, submarine_two
 ]
 
-computer_ships = [
-    battleship, destroyer_one, destroyer_two,
-    submarine_one, submarine_two
-]
+# computer_ships = [
+#     battleship, destroyer_one, destroyer_two,
+#     submarine_one, submarine_two
+# ]
 
 player_board = []
 all_comp_ship_coords = []
@@ -128,9 +128,10 @@ def game_setup():
 
 
 
-    global player_ships
-    # Place each ship instance into a list for looping
-    global computer_ships
+    # global player_ships
+    # # Place each ship instance into a list for looping
+    # global computer_ships
+    global ships
 
     # List to store all ship coords after placing all ships onto board
     global all_ship_coords
@@ -145,7 +146,7 @@ def game_setup():
     # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
-    for index, ship in enumerate(player_ships):
+    for index, ship in enumerate(ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
         all_ship_coords.extend(ship.ship_coords)
@@ -163,7 +164,7 @@ def game_setup():
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
     
-    computer.main(all_comp_ship_coords, computer_ships)
+    computer.main(all_comp_ship_coords, ships)
 
     # print(all_comp_ship_coords)
 
@@ -190,7 +191,7 @@ def start_game():
 
     game.print_blank_and_user_boards(blank_board, user_board, user_name)
 
-    game.player_shot(blank_board, user_name, all_comp_ship_coords, player_ships)
+    game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
 
 
 def game_start_prompt():
