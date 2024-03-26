@@ -3,8 +3,8 @@ from board import Board
 from rich import print
 import time
 
-/
-user_score = 0
+_computer_score = 0
+_user_score = 0
 
 def print_blank_and_user_boards(blank_board, player_board, username):
     """
@@ -15,9 +15,9 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     """
     # Makes the scores global so that they can be accessed in a
     # Different function later on in the module
-    # global computer_score
+    global computer_score
     # computer_score = 0
-    # # global user_score
+    global user_score
     # user_score = 0
 
     width_between_boards = 30
@@ -118,27 +118,27 @@ def player_shot(board, username, computer_coords, ships):
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
-    while True:
-        col_guess = board.convert_coord_to_index()
-        row_guess = board.validate_number_coord()
-        user_guess = (col_guess, row_guess)
-        if user_guess in computer_coords:
-            print("Hit!")
-            # Iterates through each ship in the player_ships list
-            for ship in ships:
-                # if the guess is part of one of the ships coordinates
-                # the health will decrease by 1.
-                if user_guess in ship.ship_coords:
-                    board[col_guess][row_guess] = "X"
-                    ship.health -= 1
-                    if ship.health == 0:
-                        user_score += 1
-                        print(f"You have sunk the Computer's {ship.name}")
-            return False
-            continue
-        elif user_guess not in computer_coords:
-            print("Miss :(")
-            board[col_guess][row_guess] = "M"
-            continue
+    # while True:
+    col_guess = board.convert_coord_to_index()
+    row_guess = board.validate_number_coord()
+    user_guess = (col_guess, row_guess)
+    if user_guess in computer_coords:
+        print("Hit!")
+        # Iterates through each ship in the player_ships list
+        for ship in ships:
+            # if the guess is part of one of the ships coordinates
+            # the health will decrease by 1.
+            if user_guess in ship.ship_coords:
+                board[col_guess][row_guess] = "X"
+                ship.health -= 1
+                if ship.health == 0:
+                    user_score += 1
+                    print(f"You have sunk the Computer's {ship.name}")
+        # return False
+        # continue
+    elif user_guess not in computer_coords:
+        print("Miss :(")
+        board[col_guess][row_guess] = "M"
+        # continue
 
 

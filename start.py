@@ -180,23 +180,28 @@ def start_game():
     blank_board = Board(8)
     blank_board.create_board()
 
-
     # Using the global variable player_board, the actual
     # board object itself is stored into another variable
     # To then be used to print both boards side by side
     user_board = player_board.board
 
-    game.print_blank_and_user_boards(blank_board, user_board, user_name)
+    while True:
+        game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
+        time.sleep(1)
 
-    game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
-    time.sleep(1)
-    clear_terminal()
-    game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        if user_score == 5:
+            print("We win!")
+            return False
 
-    computer.computer_shot(player_board, all_ship_coords, ships)
-    time.sleep(1)
-    clear_terminal()
-    game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        clear_terminal()
+        game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        computer.computer_shot(player_board, all_ship_coords, ships)
+        time.sleep(1)
+
+        if computer_score == 5:
+            print("The computer won :(")
+            return False
 
 
 def game_start_prompt():
