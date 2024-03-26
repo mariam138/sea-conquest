@@ -33,6 +33,9 @@ ships = [
 player_board = []
 all_comp_ship_coords = []
 
+user_score = 0
+computer_score = 0
+
 def print_banner():
     """
      Prints out the game's banner whenever the game is started
@@ -185,9 +188,10 @@ def start_game():
     # To then be used to print both boards side by side
     user_board = player_board.board
 
+    breakpoint()
     while True:
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
+        col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
         time.sleep(1)
 
         if user_score == 5:

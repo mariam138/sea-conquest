@@ -3,8 +3,8 @@ from board import Board
 from rich import print
 import time
 
-_computer_score = 0
-_user_score = 0
+computer_score = 0
+user_score = 0
 
 def print_blank_and_user_boards(blank_board, player_board, username):
     """
@@ -134,11 +134,9 @@ def player_shot(board, username, computer_coords, ships):
                 if ship.health == 0:
                     user_score += 1
                     print(f"You have sunk the Computer's {ship.name}")
-        # return False
+        return col_guess, row_guess
         # continue
     elif user_guess not in computer_coords:
         print("Miss :(")
         board[col_guess][row_guess] = "M"
-        # continue
-
-
+        return col_guess, row_guess
