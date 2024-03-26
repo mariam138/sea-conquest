@@ -82,6 +82,8 @@ To fix this, I separated out the nested if/else statements and added True/False 
 
 7. When testing the game in the terminal, I found that once I had the user set up their ships on their board, once again the **game_start_prompt** function would be called, rather than the **computer.main()** function to create the computer's board. I used Python's built in debugger, **pdb**, and added a **breakpoint** in the code right above where **computer.main()** was called. Stepping through the code line by line, it showed that I did not have the correct arguments being passed through the *computer.main()** and **computer_place_ships** functions. After fixing this, the bug was resolved and the **game_start_prompt** function was no longer being called.
 
+8. During the creation of the function **player_shot** which lets the user take a shot at the computer's ships, I found that when printing **all_comp_ship_coords**, it also had the coordinates of the ships the user places. After using breakpoints in my code from **computer.main()**, it appeared that the **ship.ship_coords** list was not being initialised for each placement. After adding *"ship.ship_coords = []"* into the **computer_place__ships()**, this fixed this bug of all the ships being appended into what was supposed to be the list containing only the computer's ships coordinates.
+
 ## Deployment
 
 The project was deployed to Heroku using the following steps:
