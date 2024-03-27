@@ -100,7 +100,13 @@ To fix this, I separated out the nested if/else statements and added True/False 
                 break
     `
 
-    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. To fix this, I 
+    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. To fix this, I made sure that the player_board itself was accessed directly:
+
+        `if comp_guess in player_coords:
+        print("The computer has made a hit!")
+        player_board[comp_row_guess][comp_col_guess] = "X"
+        `
+    This allowed the player board to be updated when the computer made a hit.
 
 ## Deployment
 
