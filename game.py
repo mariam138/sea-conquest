@@ -133,6 +133,7 @@ def player_shot(board, username, computer_coords, ships):
                 if ship.health == 0:
                     user_score += 1
                     print(f"You have sunk the Computer's {ship.name}")
+                break
         return col_guess, row_guess
         # continue
     elif user_guess not in computer_coords:
