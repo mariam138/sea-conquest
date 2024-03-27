@@ -52,7 +52,6 @@ class Ships:
         """
         print("You will now place your ships.")
         while True:
-            breakpoint()
             print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
             col = board.convert_coord_to_index()

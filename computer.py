@@ -143,6 +143,7 @@ def computer_shot(player_board, player_coords, ships):
     # comp_row_guess = random_row_coord(board)
     # comp_guess = (comp_row_guess, comp_col_guess)
     comp_guess = random.choice(player_coords)
+    print(comp_guess)
     comp_row_guess, comp_col_guess = comp_guess
 
     if comp_guess in player_coords:

@@ -155,7 +155,9 @@ def game_setup():
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
-        all_ship_coords.extend(ship.ship_coords)
+        # ship_coords = ship.ship_coords
+        ship_coords = ship.ship_coords[ship.name]
+        all_ship_coords.extend(ship_coords)
         # if index == len(player_ships) - 1:
         #     player_board.append(ships_board.board)
 
@@ -204,6 +206,7 @@ def start_game():
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        breakpoint()
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
 
