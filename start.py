@@ -20,15 +20,18 @@ destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
 submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
 submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
 
-ships = [
+# Player and computer have same ships but having separate
+# Lists allows them to be accessed separately when needed
+# Specifically in computer_shot() and player_shot()
+# So that the correct player's ships decrease in health
+player_ships = [
     battleship, destroyer_one, destroyer_two,
     submarine_one, submarine_two
 ]
-
-# computer_ships = [
-#     battleship, destroyer_one, destroyer_two,
-#     submarine_one, submarine_two
-# ]
+computer_ships = [
+    battleship, destroyer_one, destroyer_two,
+    submarine_one, submarine_two
+]
 
 player_board = []
 all_ship_coords = []
