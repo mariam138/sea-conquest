@@ -19,7 +19,7 @@ class Ships:
         self.health = length
         # Empty list which the ship's coordinates will be stored
         # once placed on the board
-        self.ship_coords = []
+        self.ship_coords = {}
 
     def print_ship_information(self):
         """

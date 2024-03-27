@@ -151,6 +151,7 @@ def game_setup():
     # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
+    breakpoint()
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
@@ -191,11 +192,9 @@ def start_game():
     global user_board
     user_board = player_board.board
 
-    # breakpoint()
     while True:
         # clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        breakpoint()
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
 
@@ -206,7 +205,7 @@ def start_game():
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
-        time.sleep(1)
+        time.sleep(2)
 
         if computer_score == 5:
             print("The computer won :(")

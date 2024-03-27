@@ -144,20 +144,17 @@ def computer_shot(player_board, player_coords, ships):
     # comp_guess = (comp_row_guess, comp_col_guess)
     comp_guess = random.choice(player_coords)
     comp_row_guess, comp_col_guess = comp_guess
-    print(comp_guess)
 
-    # breakpoint()
     if comp_guess in player_coords:
         print("The computer has made a hit!")
         player_board[comp_row_guess][comp_col_guess] = "X"
-        # breakpoint()
+        breakpoint()
         for ship in ships:
-            # print(ship.ship_coords)
+            print(ship.ship_coords)
             if comp_guess in ship.ship_coords:
-                player_board[comp_row_guess][comp_col_guess] = "X"
+                # player_board[comp_row_guess][comp_col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
-                    breakpoint()
                     global computer_score
                     computer_score += 1
                     print(f"The computer has sunk {ship.name}")
