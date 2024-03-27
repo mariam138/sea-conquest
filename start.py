@@ -151,7 +151,7 @@ def game_setup():
     # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
-    breakpoint()
+    # breakpoint()
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
