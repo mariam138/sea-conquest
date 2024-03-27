@@ -139,29 +139,31 @@ def computer_shot(player_board, player_coords, ships):
     All random guesses will then be stored into a list to
     prevent repeat guesses.
     """
-    # comp_col_guess = random_column_coord()
-    # comp_row_guess = random_row_coord(board)
-    # comp_guess = (comp_row_guess, comp_col_guess)
-    comp_guess = random.choice(player_coords)
+    comp_col_guess = random_column_coord()
+    comp_row_guess = random_row_coord(player_board)
+
+    comp_guess = comp_row_guess, comp_col_guess
     print(comp_guess)
-    comp_row_guess, comp_col_guess = comp_guess
 
     if comp_guess in player_coords:
-        print("The computer has made a hit!")
-        player_board[comp_row_guess][comp_col_guess] = "X"
-        breakpoint()
+        print("Computer Hit!")
+        # Iterates through each ship in the player_ships list
         for ship in ships:
-            # ship_coords = ship.ship_coords[ship.name]
-            if comp_guess in ship.ship_coords.get(ship.name, []):
-                # player_board[comp_row_guess][comp_col_guess] = "X"
+            # if the guess is part of one of the ships coordinates
+            # the health will decrease by 1.
+            if comp_guess in ship.ship_coords:
+                print(ship.ship_coords)
+                board[row_guess][col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
-                    global computer_score
                     computer_score += 1
-                    print(f"The computer has sunk {ship.name}")
+                    print(f"The computer has sunk your {ship.name}")
                 break
-        return comp_col_guess, comp_row_guess
+        return col_guess, row_guess
+        # continue
     elif comp_guess not in player_coords:
-        print("The computer has missed")
-        player_board[comp_row_guess][comp_col_guess] = "M"
-        return comp_col_guess, comp_row_guess
+        print("The computer missed")
+        board[row_guess][col_guess] = "M"
+        return col_guess, row_guess
+
+
