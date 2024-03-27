@@ -155,15 +155,22 @@ def game_setup():
     for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
-        
+
         # Prints the dictonary for each ship as {name, coords}
         print(ship.ship_coords)
-        ship_coords = ship.ship_coords[ship.name]
-        # Prints each ships coords as a list of tuples
-        print(ship_coords)
+        # Gets value from each dict and stores it in ship_coords
+        # ship_coords = ship.ship_coords[ship.name]
+        # # Prints each ships coords as a list of tuples
+        # print(ship_coords)
         # Adds each of the ship_coords lists to all_ship_coords
         # This variable is then used in computer_shot()
-        all_ship_coords.extend(ship_coords)
+        # all_ship_coords.extend(ship_coords)
+        all_ship_coords.extend(ship.ship_coords.values())
+
+    # Flattens out the above nested list into one list
+    all_ship_coords=[coord for sublist in all_ship_coords for coord in sublist]
+    print(all_ship_coords)
+
         # if index == len(player_ships) - 1:
         #     player_board.append(ships_board.board)
 
