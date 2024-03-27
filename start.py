@@ -202,7 +202,7 @@ def start_game():
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        computer.computer_shot(player_board, all_ship_coords, ships)
+        computer.computer_shot(player_board, player_board, all_ship_coords)
         time.sleep(1)
 
         if computer_score == 5:

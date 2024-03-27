@@ -100,7 +100,7 @@ To fix this, I separated out the nested if/else statements and added True/False 
                 break
     `
 
-    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**.
+    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. To fix this, I 
 
 ## Deployment
 

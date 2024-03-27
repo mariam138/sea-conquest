@@ -128,6 +128,7 @@ def player_shot(board, username, computer_coords, ships):
             # if the guess is part of one of the ships coordinates
             # the health will decrease by 1.
             if user_guess in ship.ship_coords:
+                print(ship.ship_coords)
                 board[row_guess][col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
