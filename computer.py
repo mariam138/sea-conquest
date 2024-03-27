@@ -151,6 +151,7 @@ def computer_shot(board, player_coords, ships):
         print("The computer has made a hit!")
         breakpoint()
         for ship in ships:
+            print(ship.ship_coords)
             if comp_guess in ship.ship_coords:
                 board[comp_row_guess][comp_col_guess] = "X"
                 ship.health -= 1
