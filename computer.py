@@ -5,19 +5,6 @@ from board import Board
 # To create the different ships
 from ships import Ships
 
-battleship = Ships("Battleship", 4, "dark_red", 4)
-destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
-destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
-submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
-submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
-
-ships = [
-    battleship, destroyer_one, destroyer_two,
-    submarine_one, submarine_two
-]
-
-
-
 computer_score = 0
 
 def random_column_coord():
@@ -174,11 +161,3 @@ def computer_shot(board,player_coords, ships):
         print("The computer has missed")
         board[comp_row_guess][comp_col_guess] = "M"
         return comp_col_guess, comp_row_guess
-
-for i in range(10):
-    test_board = Board(8)
-    test_board.create_board()
-    test_board.print_board()
-    for ship in ships:
-        computer_place_ships(ship, test_board)
-    test_board.print_board()

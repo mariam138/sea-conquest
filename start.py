@@ -31,6 +31,7 @@ ships = [
 # ]
 
 player_board = []
+all_ship_coords = []
 all_comp_ship_coords = []
 
 user_score = 0
@@ -138,7 +139,7 @@ def game_setup():
 
     # List to store all ship coords after placing all ships onto board
     global all_ship_coords
-    all_ship_coords = []
+    
 
     # global player_board
     # player_board = []
