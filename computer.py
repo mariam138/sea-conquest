@@ -131,7 +131,7 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
         )
         all_comp_ship_coords.extend(comp_ship_coords)
 
-def computer_shot(board,player_coords, ships):
+def computer_shot(board, player_coords, ships):
     """
     Using random choices again, the computer will take a hit
     at the player's ships. On the player's board,
@@ -146,7 +146,6 @@ def computer_shot(board,player_coords, ships):
 
     # breakpoint()
     if comp_guess in player_coords:
-        print(player_coords)
         print("The computer has made a hit!")
         for ship in ships:
             if comp_guess in ship.ship_coords:

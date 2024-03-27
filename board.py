@@ -27,6 +27,18 @@ class Board:
         """
         return self.board[index]
 
+    def __setitem__(self, index, value):
+        """
+        A dunder method that can be used side by side with the
+        __getitem__ dunder method above. This method will be used when
+        the computer takes its shot during gameplay to properly
+        update the player_board with either an "M" for miss or
+        an "X" for a hit. 
+        Code to add this dunder method is adapted from:
+        https://www.tutorialspoint.com/getitem-and-setitem-in-python
+        """
+        self.board[index] = value
+
     def create_board(self):
         """
         Prints the horizontal_coords as a string for the horizontal heading
