@@ -52,6 +52,7 @@ class Ships:
         """
         print("You will now place your ships.")
         while True:
+            breakpoint()
             print(f"Placing [dodger_blue3]{self.name}....")
             print("Please enter your starting co-ordinate")
             col = board.convert_coord_to_index()
@@ -66,6 +67,8 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
+                    # Creates an empty list to append the ships coordinates into
+                    ship_coords = []
                     for i in range(self.length):
                         if board.board[row][col + i] != "~":
                             print("The ship overlaps with another", end=" ")
@@ -74,8 +77,9 @@ class Ships:
                         else:
                             for i in range(self.length):
                                 board.board[row][col + i] = "S"
-                                self.ship_coords.append((row, col + i))
-                                self.ship_coords[self.name] = self.ship_coords.get(self.name, []) + [(row, col + i)]
+                                ship_coords.append((row, col + i))
+                                # self.ship_coords[self.name] = self.ship_coords.get(self.name, []) + [(row, col + i)]
+                            self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
                         return board
@@ -84,6 +88,7 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
+                    ship_coords = []
                     for i in range(self.length):
                         if board.board[row + i][col] != "~":
                             print("The ship overlaps with another", end=" ")
@@ -92,8 +97,8 @@ class Ships:
                         else:
                             for i in range(self.length):
                                 board.board[row + i][col] = "S"
-                                self.ship_coords.append((row + i, col))
-                                self.ship_coords[self.name] = self.ship_coords.get(self.name, []) + [(row + i, col)]
+                                ship_coords.append((row + i, col))
+                            self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
                         return board
