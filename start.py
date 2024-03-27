@@ -133,8 +133,6 @@ def game_setup():
     game_board.create_board()
     game_board.print_board()
 
-
-
     # global player_ships
     # # Place each ship instance into a list for looping
     # global computer_ships
@@ -153,7 +151,7 @@ def game_setup():
     # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
-    for index, ship in enumerate(ships):
+    for index, ship in enumerate(player_ships):
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
         all_ship_coords.extend(ship.ship_coords)
@@ -170,9 +168,10 @@ def game_setup():
     print(f"Let the sea conquest begin, commander [gold3]{user_name}[/gold3]!")
     # Calls all the functions from the computer module necessary
     # To create the computer generated board
-    computer.create_hidden_comp_board(all_comp_ship_coords, ships)
+    computer.create_hidden_comp_board(all_comp_ship_coords, computer_ships)
 
     time.sleep(2.5)
+    clear_terminal()
     start_game()
 
 
@@ -196,7 +195,7 @@ def start_game():
     while True:
         # clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, ships)
+        col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
 
         if user_score == 5:
@@ -205,7 +204,7 @@ def start_game():
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        computer.computer_shot(player_board, player_board, all_ship_coords)
+        computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(1)
 
         if computer_score == 5:
