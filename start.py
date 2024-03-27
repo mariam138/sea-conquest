@@ -14,23 +14,29 @@ import computer
 import game
 
 # All ship instances to be used in the game
-battleship = Ships("Battleship", 4, "dark_red", 4)
-destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
-destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
-submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
-submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+player_battleship = Ships("Battleship", 4, "dark_red", 4)
+player_destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
+player_destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+player_submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+player_submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+
+comp_battleship = Ships("Battleship", 4, "dark_red", 4)
+comp_destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
+comp_destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+comp_submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+comp_submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
 
 # Player and computer have same ships but having separate
 # Lists allows them to be accessed separately when needed
 # Specifically in computer_shot() and player_shot()
 # So that the correct player's ships decrease in health
 player_ships = [
-    battleship, destroyer_one, destroyer_two,
-    submarine_one, submarine_two
+    player_battleship, player_destroyer_one, player_destroyer_two,
+    player_submarine_one, player_submarine_two
 ]
 computer_ships = [
-    battleship, destroyer_one, destroyer_two,
-    submarine_one, submarine_two
+    comp_battleship, comp_destroyer_one, comp_destroyer_two,
+    comp_submarine_one, comp_submarine_two
 ]
 
 player_board = []
@@ -155,20 +161,20 @@ def game_setup():
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
 
-        # Prints the dictonary for each ship as {name, coords}
         # Gets value from each dict and stores it in ship_coords
-        # ship_coords = ship.ship_coords[ship.name]
-        # # Prints each ships coords as a list of tuples
-        # print(ship_coords)
+        ship_coords = ship.ship_coords[ship.name]
+        # Prints each ships coords as a list of tuples
+        print(ship_coords)
         # Adds each of the ship_coords lists to all_ship_coords
         # This variable is then used in computer_shot()
         # all_ship_coords.extend(ship_coords)
-        # all_ship_coords.extend(ship.ship_coords.values())
+        all_ship_coords.extend(ship.ship_coords.values())
 
     # Flattens out the above nested list into one list
-    # all_ship_coords = [
-    #     coord for sublist in all_ship_coords for coord in sublist
-    #     ]
+    all_ship_coords = [
+        coord for sublist in all_ship_coords for coord in sublist
+        ]
+    print(all_ship_coords)
 
         # if index == len(player_ships) - 1:
         #     player_board.append(ships_board.board)
@@ -218,7 +224,6 @@ def start_game():
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        breakpoint()
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
 

@@ -131,7 +131,7 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
         )
         all_comp_ship_coords.extend(comp_ship_coords)
 
-def computer_shot(player_board, player_coords, ships):
+def computer_shot(player_board, player_coords, player_ships):
     """
     Using random choices again, the computer will take a hit
     at the player's ships. On the player's board,
@@ -145,25 +145,27 @@ def computer_shot(player_board, player_coords, ships):
     comp_guess = comp_row_guess, comp_col_guess
     print(comp_guess)
 
+    breakpoint()
     if comp_guess in player_coords:
         print("Computer Hit!")
         # Iterates through each ship in the player_ships list
-        for ship in ships:
+        for ship in player_ships:
+            print(ship.ship_coords)
             # if the guess is part of one of the ships coordinates
             # the health will decrease by 1.
-            if comp_guess in ship.ship_coords:
+            if comp_guess in ship.ship_coords[ship.name]:
                 print(ship.ship_coords)
-                board[row_guess][col_guess] = "X"
+                board[comp_row_guess][comp_col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
                     computer_score += 1
                     print(f"The computer has sunk your {ship.name}")
                 break
-        return col_guess, row_guess
+        return comp_col_guess, comp_row_guess
         # continue
     elif comp_guess not in player_coords:
         print("The computer missed")
-        board[row_guess][col_guess] = "M"
-        return col_guess, row_guess
+        player_board[comp_row_guess][comp_col_guess] = "M"
+        return comp_col_guess, comp_row_guess
 
 
