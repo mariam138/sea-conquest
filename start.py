@@ -195,6 +195,7 @@ def start_game():
     while True:
         # clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        breakpoint()
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
 
