@@ -5,6 +5,19 @@ from board import Board
 # To create the different ships
 from ships import Ships
 
+battleship = Ships("Battleship", 4, "dark_red", 4)
+destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
+destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
+
+ships = [
+    battleship, destroyer_one, destroyer_two,
+    submarine_one, submarine_two
+]
+
+
+
 computer_score = 0
 
 def random_column_coord():
@@ -68,6 +81,7 @@ def computer_place_ships(ship, board):
 
         # Sets the ship_fits flag to True before validation
         ship_fits = True
+        # breakpoint()
         if direction == "h":
             # If the ship length extends the board horizontally, another
             # coordinate is generated randomly
@@ -81,7 +95,7 @@ def computer_place_ships(ship, board):
                 for i in range(ship.length):
                     if board.board[row][col + i] != "~":
                         ship_fits = False
-                        break
+                        continue
         elif direction == "v":
             # If ship length extends the board vertically, another
             # coordinate is generated randomly
@@ -141,9 +155,11 @@ def computer_shot(board,player_coords, ships):
     comp_col_guess = random_column_coord()
     comp_row_guess = random_row_coord(board)
     comp_guess = (comp_row_guess, comp_col_guess)
+    print(comp_guess)
 
     # breakpoint()
     if comp_guess in player_coords:
+        print(player_coords)
         print("The computer has made a hit!")
         for ship in ships:
             if comp_guess in ship.ship_coords:
@@ -159,4 +175,10 @@ def computer_shot(board,player_coords, ships):
         board[comp_row_guess][comp_col_guess] = "M"
         return comp_col_guess, comp_row_guess
 
-
+for i in range(10):
+    test_board = Board(8)
+    test_board.create_board()
+    test_board.print_board()
+    for ship in ships:
+        computer_place_ships(ship, test_board)
+    test_board.print_board()
