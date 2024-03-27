@@ -140,20 +140,20 @@ def computer_shot(board,player_coords, ships):
     """
     comp_col_guess = random_column_coord()
     comp_row_guess = random_row_coord(board)
-    comp_guess = (comp_col_guess, comp_row_guess)
+    comp_guess = (comp_row_guess, comp_col_guess)
 
     if comp_guess in player_coords:
         print("The computer has made a hit!")
         for ship in ships:
             if comp_guess in ship.ship_coords:
-                board[comp_col_guess][comp_row_guess] = "X"
+                board[comp_row_guess][comp_col_guess] = "X"
                 ship.health -= 1
                 if ship.health == 0:
                     computer_score += 1
                     print(f"The computer has sunk {ship.name}")
     elif comp_guess not in player_coords:
         print("The computer has missed")
-        board[comp_col_guess][comp_row_guess] = "M"
+        board[comp_row_guess][comp_col_guess] = "M"
 
 
 
