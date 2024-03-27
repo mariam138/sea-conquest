@@ -139,14 +139,17 @@ def computer_shot(board, player_coords, ships):
     All random guesses will then be stored into a list to
     prevent repeat guesses.
     """
-    comp_col_guess = random_column_coord()
-    comp_row_guess = random_row_coord(board)
-    comp_guess = (comp_row_guess, comp_col_guess)
+    # comp_col_guess = random_column_coord()
+    # comp_row_guess = random_row_coord(board)
+    # comp_guess = (comp_row_guess, comp_col_guess)
+    comp_guess = random.choice(player_coords)
+    comp_row_guess, comp_col_guess = comp_guess
     print(comp_guess)
 
     # breakpoint()
     if comp_guess in player_coords:
         print("The computer has made a hit!")
+        breakpoint()
         for ship in ships:
             if comp_guess in ship.ship_coords:
                 board[comp_row_guess][comp_col_guess] = "X"
@@ -155,7 +158,7 @@ def computer_shot(board, player_coords, ships):
                     computer_score += 1
                     print(f"The computer has sunk {ship.name}")
                 break
-        return comp_col_guess, comp_row_guess
+        # return comp_col_guess, comp_row_guess
     elif comp_guess not in player_coords:
         print("The computer has missed")
         board[comp_row_guess][comp_col_guess] = "M"
