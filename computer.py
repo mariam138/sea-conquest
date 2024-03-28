@@ -5,6 +5,7 @@ from board import Board
 # To create the different ships
 from ships import Ships
 import time
+from rich import print
 
 computer_score = 0
 # Creates empty list to store the computer's guesses
@@ -155,7 +156,7 @@ def computer_shot(player_board, player_coords, player_ships):
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
-            print("Computer Hit!")
+            print("Argh! The [bright_red]Sea Guardians[/bright_red] hit us!")
             used_comp_guesses.append(comp_guess)
             # Iterates through each ship in the player_ships list
             for ship in player_ships:
@@ -170,7 +171,7 @@ def computer_shot(player_board, player_coords, player_ships):
                     break
             return comp_col_guess, comp_row_guess
         elif comp_guess not in player_coords:
-            print("The computer missed")
+            print("Whew! That was a close one, but they missed!")
             used_comp_guesses.append(comp_guess)
-            player_board[comp_row_guess][comp_col_guess] = "M"
+            player_board[comp_row_guess][comp_col_guess] = "[yellow2]M"
             return comp_col_guess, comp_row_guess
