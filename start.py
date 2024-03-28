@@ -216,15 +216,14 @@ def start_game(username):
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
     while True:
-        print(f"User: {game.user_score}, Computer: {computer.computer_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
-        time.sleep(1)
+        time.sleep(1.5)
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
-        time.sleep(1)
+        time.sleep(1.5)
         clear_terminal()
 
         if game.user_score == 5:
@@ -274,6 +273,13 @@ def game_start_prompt():
         except Exception:
             print("That is not a valid input. Please try again.\n")
 
+def restart_or_exit_game():
+    """
+    At the end of the game, once either the computer
+    or the player have sunk all of the opponents ships,
+    this prompt will appear asking the user if they would
+    like to play again or exit the game entirely.
+    """
 
 def main():
     """
