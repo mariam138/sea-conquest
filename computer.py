@@ -145,11 +145,10 @@ def computer_shot(player_board, player_coords, player_ships):
     global computer_score
     global used_comp_guesses
 
-    comp_col_guess = random_column_coord()
-    comp_row_guess = random_row_coord(player_board)
-    comp_guess = comp_row_guess, comp_col_guess
-
     while True:
+        comp_col_guess = random_column_coord()
+        comp_row_guess = random_row_coord(player_board)
+        comp_guess = comp_row_guess, comp_col_guess
         if comp_guess in used_comp_guesses:
             print("The computer has already guessed this")
             time.sleep(1.5)
