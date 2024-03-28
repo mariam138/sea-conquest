@@ -3,8 +3,10 @@ from board import Board
 from rich import print
 import time
 
+# Sets scores to 0 initially
 computer_score = 0
 user_score = 0
+# Creates an empty list to store the previous guesses in
 used_guesses = []
 
 def print_blank_and_user_boards(blank_board, player_board, username):
@@ -114,7 +116,7 @@ def player_shot(board, username, computer_coords, ships):
     """
 
     global user_score
-    # Create an empty list to store previous guesses in
+    # Makes the variable global so that it's updated each turn
     global used_guesses
 
     print(f"It's our turn first, commander {username}!")
