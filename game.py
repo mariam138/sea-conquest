@@ -2,9 +2,10 @@
 from board import Board
 from rich import print
 import time
+from computer import computer_score
 
 # Sets scores to 0 initially
-computer_score = 0
+# computer_score = 0
 user_score = 0
 # Creates an empty list to store the previous guesses in
 used_guesses = []

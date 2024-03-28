@@ -160,6 +160,7 @@ def game_setup():
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
+        time.sleep(0.5)
         ship.print_ship_information()
         player_board = ship.player_place_ships(game_board)
 
@@ -168,7 +169,6 @@ def game_setup():
         # Adds each of the ship_coords lists to all_ship_coords
         # This variable is then used in computer_shot()
         all_ship_coords.extend(ship.ship_coords.values())
-        time.sleep(1)
 
     # Flattens out the above nested list into one list
     all_ship_coords = [
@@ -228,7 +228,7 @@ def start_game():
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
-        time.sleep(2)
+        time.sleep(1)
 
 
 
