@@ -43,8 +43,8 @@ player_board = []
 all_ship_coords = []
 all_comp_ship_coords = []
 
-_user_score = game.user_score
-_comp_score = game.computer_score
+# _user_score = game.user_score
+# _comp_score = game.computer_score
 # user_score = 0
 # computer_score = 0
 
@@ -134,6 +134,7 @@ def display_instructions():
     print("To win the game, we must sink the enemy's ships first.")
     print("Are you ready for the challenge, commander?\n")
 
+
 def game_setup():
     # Gets Board class and stores it in a variable to call its methods
     game_board = Board(8)
@@ -212,13 +213,16 @@ def start_game():
     # global _comp_score
 
     while True:
-        print(f"User: {_user_score}, Computer: {_comp_score}")
+        print(f"User: {game.user_score}, Computer: {game.computer_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
 
-        if _user_score == 5:
+        if game.user_score == 5:
             print("We win!")
+            return False
+        elif game.computer_score == 5:
+            print("The computer won :(")
             return False
 
         clear_terminal()
@@ -226,9 +230,6 @@ def start_game():
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
 
-        if _comp_score == 5:
-            print("The computer won :(")
-            return False
 
 
 def game_start_prompt():
