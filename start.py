@@ -204,8 +204,8 @@ def restart_or_exit_game(username):
         print(f"Would you like to start another game Commander {username}?")
         print("Enter 'S' to start a new game, or enter 'Q' to exit.")
         try:
-            end_choice = input("Enter 'S' or 'Q':\n").lower
-            if end_choice != "q" and end_choice != "s":
+            end_choice = input("Enter 'S' or 'Q':\n").lower()
+            if (end_choice != "q" and end_choice != "s"):
                 raise Exception
             elif end_choice == "s":
                 print(f"You've got heart, Commander {username}!"
@@ -223,7 +223,7 @@ def restart_or_exit_game(username):
                 main()
                 return False
         except Exception:
-            print("That was not a valid input. Please try again.")
+            print("That was not a valid input. Please try again.\n")
 
 
 def start_game(username):
@@ -256,8 +256,8 @@ def start_game(username):
 
         if game.user_score == 5:
             print("We win!")
-            breakpoint()
-            restart_or_exit_game()
+            # breakpoint()
+            restart_or_exit_game(user_name)
             return False
 
         clear_terminal()
@@ -268,7 +268,7 @@ def start_game(username):
 
         if computer.computer_score == 5:
             print("The computer won :(")
-            restart_or_exit_game()
+            restart_or_exit_game(user_name)
             return False
 
 
