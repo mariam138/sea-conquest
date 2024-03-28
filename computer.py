@@ -141,14 +141,13 @@ def computer_shot(player_board, player_coords, player_ships):
     """
 
     global computer_score
-    
+
     comp_col_guess = random_column_coord()
     comp_row_guess = random_row_coord(player_board)
 
     comp_guess = comp_row_guess, comp_col_guess
     print(comp_guess)
 
-    breakpoint()
     if comp_guess in player_coords:
         print("Computer Hit!")
         # Iterates through each ship in the player_ships list

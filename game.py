@@ -113,31 +113,39 @@ def player_shot(board, username, computer_coords, ships):
     """
 
     global user_score
+    # Create an empty list to store previous guesses in
+    used_guesses = []
 
     print(f"It's our turn first, commander {username}!")
     print("Take your best shot for the", end = " ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
-    col_guess = board.convert_coord_to_index()
-    row_guess = board.validate_number_coord()
-    user_guess = (row_guess, col_guess)
-    if user_guess in computer_coords:
-        print("Hit!")
-        # Iterates through each ship in the player_ships list
-        for ship in ships:
-            # if the guess is part of one of the ships coordinates
-            # the health will decrease by 1.
-            if user_guess in ship.ship_coords:
-                print(ship.ship_coords)
-                board[row_guess][col_guess] = "X"
-                ship.health -= 1
-                if ship.health == 0:
-                    user_score += 1
-                    print(f"You have sunk the Computer's {ship.name}")
-                break
-        return col_guess, row_guess
-        # continue
-    elif user_guess not in computer_coords:
-        print("Miss :(")
-        board[row_guess][col_guess] = "M"
-        return col_guess, row_guess
+    while True:
+        col_guess = board.convert_coord_to_index()
+        row_guess = board.validate_number_coord()
+        user_guess = (row_guess, col_guess)
+        used_guesses.append(user_guess)
+        if user_guess in used_guesses:
+            print("You've already guessed that, commander!", end = " ")
+            print("Let's try again, shall we?")
+            continue
+        elif user_guess in computer_coords:
+            print("Hit!")
+            # Iterates through each ship in the player_ships list
+            for ship in ships:
+                # if the guess is part of one of the ships coordinates
+                # the health will decrease by 1.
+                if user_guess in ship.ship_coords:
+                    print(ship.ship_coords)
+                    board[row_guess][col_guess] = "X"
+                    ship.health -= 1
+                    if ship.health == 0:
+                        user_score += 1
+                        print(f"You have sunk the Computer's {ship.name}")
+                    break
+            return row_guess, col_guess
+            # continue
+        elif user_guess not in computer_coords:
+            print("Miss :(")
+            board[row_guess][col_guess] = "M"
+            return row_guess, col_guess

@@ -77,7 +77,6 @@ class Ships:
                             for i in range(self.length):
                                 board.board[row][col + i] = "S"
                                 ship_coords.append((row, col + i))
-                                # self.ship_coords[self.name] = self.ship_coords.get(self.name, []) + [(row, col + i)]
                             self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
