@@ -15,8 +15,8 @@ import game
 
 # All ship instances to be used in the game
 player_battleship = Ships("Battleship", 4, "dark_red", 4)
-player_destroyer_one = Ships("Destroyer 1", 3, "green_4", 3)
-player_destroyer_two = Ships("Destroyer 2", 3, "yellow_4", 3)
+player_destroyer_one = Ships("Destroyer 1", 3, "green4", 3)
+player_destroyer_two = Ships("Destroyer 2", 3, "yellow4", 3)
 player_submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
 player_submarine_two = Ships("Submarine 2", 2, "blue_violet", 2)
 
