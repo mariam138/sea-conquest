@@ -192,6 +192,40 @@ def game_setup():
     start_game(user_name)
 
 
+def restart_or_exit_game(username):
+    """
+    At the end of the game, once either the computer
+    or the player have sunk all of the opponents ships,
+    this prompt will appear asking the user if they would
+    like to play again or exit the game entirely.
+    """
+
+    while True:
+        print(f"Would you like to start another game Commander {username}?")
+        print("Enter 'S' to start a new game, or enter 'Q' to exit.")
+        try:
+            end_choice = input("Enter 'S' or 'Q':\n").lower
+            if end_choice != "q" and end_choice != "s":
+                raise Exception
+            elif end_choice == "s":
+                print(f"You've got heart, Commander {username}!"
+                f"Let's battle the [bright_red]Sea Guardians[/bright_red] again!")
+                time.sleep(2.5)
+                clear_terminal()
+                game_setup()
+                return False
+            elif end_choice == "q":
+                print(f"You've worked hard, Commander {username}.")
+                print("Us [gold3] Ocean Voyagers [/gold3] will be", end = " ")
+                print("waiting for you!")
+                time.sleep(2.5)
+                clear_terminal()
+                main()
+                return False
+        except Exception:
+            print("That was not a valid input. Please try again.")
+
+
 def start_game(username):
     """
     If the user inputs "s" into the terminal, it will trigger this function to
@@ -274,40 +308,6 @@ def game_start_prompt():
                 return False
         except Exception:
             print("That is not a valid input. Please try again.\n")
-
-def restart_or_exit_game(username):
-    """
-    At the end of the game, once either the computer
-    or the player have sunk all of the opponents ships,
-    this prompt will appear asking the user if they would
-    like to play again or exit the game entirely.
-    """
-
-    while True:
-        print(f"Would you like to start another game Commander {username}?")
-        print("Enter 'S' to start a new game, or enter 'Q' to exit.")
-        try:
-            end_choice = input("Enter 'S' or 'Q':\n").lower
-            if end_choice != "q" and end_choice != "s":
-                raise Exception
-            elif end_choice == "s":
-                print(f"You've got heart, Commander {username}!"
-                f"Let's battle the [bright_red]Sea Guardians[/bright_red] again!")
-                time.sleep(2.5)
-                clear_terminal()
-                game_setup()
-                return False
-            elif end_choice == "q":
-                print(f"You've worked hard, Commander {username}.")
-                print("Us [gold3] Ocean Voyagers [/gold3] will be", end = " ")
-                print("waiting for you!")
-                time.sleep(2.5)
-                clear_terminal()
-                main()
-                return False
-        except Exception:
-            print("That was not a valid input. Please try again.")
-
 
 
 def main():
