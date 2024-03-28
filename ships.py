@@ -75,7 +75,8 @@ class Ships:
                             break
                         else:
                             for i in range(self.length):
-                                board.board[row][col + i] = "S"
+                                breakpoint()
+                                board.board[row][col + i] = f"[{self.colour}S"
                                 ship_coords.append((row, col + i))
                             self.ship_coords[self.name] = ship_coords
                         clear_terminal()

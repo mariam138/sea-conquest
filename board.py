@@ -65,6 +65,8 @@ class Board:
         """
         for row in self.board:
             for cell in row:
+                # if cell == "S":
+                #     print([])
                 print(cell, end=" ")
             print()
         print()
@@ -89,7 +91,7 @@ class Board:
         while True:
             column_coord = (
                 input("Please enter a column coordinate"
-                      "as a letter:\n").upper()
+                      " as a letter:\n").upper()
             )
             if column_coord in letter_coord_dict:
                 col = letter_coord_dict[column_coord]
