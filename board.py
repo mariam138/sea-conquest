@@ -63,12 +63,15 @@ class Board:
         Prints out the game board that was created, using a nested for loop
         to print a grid to the terminal
         """
-        for row in self.board:
-            for cell in row:
-                # if cell == "S":
-                #     print([])
-                print(cell, end=" ")
-            print()
+        for i, row in enumerate(self.board):
+            if i == 0:
+                for cell in row:
+                    print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end=" ")
+                print()
+            else:
+                for cell in row:
+                    print(cell, end=" ")
+                print()
         print()
 
     def convert_coord_to_index(self):
