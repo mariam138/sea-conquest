@@ -256,6 +256,7 @@ def start_game(username):
 
         if game.user_score == 5:
             print("We win!")
+            breakpoint()
             restart_or_exit_game()
             return False
 
