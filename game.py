@@ -2,7 +2,7 @@
 from board import Board
 from rich import print
 import time
-from computer import computer_score
+import computer
 
 # Sets scores to 0 initially
 # computer_score = 0
@@ -71,7 +71,7 @@ def print_blank_and_user_boards(blank_board, player_board, username):
                 print(cell, end = " ")
             print(" " * 8, end = " ")
             print(f"[bright_red]Computer[/bright_red]:"
-            f" {computer_score}/5", end = " ")
+            f" {computer.computer_score}/5", end = " ")
             print(" " * 7, end = " ")
             for cell in user_row:
                 print(cell, end = " ")
@@ -115,7 +115,7 @@ def player_shot(board, username, computer_coords, ships):
     All guesses will be stored into a list to prevent repeat
     guesses from being made.
     """
-
+    global computer_score
     global user_score
     # Makes the variable global so that it's updated each turn
     global used_guesses
@@ -133,7 +133,6 @@ def player_shot(board, username, computer_coords, ships):
             print("Let's try again, shall we?")
             continue
         elif user_guess in computer_coords:
-            breakpoint()
             print("Hit!")
             used_guesses.append(user_guess)
             # Iterates through each ship in the player_ships list

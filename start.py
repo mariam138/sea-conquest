@@ -189,7 +189,6 @@ def game_setup():
 
     time.sleep(2.5)
     clear_terminal()
-    breakpoint()
     start_game()
 
 
@@ -213,7 +212,7 @@ def start_game():
     # global _comp_score
 
     while True:
-        print(f"User: {game.user_score}, Computer: {game.computer_score}")
+        print(f"User: {game.user_score}, Computer: {computer.computer_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
@@ -221,7 +220,7 @@ def start_game():
         if game.user_score == 5:
             print("We win!")
             return False
-        elif game.computer_score == 5:
+        elif computer.computer_score == 5:
             print("The computer won :(")
             return False
 
