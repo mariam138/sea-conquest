@@ -220,20 +220,21 @@ def start_game(username):
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1.5)
 
+        if game.user_score == 5:
+            print("We win!")
+            restart_or_exit_game()
+            return False
+
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(1.5)
         clear_terminal()
 
-        if game.user_score == 5:
-            print("We win!")
-            return False
-        elif computer.computer_score == 5:
+        if computer.computer_score == 5:
             print("The computer won :(")
+            restart_or_exit_game()
             return False
-    restart_or_exit_game()
-
 
 
 def game_start_prompt():
@@ -289,14 +290,14 @@ def restart_or_exit_game(username):
             end_choice = input("Enter 'S' or 'Q':\n").lower
             if end_choice != "q" and end_choice != "s":
                 raise Exception
-            elif end_choice = "s":
+            elif end_choice == "s":
                 print(f"You've got heart, Commander {username}!"
                 f"Let's battle the [bright_red]Sea Guardians[/bright_red] again!")
                 time.sleep(2.5)
                 clear_terminal()
                 game_setup()
                 return False
-            elif end_choice = "q":
+            elif end_choice == "q":
                 print(f"You've worked hard, Commander {username}.")
                 print("Us [gold3] Ocean Voyagers [/gold3] will be", end = " ")
                 print("waiting for you!")
