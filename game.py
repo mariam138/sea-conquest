@@ -10,6 +10,7 @@ user_score = 0
 # Creates an empty list to store the previous guesses in
 used_guesses = []
 
+
 def print_blank_and_user_boards(blank_board, player_board, username):
     """
     Will print a blank board to represent the computer's ships,
@@ -29,13 +30,12 @@ def print_blank_and_user_boards(blank_board, player_board, username):
         width_between_boards - (len(username) + len(str(user_score) + "/5"))
     )
 
-
     print()
     # Labels each board so user knows which board is which
     print(f"{' ' * 10}"
-    f"[bright_red]Computer[/bright_red]"
-    f"{' ' * 41}"
-    f"[gold3]{username}[/gold3]")
+          f"[bright_red]Computer[/bright_red]"
+          f"{' ' * 41}"
+          f"[gold3]{username}[/gold3]")
     print()
     # A nested for loop to print one row of the blank board
     # Followed by one row of the user board side by side
@@ -46,72 +46,73 @@ def print_blank_and_user_boards(blank_board, player_board, username):
         if row == 0:
             print(" " * 4, end=" ")
             for cell in current_row:
-                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
-            print(" " * 30, end = " ")
+                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end=" ")
+            print(" " * 30, end=" ")
             for cell in user_row:
-                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end = " ")
-            print(" " * 4, end = " ")
+                print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end=" ")
+            print(" " * 4, end=" ")
             print()
         # Prints "Ships sunk:" between the boards
         elif row == 1:
-            print(" " * 4, end = " ")
+            print(" " * 4, end=" ")
             for cell in current_row:
-                print(cell, end = " ")
-            print(" " * 9, end = " ")
-            print("Ships sunk:", end = " ")
-            print(" " * 8, end = " ")
+                print(cell, end=" ")
+            print(" " * 9, end=" ")
+            print("Ships sunk:", end=" ")
+            print(" " * 8, end=" ")
             for cell in user_row:
-                print(cell, end = " ")
-            print(" " * 4, end = " ")
+                print(cell, end=" ")
+            print(" " * 4, end=" ")
             print()
         # Prints "Computer: 0/5" between the boards
         elif row == 2:
-            print(" " * 4, end = " ")
+            print(" " * 4, end=" ")
             for cell in current_row:
-                print(cell, end = " ")
-            print(" " * 8, end = " ")
+                print(cell, end=" ")
+            print(" " * 8, end=" ")
             print(f"[bright_red]Computer[/bright_red]:"
-            f" {computer.computer_score}/5", end = " ")
-            print(" " * 7, end = " ")
+                  f" {computer.computer_score}/5", end=" ")
+            print(" " * 7, end=" ")
             for cell in user_row:
-                print(cell, end = " ")
-            print(" " * 4, end = " ")
+                print(cell, end=" ")
+            print(" " * 4, end=" ")
             print()
         # Prints the username and the score between boards
         # and centres it depending on the length of the username entered
         elif row == 3:
-            print(" " * 4, end = " ")
+            print(" " * 4, end=" ")
             for cell in current_row:
-                print(cell, end = " ")
-            print(" " * ((total_width // 2) - 1), end = " ")
+                print(cell, end=" ")
+            print(" " * ((total_width // 2) - 1), end=" ")
             if total_width % 2 == 0:
                 print(f"[gold3]{username}[/gold3]:"
-                f" {user_score}/5", end = " " * ((total_width // 2)-1))
+                      f" {user_score}/5", end=" " * ((total_width // 2)-1))
             else:
                 print(f"[gold3]{username}[/gold3]:"
-                f" {user_score}/5", end = " " * (total_width // 2))
+                      f" {user_score}/5", end=" " * (total_width // 2))
             for cell in user_row:
-                print(cell, end = " ")
-            print(" " * 4, end = " ")
+                print(cell, end=" ")
+            print(" " * 4, end=" ")
             print()
         # Prints the rest of both boards as normal
         else:
-            print(" " * 4, end = " ")
+            print(" " * 4, end=" ")
             for cell in current_row:
-                print(cell, end = " ")
-            print(" " * 30, end = " ")
+                print(cell, end=" ")
+            print(" " * 30, end=" ")
             for cell in user_row:
-                print(cell, end = " ")
-            print(" " * 4, end = " ")
+                print(cell, end=" ")
+            print(" " * 4, end=" ")
             print()
     print()
+
 
 def player_shot(board, username, computer_coords, ships):
     """
     Player will enter a valid letter and number coordinate
     to make a guess on where the computer's ships are
     placed. If it's a miss, the computer's board will show
-    an "M". If it is a hit, the board will show an "X". 
+    an "M". If it is a hit, the board will show an "X".
     All guesses will be stored into a list to prevent repeat
     guesses from being made.
     """
@@ -125,7 +126,7 @@ def player_shot(board, username, computer_coords, ships):
         row_guess = board.validate_number_coord()
         user_guess = (row_guess, col_guess)
         if user_guess in used_guesses:
-            print("You've already guessed that, commander!", end = " ")
+            print("You've already guessed that, commander!", end=" ")
             print("Let's try again, shall we?")
             continue
         elif user_guess in computer_coords:
