@@ -43,8 +43,10 @@ player_board = []
 all_ship_coords = []
 all_comp_ship_coords = []
 
-user_score = 0
-computer_score = 0
+_user_score = game.user_score
+_comp_score = game.computer_score
+# user_score = 0
+# computer_score = 0
 
 def print_banner():
     """
@@ -162,21 +164,15 @@ def game_setup():
 
         # Gets value from each dict and stores it in ship_coords
         ship_coords = ship.ship_coords[ship.name]
-        # Prints each ships coords as a list of tuples
-        print(ship_coords)
         # Adds each of the ship_coords lists to all_ship_coords
         # This variable is then used in computer_shot()
-        # all_ship_coords.extend(ship_coords)
         all_ship_coords.extend(ship.ship_coords.values())
+        time.sleep(1)
 
     # Flattens out the above nested list into one list
     all_ship_coords = [
         coord for sublist in all_ship_coords for coord in sublist
         ]
-    print(all_ship_coords)
-
-        # if index == len(player_ships) - 1:
-        #     player_board.append(ships_board.board)
 
     # An empty list to store a ship's coordinates
     # global computer_ship_coords
@@ -192,6 +188,7 @@ def game_setup():
 
     time.sleep(2.5)
     clear_terminal()
+    breakpoint()
     start_game()
 
 
@@ -211,13 +208,16 @@ def start_game():
     global user_board
     user_board = player_board.board
 
+    global _user_score
+    global _comp_score
+
     while True:
-        # clear_terminal()
+        print(f"User: {user_score}, Computer: {computer_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
 
-        if user_score == 5:
+        if _user_score == 5:
             print("We win!")
             return False
 
@@ -226,7 +226,7 @@ def start_game():
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
 
-        if computer_score == 5:
+        if _comp_score == 5:
             print("The computer won :(")
             return False
 
