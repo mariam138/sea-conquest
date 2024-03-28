@@ -10,6 +10,7 @@ computer_score = 0
 # Creates empty list to store the computer's guesses
 used_comp_guesses = []
 
+
 def random_column_coord():
     """
     A dictionary will be again defined for each letter
@@ -134,6 +135,7 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
         all_comp_ship_coords.extend(comp_ship_coords)
     print(all_comp_ship_coords)
 
+
 def computer_shot(player_board, player_coords, player_ships):
     """
     Using random choices again, the computer will take a hit
@@ -172,5 +174,3 @@ def computer_shot(player_board, player_coords, player_ships):
             used_comp_guesses.append(comp_guess)
             player_board[comp_row_guess][comp_col_guess] = "M"
             return comp_col_guess, comp_row_guess
-
-
