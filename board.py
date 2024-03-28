@@ -1,6 +1,7 @@
 # To allow printing of certain words in colour to the terminal
 from rich import print
 
+
 class Board:
     """
     Takes in a number for the dimensions and will print a board out which
@@ -33,7 +34,7 @@ class Board:
         __getitem__ dunder method above. This method will be used when
         the computer takes its shot during gameplay to properly
         update the player_board with either an "M" for miss or
-        an "X" for a hit. 
+        an "X" for a hit.
         Code to add this dunder method is adapted from:
         https://www.tutorialspoint.com/getitem-and-setitem-in-python
         """
@@ -80,14 +81,15 @@ class Board:
         # A dictionary which contains the letter coordinate as its
         # corresponding number index
         letter_coord_dict = {
-            "A": 1, "B": 2, "C": 3, "D" : 4, "E": 5, "F": 6, "G": 7, "H": 8
+            "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8
         }
 
         #  Checks if vertical_coord is a key in the letter_coord_dict and if
         # so, "converts" it into its value
         while True:
             column_coord = (
-                input("Please enter a column coordinate as a letter:\n").upper()
+                input("Please enter a column coordinate"
+                      "as a letter:\n").upper()
             )
             if column_coord in letter_coord_dict:
                 col = letter_coord_dict[column_coord]

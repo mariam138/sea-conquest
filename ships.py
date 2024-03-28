@@ -66,7 +66,7 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
-                    # Creates an empty list to append the ships coordinates into
+                    # Creates empty list to append the ships coordinates into
                     ship_coords = []
                     for i in range(self.length):
                         if board.board[row][col + i] != "~":
