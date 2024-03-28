@@ -132,6 +132,7 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
             computer_place_ships(ship, random_board)
         )
         all_comp_ship_coords.extend(comp_ship_coords)
+    print(all_comp_ship_coords)
 
 def computer_shot(player_board, player_coords, player_ships):
     """

@@ -43,10 +43,6 @@ player_board = []
 all_ship_coords = []
 all_comp_ship_coords = []
 
-# _user_score = game.user_score
-# _comp_score = game.computer_score
-# user_score = 0
-# computer_score = 0
 
 def print_banner():
     """
@@ -84,7 +80,7 @@ def get_user_name():
         if validate_user_name(user_name):
             print()
             print(f"Welcome aboard [gold3]{user_name}[/gold3]!")
-            print("Are you ready to take the seas and win", end = " ")
+            print("Are you ready to take the seas and win", end=" ")
             print("the [dodger_blue3]Sea Conquest[/dodger_blue3]?\n")
             break
 
@@ -208,15 +204,18 @@ def restart_or_exit_game(username):
             if (end_choice != "q" and end_choice != "s"):
                 raise Exception
             elif end_choice == "s":
-                print(f"You've got heart, Commander {username}!"
-                f"Let's battle the [bright_red]Sea Guardians[/bright_red] again!")
+                print()
+                print(f"You've got heart, Commander {username}! "
+                      f"Let's battle the [bright_red]Sea Guardians"
+                      "[/bright_red] again!")
                 time.sleep(2.5)
                 clear_terminal()
                 game_setup()
                 return False
             elif end_choice == "q":
+                print()
                 print(f"You've worked hard, Commander {username}.")
-                print("Us [gold3] Ocean Voyagers [/gold3] will be", end = " ")
+                print("Us [gold3] Ocean Voyagers [/gold3] will be", end=" ")
                 print("waiting for you!")
                 time.sleep(2.5)
                 clear_terminal()
@@ -246,12 +245,14 @@ def start_game(username):
     # global _comp_score
 
     print(f"It's our turn first, commander {username}!")
-    print("Take your best shot for the", end = " ")
+    print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
     while True:
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
+        col_guess, row_guess = game.player_shot(
+            blank_board, user_name, all_comp_ship_coords, computer_ships
+            )
         time.sleep(1.5)
 
         if game.user_score == 5:
@@ -289,7 +290,7 @@ def game_start_prompt():
         try:
             start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
             if (start_choice != 'i' and start_choice != 's'
-             and start_choice != 'q'):
+               and start_choice != 'q'):
                 raise Exception
             elif start_choice == 'i':
                 clear_terminal()
@@ -301,7 +302,7 @@ def game_start_prompt():
                 return False
             elif start_choice == "q":
                 print()
-                print("Goodbye for now commander, us", end = " ")
+                print("Goodbye for now commander, us", end=" ")
                 print("[gold3]Ocean Voyagers[/gold3] are waiting for you!")
                 time.sleep(3)
                 clear_terminal()
