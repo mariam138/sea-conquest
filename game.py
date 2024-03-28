@@ -115,7 +115,7 @@ def player_shot(board, username, computer_coords, ships):
     guesses from being made.
     """
 
-    global user_score
+    # global user_score
     # Makes the variable global so that it's updated each turn
     global used_guesses
 
@@ -146,7 +146,7 @@ def player_shot(board, username, computer_coords, ships):
                         user_score += 1
                         print(f"You have sunk the Computer's {ship.name}")
                     break
-            return row_guess, col_guess
+            return row_guess, col_guess, user_score
             # continue
         elif user_guess not in computer_coords:
             print("Miss :(")

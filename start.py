@@ -208,11 +208,11 @@ def start_game():
     global user_board
     user_board = player_board.board
 
-    global _user_score
-    global _comp_score
+    # global _user_score
+    # global _comp_score
 
     while True:
-        print(f"User: {user_score}, Computer: {computer_score}")
+        print(f"User: {_user_score}, Computer: {_comp_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
@@ -267,7 +267,7 @@ def game_start_prompt():
                 main()
                 return False
         except Exception:
-            print('That is not a valid input. Please try again.')
+            print("That is not a valid input. Please try again.\n")
 
 
 def main():
