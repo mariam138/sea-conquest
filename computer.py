@@ -163,7 +163,7 @@ def computer_shot(player_board, player_coords, player_ships):
                 # if the guess is part of one of the ships coordinates
                 # the health will decrease by 1.
                 if comp_guess in ship.ship_coords[ship.name]:
-                    player_board[comp_row_guess][comp_col_guess] = "X"
+                    player_board[comp_row_guess][comp_col_guess] = "[red1]X"
                     ship.health -= 1
                     if ship.health == 0:
                         computer_score += 1
