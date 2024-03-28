@@ -189,10 +189,10 @@ def game_setup():
 
     time.sleep(2.5)
     clear_terminal()
-    start_game()
+    start_game(user_name)
 
 
-def start_game():
+def start_game(username):
     """
     If the user inputs "s" into the terminal, it will trigger this function to
     be called which will start the game. The board will be created, and the
@@ -211,11 +211,21 @@ def start_game():
     # global _user_score
     # global _comp_score
 
+    print(f"It's our turn first, commander {username}!")
+    print("Take your best shot for the", end = " ")
+    print("[gold3]Ocean Voyagers[/gold3]!\n")
+
     while True:
         print(f"User: {game.user_score}, Computer: {computer.computer_score}")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(blank_board, user_name, all_comp_ship_coords, computer_ships)
         time.sleep(1)
+
+        clear_terminal()
+        game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        computer.computer_shot(player_board, all_ship_coords, player_ships)
+        time.sleep(1)
+        clear_terminal()
 
         if game.user_score == 5:
             print("We win!")
@@ -223,11 +233,6 @@ def start_game():
         elif computer.computer_score == 5:
             print("The computer won :(")
             return False
-
-        clear_terminal()
-        game.print_blank_and_user_boards(blank_board, user_board, user_name)
-        computer.computer_shot(player_board, all_ship_coords, player_ships)
-        time.sleep(1)
 
 
 

@@ -120,10 +120,6 @@ def player_shot(board, username, computer_coords, ships):
     # Makes the variable global so that it's updated each turn
     global used_guesses
 
-    print(f"It's our turn first, commander {username}!")
-    print("Take your best shot for the", end = " ")
-    print("[gold3]Ocean Voyagers[/gold3]!\n")
-
     while True:
         col_guess = board.convert_coord_to_index()
         row_guess = board.validate_number_coord()
@@ -140,7 +136,6 @@ def player_shot(board, username, computer_coords, ships):
                 # if the guess is part of one of the ships coordinates
                 # the health will decrease by 1.
                 if user_guess in ship.ship_coords:
-                    print(ship.ship_coords)
                     board[row_guess][col_guess] = "X"
                     ship.health -= 1
                     if ship.health == 0:
