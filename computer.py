@@ -150,14 +150,10 @@ def computer_shot(player_board, player_coords, player_ships):
         comp_row_guess = random_row_coord(player_board)
         comp_guess = comp_row_guess, comp_col_guess
         if comp_guess in used_comp_guesses:
-            print("The computer has already guessed this")
-            time.sleep(1.5)
             continue
         elif comp_guess in player_coords:
             print("Computer Hit!")
             used_comp_guesses.append(comp_guess)
-            print("The guess has been stored")
-            time.sleep(1.5)
             # Iterates through each ship in the player_ships list
             for ship in player_ships:
                 # if the guess is part of one of the ships coordinates
@@ -170,12 +166,9 @@ def computer_shot(player_board, player_coords, player_ships):
                         print(f"The computer has sunk your {ship.name}")
                     break
             return comp_col_guess, comp_row_guess
-            # continue
         elif comp_guess not in player_coords:
             print("The computer missed")
             used_comp_guesses.append(comp_guess)
-            print("The guess has been stored")
-            time.sleep(1.5)
             player_board[comp_row_guess][comp_col_guess] = "M"
             return comp_col_guess, comp_row_guess
 

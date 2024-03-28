@@ -127,7 +127,6 @@ def player_shot(board, username, computer_coords, ships):
         col_guess = board.convert_coord_to_index()
         row_guess = board.validate_number_coord()
         user_guess = (row_guess, col_guess)
-        print(used_guesses)
         if user_guess in used_guesses:
             print("You've already guessed that, commander!", end = " ")
             print("Let's try again, shall we?")
