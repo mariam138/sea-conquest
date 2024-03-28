@@ -4,8 +4,11 @@ import random
 from board import Board
 # To create the different ships
 from ships import Ships
+import time
 
 computer_score = 0
+# Creates empty list to store the computer's guesses
+used_comp_guesses = []
 
 def random_column_coord():
     """
@@ -140,33 +143,41 @@ def computer_shot(player_board, player_coords, player_ships):
     """
 
     global computer_score
+    global used_comp_guesses
 
     comp_col_guess = random_column_coord()
     comp_row_guess = random_row_coord(player_board)
-
     comp_guess = comp_row_guess, comp_col_guess
-    print(comp_guess)
 
-    if comp_guess in player_coords:
-        print("Computer Hit!")
-        # Iterates through each ship in the player_ships list
-        for ship in player_ships:
-            print(ship.ship_coords)
-            # if the guess is part of one of the ships coordinates
-            # the health will decrease by 1.
-            if comp_guess in ship.ship_coords[ship.name]:
-                print(ship.ship_coords)
-                player_board[comp_row_guess][comp_col_guess] = "X"
-                ship.health -= 1
-                if ship.health == 0:
-                    computer_score += 1
-                    print(f"The computer has sunk your {ship.name}")
-                break
-        return comp_col_guess, comp_row_guess
-        # continue
-    elif comp_guess not in player_coords:
-        print("The computer missed")
-        player_board[comp_row_guess][comp_col_guess] = "M"
-        return comp_col_guess, comp_row_guess
+    while True:
+        if comp_guess in used_comp_guesses:
+            print("The computer has already guessed this")
+            time.sleep(1.5)
+            continue
+        elif comp_guess in player_coords:
+            print("Computer Hit!")
+            used_comp_guesses.append(comp_guess)
+            print("The guess has been stored")
+            time.sleep(1.5)
+            # Iterates through each ship in the player_ships list
+            for ship in player_ships:
+                # if the guess is part of one of the ships coordinates
+                # the health will decrease by 1.
+                if comp_guess in ship.ship_coords[ship.name]:
+                    player_board[comp_row_guess][comp_col_guess] = "X"
+                    ship.health -= 1
+                    if ship.health == 0:
+                        computer_score += 1
+                        print(f"The computer has sunk your {ship.name}")
+                    break
+            return comp_col_guess, comp_row_guess
+            # continue
+        elif comp_guess not in player_coords:
+            print("The computer missed")
+            used_comp_guesses.append(comp_guess)
+            print("The guess has been stored")
+            time.sleep(1.5)
+            player_board[comp_row_guess][comp_col_guess] = "M"
+            return comp_col_guess, comp_row_guess
 
 
