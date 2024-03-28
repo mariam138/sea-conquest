@@ -68,7 +68,6 @@ def computer_place_ships(ship, board):
 
         # Sets the ship_fits flag to True before validation
         ship_fits = True
-        # breakpoint()
         if direction == "h":
             # If the ship length extends the board horizontally, another
             # coordinate is generated randomly
@@ -159,7 +158,6 @@ def computer_shot(player_board, player_coords, player_ships):
                 print(ship.ship_coords)
                 player_board[comp_row_guess][comp_col_guess] = "X"
                 ship.health -= 1
-                breakpoint()
                 if ship.health == 0:
                     computer_score += 1
                     print(f"The computer has sunk your {ship.name}")
