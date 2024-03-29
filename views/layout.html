@@ -14,15 +14,26 @@
             font-family: Arial;
             /* Custom styling so that terminal is centered vertically
             and horizontally */
-            display: flex;
+            /* display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 8%;
+            margin-top: 8%; */
         }
 
         /* Add custom background image to page */
         #background-image {
-            background: url(../assets/images/sea-conq-bg-img.webp) #1d4269 no-repeat top left / cover
+            background: url(../assets/images/sea-conq-bg-img.webp) #1d4269 no-repeat top left / cover;
+            /* Centres the terminal and ensures the bg div takes up the entire background */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
         }
 
         /**
