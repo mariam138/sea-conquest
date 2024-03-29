@@ -40,7 +40,7 @@ def random_row_coord(board):
     row. This method will be used both for placing the computers'
     ships and for guessing coordinates in game
     """
-    computer_row = random.randrange(1, board.dimensions)
+    computer_row = random.randrange(1, board.dimensions + 1)
     return computer_row
 
 
