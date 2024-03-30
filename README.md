@@ -137,3 +137,7 @@ The project was deployed to Heroku using the following steps:
 - The code to create the dunder method "__getitem__" to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
 - The background image used behind the terminal is from [FreePik](https://www.freepik.com/free-ai-image/marine-landscape-cartoon-style-with-ship_137490083.htm)
 
+## Acknowledgements
+- Thank you to John from CI Tutoring who suggested I use an external link for the background image
+- Thank you to my mentor Matt Bodden for his support and advice throughout this project.
+- Thank you to my boyfriend Samu for running and testing this game for me to give user feedback
