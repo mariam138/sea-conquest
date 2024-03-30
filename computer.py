@@ -157,6 +157,7 @@ def computer_shot(player_board, player_coords, player_ships):
             continue
         elif comp_guess in player_coords:
             print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
+            print()
             used_comp_guesses.append(comp_guess)
             # Iterates through each ship in the player_ships list
             for ship in player_ships:

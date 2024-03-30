@@ -130,7 +130,7 @@ def player_shot(board, username, computer_coords, ships):
             print("Let's try again, shall we?")
             continue
         elif user_guess in computer_coords:
-            print("Hit!")
+            print("Nice shot, Commander!")
             used_guesses.append(user_guess)
             # Iterates through each ship in the player_ships list
             for ship in ships:
