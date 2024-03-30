@@ -52,7 +52,7 @@ class Ships:
         """
         print("You will now place your ships.")
         while True:
-            print(f"Placing [dodger_blue3]{self.name}....")
+            print(f"Placing [dodger_blue3]{self.name}....\n")
             print("Please enter your starting co-ordinate")
             col = board.convert_coord_to_index()
             row = board.validate_number_coord()

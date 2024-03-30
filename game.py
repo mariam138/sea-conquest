@@ -152,3 +152,5 @@ def player_shot(board, username, computer_coords, ships):
             used_guesses.append(user_guess)
             board[row_guess][col_guess] = "[yellow2]M"
             return row_guess, col_guess
+        # elif col_guess == "Q":
+        #     print("The user wants to leave")

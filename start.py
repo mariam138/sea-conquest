@@ -57,7 +57,7 @@ def print_banner():
          \___ \   _ \  _` |  |      _ \  __ \   _` | |   |  _ \  __| __| 
                |  __/ (   |  |     (   | |   | (   | |   |  __/\__ \ |   
          _____/ \___|\__,_| \____|\___/ _|  _|\__, |\__,_|\___|____/\__| 
-                                          _|                     
+                                                  _|                     
 
   """)
 
@@ -141,7 +141,7 @@ def game_setup():
     # global player_ships
     # # Place each ship instance into a list for looping
     # global computer_ships
-    global ships
+    global player_ships
 
     # List to store all ship coords after placing all ships onto board
     global all_ship_coords

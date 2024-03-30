@@ -1,5 +1,6 @@
 # To allow printing of certain words in colour to the terminal
 from rich import print
+import time
 
 
 class Board:
@@ -92,6 +93,7 @@ class Board:
         #  Checks if vertical_coord is a key in the letter_coord_dict and if
         # so, "converts" it into its value
         while True:
+            print("To quit the game, enter 'Q'.")
             column_coord = (
                 input("Please enter a column coordinate"
                       " as a letter:\n").upper()
@@ -100,6 +102,11 @@ class Board:
                 col = letter_coord_dict[column_coord]
                 return col
                 break
+            elif column_coord == "Q":
+                print("Are you leaving us Commander?")
+                print("We'll be waiting for you.")
+                time.sleep(2)
+                exit()
             else:
                 print("That is not a valid coordinate. Please try again.")
 
