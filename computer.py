@@ -168,8 +168,10 @@ def computer_shot(player_board, player_coords, player_ships):
                     ship.health -= 1
                     if ship.health == 0:
                         computer_score += 1
+                        time.sleep(1.5)
                         print(f"Rats! The [bright_red]Sea Guardians"
-                              f"[/bright_red] have sunk our {ship.name}...")
+                              f"[/bright_red] have sunk our [{ship.colour}]"
+                              f"{ship.name}[/{ship.colour}]...")
                     break
             return comp_col_guess, comp_row_guess
         elif comp_guess not in player_coords:

@@ -142,9 +142,10 @@ def player_shot(board, username, computer_coords, ships):
                     ship.health -= 1
                     if ship.health == 0:
                         user_score += 1
+                        time.sleep(1.5)
                         print(f"Excellent work, Commander! We sunk the"
                               f" [bright_red]Sea Guardian's[/bright_red]"
-                              f" {ship.name}!")
+                              f" [{ship.colour}]{ship.name}[/{ship.colour}]!")
                     break
             return row_guess, col_guess
         elif user_guess not in computer_coords:
