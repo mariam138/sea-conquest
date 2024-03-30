@@ -175,5 +175,5 @@ def computer_shot(player_board, player_coords, player_ships):
         elif comp_guess not in player_coords:
             print("Whew! That was a close one, but they missed!")
             used_comp_guesses.append(comp_guess)
-            player_board[comp_row_guess][comp_col_guess] = "[yellow2]M"
+            player_board[comp_row_guess][comp_col_guess] = "[orange3]M"
             return comp_col_guess, comp_row_guess
