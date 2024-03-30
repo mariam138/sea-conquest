@@ -172,16 +172,18 @@ def computer_shot(player_board, player_coords, player_ships):
                 ]
 
                 random.shuffle(target_hits)
+                print(target_hits)
                 # Let the computer guess be a random choice form the target hits
                 for new_comp_guess in target_hits:
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
-                    if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) or (
+                    if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) and (
                     0 < new_comp_guess[1] <= (player_board.dimensions + 1)):
                         comp_guess = new_comp_guess
+                        print(comp_guess)
                         break
-                else:
-                    continue
+                    else:
+                        continue
             else:
                 break
         if comp_guess in used_comp_guesses:
