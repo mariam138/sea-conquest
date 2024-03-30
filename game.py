@@ -150,6 +150,6 @@ def player_shot(board, username, computer_coords, ships):
             print("Argh, we missed... We'll"
                   " get them in the next shot, Commander.")
             used_guesses.append(user_guess)
-            board[row_guess][col_guess] = "[dark_orange3]M"
+            board[row_guess][col_guess] = "[orange_red1]M"
             return row_guess, col_guess
 
