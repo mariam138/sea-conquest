@@ -193,7 +193,8 @@ def restart_or_exit_game(username):
     """
 
     while True:
-        print(f"Would you like to start another game Commander {username}?")
+        print(f"Would you like to start another game Commander"
+              f" [gold3]{username}[/gold3]?")
         print("Enter 'S' to start a new game, or enter 'Q' to exit.")
         try:
             end_choice = input("Enter 'S' or 'Q':\n").lower()
