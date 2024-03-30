@@ -105,28 +105,30 @@ def display_instructions():
     """
     If the user decides to read the instructions before playing, the following
     text is shown, explaining the rules of the game and giving the user
-    a background story.Once the instructions are displayed, the user
-    will be given the choice to continue
-    to game play, or exit back to the starting page.
+    a background story. Once the instructions are displayed, the user
+    will be given the choice to continue to game play,
+    or exit back to the starting page.
     """
     print("[purple4]Ocean Voyagers vs Sea Guardians")
-    print("Tensions between the rival [bright_red]Sea Guardians[/bright_red]")
-    print(" and the [gold3]Ocean Voyagers[/gold3](that's us!) have reached")
-    print(" a boiling point. We have to take back what is our rightful sea!")
-    print(" As the commander of our naval forces, the ")
-    print("[gold3]Ocean Voyagers[/gold3] are putting their trust in you ")
-    print("to defeat the [bright_red]Sea Guardian's[/bright_red] ships.")
+    print("Tensions between the rival [bright_red]Sea Guardians[/bright_red]"
+          " and the [gold3]Ocean Voyagers[/gold3](that's us!)")
+    print("have reached a boiling point. We have to take back what is our rightful sea!")
+    print("As the commander of our naval forces, the "
+          "[gold3]Ocean Voyagers[/gold3] are putting")
+    print("their trust in you to defeat the [bright_red]Sea Guardians[/bright_red].")
     print("Get ready to lead the [gold3]Ocean Voyagers[/gold3] to victory!\n")
     print("[purple4]Instructions")
-    print("Both you and the enemy will have a grid where your ships shall be")
-    print("placed. The objective of the game is to sink all of the")
-    print(" [bright_red]Sea Guardian's[/bright_red] ships before they sink")
-    print(" ours. We are not able to see the enemy ships, nor will they see ")
-    print("ours. Starting with you, you will take the first turn in trying to")
-    print(" sink the enemy's ships. The ")
-    print("[bright_red]Sea Guardians[/bright_red] will shout 'Hit!' if we")
-    print(" hit one of their fleet, or 'Miss' if not. Once all the points of ")
-    print("a ship have been hit, it will sink.")
+    print("Both you and the enemy will have a grid where your ships shall be "
+          "placed.") 
+    print("The objective of the game is to sink all of the"
+          " [bright_red]Sea Guardian's[/bright_red]")
+    print("ships before they sink ours. We are not able to see the enemy ships,")
+    print("nor will they see ours. Starting with you, you will take the first turn")
+    print("in trying to sink the enemy's ships. The "
+          "[bright_red]Sea Guardians[/bright_red]") 
+    print("will shout if we have [red3]hit[/red3] one of their fleet"
+          " or if we have [yellow1]missed[/yellow1].")
+    print("Once all the coordinates of a ship have been hit, it will [red3]sink[/red3].")
     print("To win the game, we must sink the enemy's ships first.")
     print("Are you ready for the challenge, commander?\n")
 
