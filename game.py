@@ -4,8 +4,7 @@ from rich import print
 import time
 import computer
 
-# Sets scores to 0 initially
-# computer_score = 0
+
 user_score = 0
 # Creates an empty list to store the previous guesses in
 used_guesses = []
@@ -127,7 +126,7 @@ def player_shot(board, username, computer_coords, ships):
         user_guess = (row_guess, col_guess)
         if user_guess in used_guesses:
             print("You've already guessed that, commander!", end=" ")
-            print("Let's try again, shall we?")
+            print("Let's try again, shall we?\n")
             continue
         elif user_guess in computer_coords:
             print("Nice shot, Commander!")
@@ -137,16 +136,19 @@ def player_shot(board, username, computer_coords, ships):
                 # if the guess is part of one of the ships coordinates
                 # the health will decrease by 1.
                 if user_guess in ship.ship_coords:
+                    print(f"You got their {ship.name}!")
                     board[row_guess][col_guess] = f"[{ship.colour}]X"
                     ship.health -= 1
                     if ship.health == 0:
                         user_score += 1
-                        print(f"You have sunk the Computer's {ship.name}")
+                        print(f"Excellent work, Commander! We sunk the"
+                              f" [bright_red]Sea Guardian's[/bright_red]"
+                              f"{ship.name}!")
                     break
             return row_guess, col_guess
-            # continue
         elif user_guess not in computer_coords:
-            print("Miss :(")
+            print("Argh, we missed... We'll"
+                  " get them in the next shot, Commander.")
             used_guesses.append(user_guess)
             board[row_guess][col_guess] = "[yellow2]M"
             return row_guess, col_guess
