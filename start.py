@@ -240,11 +240,12 @@ def start_game(username):
     global user_board
     user_board = player_board.board
 
-    print(f"It's our turn first, commander {username}!")
+    print(f"It's our turn first, Commander {username}!")
     print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
     while True:
+        print(f"It's our turn again, Commander {username}!")
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(
             blank_board, user_name, all_comp_ship_coords, computer_ships
@@ -266,6 +267,8 @@ def start_game(username):
 
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
+        print("Ugh. It's the [bright_red]Sea Guardians'[/bright_red] turn...")
+        time.sleep(1)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
         clear_terminal()
