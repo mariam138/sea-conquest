@@ -237,9 +237,6 @@ def start_game(username):
     global user_board
     user_board = player_board.board
 
-    # global _user_score
-    # global _comp_score
-
     print(f"It's our turn first, commander {username}!")
     print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
@@ -252,8 +249,14 @@ def start_game(username):
         time.sleep(1.5)
 
         if game.user_score == 5:
-            print("We win!")
-            # breakpoint()
+            clear_terminal()
+            print(r"""[bright_green]
+                __   _____  _   _  __        _____ _   _ _ 
+                \ \ / / _ \| | | | \ \      / /_ _| \ | | |
+                 \ V / | | | | | |  \ \ /\ / / | ||  \| | |
+                  | || |_| | |_| |   \ V  V /  | || |\  |_|
+                  |_| \___/ \___/     \_/\_/  |___|_| \_(_)
+            """)
             restart_or_exit_game(user_name)
             return False
 
