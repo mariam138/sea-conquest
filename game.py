@@ -136,14 +136,14 @@ def player_shot(board, username, computer_coords, ships):
                 # if the guess is part of one of the ships coordinates
                 # the health will decrease by 1.
                 if user_guess in ship.ship_coords:
-                    print(f"You got their {ship.name}!")
+                    print(f"You got their {ship.name}!\n")
                     board[row_guess][col_guess] = f"[{ship.colour}]X"
                     ship.health -= 1
                     if ship.health == 0:
                         user_score += 1
                         print(f"Excellent work, Commander! We sunk the"
                               f" [bright_red]Sea Guardian's[/bright_red]"
-                              f"{ship.name}!")
+                              f" {ship.name}!")
                     break
             return row_guess, col_guess
         elif user_guess not in computer_coords:
