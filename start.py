@@ -17,13 +17,13 @@ import game
 player_battleship = Ships("Battleship", 4, "bright_magenta", 4)
 player_destroyer_one = Ships("Destroyer 1", 3, "green4", 3)
 player_destroyer_two = Ships("Destroyer 2", 3, "dark_olive_green1", 3)
-player_submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+player_submarine_one = Ships("Submarine 1", 2, "blue3", 2)
 player_submarine_two = Ships("Submarine 2", 2, "purple4", 2)
 
 comp_battleship = Ships("Battleship", 4, "bright_magenta", 4)
 comp_destroyer_one = Ships("Destroyer 1", 3, "green4", 3)
 comp_destroyer_two = Ships("Destroyer 2", 3, "dark_olive_green1", 3)
-comp_submarine_one = Ships("Submarine 1", 2, "dodger_blue1", 2)
+comp_submarine_one = Ships("Submarine 1", 2, "blue3", 2)
 comp_submarine_two = Ships("Submarine 2", 2, "purple4", 2)
 
 # Player and computer have same ships but having separate
