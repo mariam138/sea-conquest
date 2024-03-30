@@ -251,6 +251,7 @@ def start_game(username):
 
         if game.user_score == 5:
             clear_terminal()
+            # Banner generated on ascii-art-generator.org
             print(r"""[bright_green]
                 __   _____  _   _  __        _____ _   _ _ 
                 \ \ / / _ \| | | | \ \      / /_ _| \ | | |
@@ -268,7 +269,15 @@ def start_game(username):
         clear_terminal()
 
         if computer.computer_score == 5:
-            print("The computer won :(")
+            clear_terminal
+            print(r"""[red3]
+            __   __            _                      
+            \ \ / /__  _   _  | | ___  ___  ___       
+             \ V / _ \| | | | | |/ _ \/ __|/ _ \      
+              | | (_) | |_| | | | (_) \__ \  __/_ _ _ 
+              |_|\___/ \__,_| |_|\___/|___/\___(_|_|_)
+
+            """)
             restart_or_exit_game(user_name)
             return False
 
