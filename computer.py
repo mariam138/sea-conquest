@@ -156,18 +156,20 @@ def computer_shot(player_board, player_coords, player_ships):
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
-            print("Argh! The [bright_red]Sea Guardians[/bright_red] hit us!")
+            print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
             used_comp_guesses.append(comp_guess)
             # Iterates through each ship in the player_ships list
             for ship in player_ships:
                 # if the guess is part of one of the ships coordinates
                 # the health will decrease by 1.
                 if comp_guess in ship.ship_coords[ship.name]:
+                    print(f"They hit our {ship.name}!")
                     player_board[comp_row_guess][comp_col_guess] = "[red1]X"
                     ship.health -= 1
                     if ship.health == 0:
                         computer_score += 1
-                        print(f"The computer has sunk your {ship.name}")
+                        print(f"Rats! The [bright_red]Sea Guardians"
+                              f"[/bright_red] have sunk our {ship.name}...")
                     break
             return comp_col_guess, comp_row_guess
         elif comp_guess not in player_coords:
