@@ -247,7 +247,7 @@ def start_game(username):
         col_guess, row_guess = game.player_shot(
             blank_board, user_name, all_comp_ship_coords, computer_ships
             )
-        time.sleep(1.5)
+        time.sleep(2.5)
 
         if game.user_score == 5:
             clear_terminal()
@@ -264,7 +264,7 @@ def start_game(username):
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         computer.computer_shot(player_board, all_ship_coords, player_ships)
-        time.sleep(1.5)
+        time.sleep(2.5)
         clear_terminal()
 
         if computer.computer_score == 5:
