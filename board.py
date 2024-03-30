@@ -1,5 +1,6 @@
 # To allow printing of certain words in colour to the terminal
 from rich import print
+# To allow delays before executing certain code
 import time
 
 
@@ -92,6 +93,8 @@ class Board:
 
         #  Checks if vertical_coord is a key in the letter_coord_dict and if
         # so, "converts" it into its value
+        # Also allows the user to quit the game at any desired point
+        # Whenever prompted to enter in a letter coordinate.
         while True:
             print("To quit the game, enter 'Q'.")
             column_coord = (
