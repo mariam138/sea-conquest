@@ -11,6 +11,8 @@ computer_score = 0
 # Creates empty list to store the computer's guesses
 used_comp_guesses = []
 
+previous_hit = None
+
 
 def random_column_coord():
     """
@@ -144,36 +146,44 @@ def computer_shot(player_board, player_coords, player_ships):
     All random guesses will then be stored into a list to
     prevent repeat guesses.
     """
-    breakpoint()
     global computer_score
     global used_comp_guesses
     # Initialises previous_hit to None
-    previous_hit = None
+    global previous_hit
+    # previous_hit = None
  
 
     while True:
+        # Initialises the column and row guesses
+        comp_col_guess = random_column_coord()
+        comp_row_guess = random_row_coord(player_board)
+        comp_guess = comp_row_guess, comp_col_guess
         # Create empty list to store target hits
         target_hits = []
+        breakpoint()
         while True:
             if previous_hit:
                 # Create the target hits based on the previous hit
                 target_hits = [
-                    (comp_row_guess + 1, comp_col_guess), (comp_row_guess - 1, comp_col_guess),
-                    (comp_row_guess, comp_col_guess + 1), (comp_row_guess, comp_col_guess - 1)
+                    (previous_hit[0] + 1, previous_hit[1]),
+                    (previous_hit[0] - 1, previous_hit[1]),
+                    (previous_hit[0], previous_hit[1] + 1),
+                    (previous_hit[0], previous_hit[1] - 1)
                 ]
+
+                random.shuffle(target_hits)
                 # Let the computer guess be a random choice form the target hits
-                new_comp_guess = random.choice(target_hits)
+                for new_comp_guess in target_hits:
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
-                if comp_guess > (player_board.dimensions + 1):
+                    if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) or (
+                    0 < new_comp_guess[1] <= (player_board.dimensions + 1)):
+                        comp_guess = new_comp_guess
+                        break
+                else:
                     continue
-                elif new_comp_guess <= (player_board.dimensions + 1):
-                    break
             else:
-                comp_col_guess = random_column_coord()
-                comp_row_guess = random_row_coord(player_board)
-                comp_guess = comp_row_guess, comp_col_guess
-                return False
+                break
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
@@ -203,4 +213,4 @@ def computer_shot(player_board, player_coords, player_ships):
             print("Whew! That was a close one, but they missed!")
             used_comp_guesses.append(comp_guess)
             player_board[comp_row_guess][comp_col_guess] = "[grey46]M"
-            return comp_col_guess, comp_row_guess
+            return comp_row_guess, comp_col_guess
