@@ -103,10 +103,20 @@ class Board:
                 return col
                 break
             elif column_coord == "Q":
-                print("Are you leaving us Commander?")
-                print("We'll be waiting for you.")
-                time.sleep(2)
-                exit()
+                while True:
+                    print("Are you leaving us Commander?")
+                    stay_leave = input("Type 'Y' to quit, or 'N' to stay:\n").upper()
+                    if stay_leave == 'Y':
+                        print("We'll be waiting for you.")
+                        time.sleep(2)
+                        exit()
+                    elif stay_leave == 'N':
+                        print("We knew you weren't a quitter! Now, where were we...\n")
+                        time.sleep(2)
+                        break
+                    elif (stay_leave != 'Y') and (stay_leave != 'N'):
+                        print("I didn't quite catch that Commander! Let's try that again.")
+                        continue
             else:
                 print("That is not a valid coordinate. Please try again.")
 
