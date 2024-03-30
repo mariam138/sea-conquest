@@ -214,7 +214,7 @@ def restart_or_exit_game(username):
             elif end_choice == "q":
                 print()
                 print(f"You've worked hard, Commander {username}.")
-                print("Us [gold3] Ocean Voyagers [/gold3] will be", end=" ")
+                print("Us [gold3]Ocean Voyagers[/gold3] will be", end=" ")
                 print("waiting for you!")
                 time.sleep(2.5)
                 clear_terminal()
