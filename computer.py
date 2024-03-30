@@ -144,7 +144,7 @@ def computer_shot(player_board, player_coords, player_ships):
     All random guesses will then be stored into a list to
     prevent repeat guesses.
     """
-
+    breakpoint()
     global computer_score
     global used_comp_guesses
     # Initialises previous_hit to None
@@ -168,11 +168,12 @@ def computer_shot(player_board, player_coords, player_ships):
                 if comp_guess > (player_board.dimensions + 1):
                     continue
                 elif new_comp_guess <= (player_board.dimensions + 1):
-                    pass
+                    break
             else:
                 comp_col_guess = random_column_coord()
                 comp_row_guess = random_row_coord(player_board)
                 comp_guess = comp_row_guess, comp_col_guess
+                return False
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
