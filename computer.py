@@ -147,11 +147,32 @@ def computer_shot(player_board, player_coords, player_ships):
 
     global computer_score
     global used_comp_guesses
+    # Initialises previous_hit to None
+    previous_hit = None
+ 
 
     while True:
-        comp_col_guess = random_column_coord()
-        comp_row_guess = random_row_coord(player_board)
-        comp_guess = comp_row_guess, comp_col_guess
+        # Create empty list to store target hits
+        target_hits = []
+        while True:
+            if previous_hit:
+                # Create the target hits based on the previous hit
+                target_hits = [
+                    (comp_row_guess + 1, comp_col_guess), (comp_row_guess - 1, comp_col_guess),
+                    (comp_row_guess, comp_col_guess + 1), (comp_row_guess, comp_col_guess - 1)
+                ]
+                # Let the computer guess be a random choice form the target hits
+                new_comp_guess = random.choice(target_hits)
+                # If the comp_guess is larger than the board dimensions
+                # ie doesnt fit, reguess again
+                if comp_guess > (player_board.dimensions + 1):
+                    continue
+                elif new_comp_guess <= (player_board.dimensions + 1):
+                    pass
+            else:
+                comp_col_guess = random_column_coord()
+                comp_row_guess = random_row_coord(player_board)
+                comp_guess = comp_row_guess, comp_col_guess
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
@@ -166,6 +187,9 @@ def computer_shot(player_board, player_coords, player_ships):
                           f"{ship.name}[/{ship.colour}]!\n")
                     player_board[comp_row_guess][comp_col_guess] = "[red1]X"
                     ship.health -= 1
+                    # If the computer hits one of the ship's coordinates
+                    # It will append it to this empty list
+                    previous_hit = comp_guess
                     if ship.health == 0:
                         computer_score += 1
                         time.sleep(1.5)
