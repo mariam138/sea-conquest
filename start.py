@@ -244,8 +244,17 @@ def start_game(username):
     print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
+    # Sets var to true so that the print statement below
+    # only prints after the first loop
+    first_iteration = True
+
     while True:
-        print(f"It's our turn again, Commander {username}!")
+        # Will only print this line after the first loop
+        if not first_iteration:
+            print(f"It's our turn again, Commander {username}!")
+        else:
+            first_iteration = False
+        
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         col_guess, row_guess = game.player_shot(
             blank_board, user_name, all_comp_ship_coords, computer_ships
@@ -254,7 +263,8 @@ def start_game(username):
 
         if game.user_score == 5:
             clear_terminal()
-            # Banner generated on ascii-art-generator.org
+            # Banner generated from
+            # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=
             print(r"""[bright_green]
                               __   _____  _   _  __        _____ _   _ _ 
                               \ \ / / _ \| | | | \ \      / /_ _| \ | | |
