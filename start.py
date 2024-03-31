@@ -278,7 +278,7 @@ def start_game(username):
         clear_terminal()
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         print("It's the [bright_red]Sea Guardians'[/bright_red] turn...")
-        time.sleep(1)
+        time.sleep(2)
         # breakpoint()
         computer.computer_shot(player_board, all_ship_coords, player_ships)
         time.sleep(2)
