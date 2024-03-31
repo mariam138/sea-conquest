@@ -146,13 +146,13 @@ def generate_target_hits(previous_hit):
     to choose a random choice from the 4 target hits.
     This will then become the computer's next target.
     """
-        row, col = previous_hit
-        return [
-                    (row + 1, col),
-                    (row - 1, col),
-                    (row, col + 1),
-                    (row, col - 1)
-                ]
+    row, col = previous_hit
+    return [
+                (row + 1, col),
+                (row - 1, col),
+                (row, col + 1),
+                (row, col - 1)
+            ]
 
 
 def computer_shot(player_board, player_coords, player_ships):
@@ -171,14 +171,17 @@ def computer_shot(player_board, player_coords, player_ships):
  
 
     while True:
+        breakpoint()
         # Initialises the column and row guesses
         comp_col_guess = random_column_coord()
         comp_row_guess = random_row_coord(player_board)
         comp_guess = comp_row_guess, comp_col_guess
         # Create empty list to store target hits
         target_hits = []
+
+        continue_loop = True
         # breakpoint()
-        while True:
+        while continue_loop:
             if previous_hit:
                 # Create the target hits based on the previous hit
                 target_hits = generate_target_hits(previous_hit)
@@ -190,6 +193,7 @@ def computer_shot(player_board, player_coords, player_ships):
                 (player_board.dimensions + 1) >= new_comp_guess[1] > 0) and (
                     new_comp_guess not in used_comp_guesses):
                     comp_guess = new_comp_guess
+                    continue_loop = False
                 #     if new_comp_guess in used_comp_guesses:
                 #         continue
                 #     elif new_comp_guess in player_coords:
@@ -224,8 +228,8 @@ def computer_shot(player_board, player_coords, player_ships):
                 #         return new_comp_guess
                 else:
                     continue
-            # elif not previous_hit:
-            #     break
+            elif not previous_hit:
+                break
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
