@@ -171,21 +171,27 @@ def computer_shot(player_board, player_coords, player_ships):
                     (previous_hit[0], previous_hit[1] - 1)
                 ]
 
-                random.shuffle(target_hits)
-                print(target_hits)
+                new_comp_guess = random.choice(target_hits)
                 # Let the computer guess be a random choice form the target hits
-                for new_comp_guess in target_hits:
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
-                    if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) and (
-                    0 < new_comp_guess[1] <= (player_board.dimensions + 1)):
-                        comp_guess = new_comp_guess
-                        print(comp_guess)
-                        break
-                    else:
-                        continue
-            else:
-                break
+                if ((player_board.dimensions + 1) >= new_comp_guess[0] > 0) and
+                ((player_board.dimensions + 1) >= new_comp_guess[1] > 0):
+                    comp_guess = new_comp_guess
+                    print(comp_guess)
+                    return False
+                else:
+                    continue
+
+                    # if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) and (
+                    # 0 < new_comp_guess[1] <= (player_board.dimensions + 1)):
+                    #     comp_guess = new_comp_guess
+                    #     print(comp_guess)
+                    #     break
+                    # else:
+                    #     break
+            elif not previous_hit:
+                return False
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
@@ -216,3 +222,4 @@ def computer_shot(player_board, player_coords, player_ships):
             used_comp_guesses.append(comp_guess)
             player_board[comp_row_guess][comp_col_guess] = "[grey46]M"
             return comp_row_guess, comp_col_guess
+
