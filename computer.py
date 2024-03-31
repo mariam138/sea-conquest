@@ -160,7 +160,7 @@ def computer_shot(player_board, player_coords, player_ships):
         comp_guess = comp_row_guess, comp_col_guess
         # Create empty list to store target hits
         target_hits = []
-        breakpoint()
+        # breakpoint()
         while True:
             if previous_hit:
                 # Create the target hits based on the previous hit
@@ -198,6 +198,7 @@ def computer_shot(player_board, player_coords, player_ships):
                                 if ship.health == 0:
                                     computer_score += 1
                                     time.sleep(1.5)
+                                    previous_hit = None
                                     print(f"Rats! The [bright_red]Sea Guardians"
                                         f"[/bright_red] have sunk our [{ship.colour}]"
                                         f"{ship.name}[/{ship.colour}]...")
@@ -206,19 +207,11 @@ def computer_shot(player_board, player_coords, player_ships):
                     elif new_comp_guess not in player_coords:
                         print("Whew! That was a close one, but they missed!")
                         used_comp_guesses.append(new_comp_guess)
+                        previous_hit = None
                         player_board[new_comp_guess[0]][new_comp_guess[1]] = "[grey46]M"
                         return new_comp_guess
-
                 else:
                     continue
-
-                    # if (0 < new_comp_guess[0] <= (player_board.dimensions + 1)) and (
-                    # 0 < new_comp_guess[1] <= (player_board.dimensions + 1)):
-                    #     comp_guess = new_comp_guess
-                    #     print(comp_guess)
-                    #     break
-                    # else:
-                    #     break
             elif not previous_hit:
                 break
         if comp_guess in used_comp_guesses:
