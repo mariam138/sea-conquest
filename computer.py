@@ -179,8 +179,6 @@ def computer_shot(player_board, player_coords, player_ships):
         # Create empty list to store target hits
         target_hits = []
 
-        # continue_loop = True
-        # breakpoint()
         while True:
             if previous_hit:
                 breakpoint()
@@ -193,11 +191,6 @@ def computer_shot(player_board, player_coords, player_ships):
                 if ((player_board.dimensions) >= new_comp_guess[0] > 0) and (
                 (player_board.dimensions) >= new_comp_guess[1] > 0) and (
                     new_comp_guess not in used_comp_guesses):
-                    print(new_comp_guess)
-                    # comp_guess = new_comp_guess
-                #     if new_comp_guess in used_comp_guesses:
-                #         continue
-                #    elif new_comp_guess in player_coords:
                     if new_comp_guess in player_coords:
                         print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
                         used_comp_guesses.append(new_comp_guess)
