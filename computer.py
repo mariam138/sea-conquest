@@ -193,7 +193,6 @@ def computer_shot(player_board, player_coords, player_ships):
                 (player_board.dimensions + 1) >= new_comp_guess[1] > 0) and (
                     new_comp_guess not in used_comp_guesses):
                     # comp_guess = new_comp_guess
-                    continue_loop = False
                 #     if new_comp_guess in used_comp_guesses:
                 #         continue
                 #     elif new_comp_guess in player_coords:
