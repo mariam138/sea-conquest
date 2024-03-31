@@ -175,11 +175,11 @@ def computer_shot(player_board, player_coords, player_ships):
                 # Let the computer guess be a random choice form the target hits
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
-                if ((player_board.dimensions + 1) >= new_comp_guess[0] > 0) and
-                ((player_board.dimensions + 1) >= new_comp_guess[1] > 0):
+                if ((player_board.dimensions + 1) >= new_comp_guess[0] > 0) and (
+                (player_board.dimensions + 1) >= new_comp_guess[1] > 0):
                     comp_guess = new_comp_guess
                     print(comp_guess)
-                    return False
+                    break
                 else:
                     continue
 
@@ -191,7 +191,7 @@ def computer_shot(player_board, player_coords, player_ships):
                     # else:
                     #     break
             elif not previous_hit:
-                return False
+                break
         if comp_guess in used_comp_guesses:
             continue
         elif comp_guess in player_coords:
