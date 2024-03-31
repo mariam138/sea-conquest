@@ -138,6 +138,24 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
         all_comp_ship_coords.extend(comp_ship_coords)
 
 
+def generate_target_hits(previous_hit):
+    """
+    If the previous guess from the computer was a hit,
+    then 4 target hits that surround the hit will be generated
+    from the previous hit. Then this function will be called
+    to choose a random choice from the 4 target hits.
+    This will then become the computer's next target.
+    """
+        row, col = previous_hit
+        target_hits = [
+                    (row + 1, col),
+                    (row - 1, col),
+                    (row, col + 1),
+                    (row, col - 1)
+                ]
+        return target_hits
+
+
 def computer_shot(player_board, player_coords, player_ships):
     """
     Using random choices again, the computer will take a hit
@@ -244,4 +262,3 @@ def computer_shot(player_board, player_coords, player_ships):
             used_comp_guesses.append(comp_guess)
             player_board[comp_row_guess][comp_col_guess] = "[grey46]M"
             return comp_row_guess, comp_col_guess
-
