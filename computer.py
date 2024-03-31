@@ -171,7 +171,7 @@ def computer_shot(player_board, player_coords, player_ships):
  
 
     while True:
-        breakpoint()
+        # breakpoint()
         # Initialises the column and row guesses
         comp_col_guess = random_column_coord()
         comp_row_guess = random_row_coord(player_board)
@@ -179,52 +179,56 @@ def computer_shot(player_board, player_coords, player_ships):
         # Create empty list to store target hits
         target_hits = []
 
-        continue_loop = True
+        # continue_loop = True
         # breakpoint()
-        while continue_loop:
+        while True:
             if previous_hit:
+                breakpoint()
                 # Create the target hits based on the previous hit
                 target_hits = generate_target_hits(previous_hit)
                 new_comp_guess = random.choice(target_hits)
                 # Let the computer guess be a random choice form the target hits
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
-                if ((player_board.dimensions + 1) >= new_comp_guess[0] > 0) and (
-                (player_board.dimensions + 1) >= new_comp_guess[1] > 0) and (
+                if ((player_board.dimensions) >= new_comp_guess[0] > 0) and (
+                (player_board.dimensions) >= new_comp_guess[1] > 0) and (
                     new_comp_guess not in used_comp_guesses):
+                    print(new_comp_guess)
                     # comp_guess = new_comp_guess
                 #     if new_comp_guess in used_comp_guesses:
                 #         continue
-                #     elif new_comp_guess in player_coords:
-                    print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
-                    used_comp_guesses.append(new_comp_guess)
-                    # Iterates through each ship in the player_ships list
-                    for ship in player_ships:
-                        # if the guess is part of one of the ships coordinates
-                        # the health will decrease by 1.
-                        if new_comp_guess in ship.ship_coords[ship.name]:
-                            print(f"They hit our [{ship.colour}]"
-                                f"{ship.name}[/{ship.colour}]!\n")
-                            player_board[new_comp_guess[0]][new_comp_guess[1]] = "[red1]X"
-                            ship.health -= 1
-                            # If the computer hits one of the ship's coordinates
-                            # It will append it to this empty list
-                            previous_hit = comp_guess
-                            if ship.health == 0:
-                                computer_score += 1
-                                time.sleep(1.5)
-                                previous_hit = None
-                                print(f"Rats! The [bright_red]Sea Guardians"
-                                    f"[/bright_red] have sunk our [{ship.colour}]"
-                                    f"{ship.name}[/{ship.colour}]...")
-                            break
-                    return new_comp_guess
-                elif new_comp_guess not in player_coords:
-                    print("Whew! That was a close one, but they missed!")
-                    used_comp_guesses.append(new_comp_guess)
-                    previous_hit = None
-                    player_board[new_comp_guess[0]][new_comp_guess[1]] = "[grey46]M"
-                    return new_comp_guess
+                #    elif new_comp_guess in player_coords:
+                    if new_comp_guess in player_coords:
+                        print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
+                        used_comp_guesses.append(new_comp_guess)
+                        # Iterates through each ship in the player_ships list
+                        for ship in player_ships:
+                            print("Ship coordinates:", ship.ship_coords[ship.name])
+                            # if the guess is part of one of the ships coordinates
+                            # the health will decrease by 1.
+                            if new_comp_guess in ship.ship_coords[ship.name]:
+                                print(f"They hit our [{ship.colour}]"
+                                    f"{ship.name}[/{ship.colour}]!\n")
+                                player_board[new_comp_guess[0]][new_comp_guess[1]] = "[red1]X"
+                                ship.health -= 1
+                                # If the computer hits one of the ship's coordinates
+                                # It will append it to this empty list
+                                previous_hit = new_comp_guess
+                                if ship.health == 0:
+                                    computer_score += 1
+                                    time.sleep(1.5)
+                                    previous_hit = None
+                                    print(f"Rats! The [bright_red]Sea Guardians"
+                                        f"[/bright_red] have sunk our [{ship.colour}]"
+                                        f"{ship.name}[/{ship.colour}]...")
+                                break
+                        return new_comp_guess
+                    elif new_comp_guess not in player_coords:
+                        print("Whew! That was a close one, but they missed!")
+                        used_comp_guesses.append(new_comp_guess)
+                        previous_hit = None
+                        player_board[new_comp_guess[0]][new_comp_guess[1]] = "[grey46]M"
+                        return new_comp_guess
                 else:
                     continue
             elif not previous_hit:
