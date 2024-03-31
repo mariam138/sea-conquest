@@ -171,7 +171,6 @@ def computer_shot(player_board, player_coords, player_ships):
  
 
     while True:
-        # breakpoint()
         # Initialises the column and row guesses
         comp_col_guess = random_column_coord()
         comp_row_guess = random_row_coord(player_board)
@@ -181,7 +180,6 @@ def computer_shot(player_board, player_coords, player_ships):
 
         while True:
             if previous_hit:
-                breakpoint()
                 # Create the target hits based on the previous hit
                 target_hits = generate_target_hits(previous_hit)
                 new_comp_guess = random.choice(target_hits)
@@ -196,7 +194,6 @@ def computer_shot(player_board, player_coords, player_ships):
                         used_comp_guesses.append(new_comp_guess)
                         # Iterates through each ship in the player_ships list
                         for ship in player_ships:
-                            print("Ship coordinates:", ship.ship_coords[ship.name])
                             # if the guess is part of one of the ships coordinates
                             # the health will decrease by 1.
                             if new_comp_guess in ship.ship_coords[ship.name]:
