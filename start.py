@@ -265,7 +265,7 @@ def start_game(username):
             clear_terminal()
             # Banner generated from
             # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=
-            print(r """
+            print(r"""
                               [bright_green]
                               __   _____  _   _  __        _____ _   _ _ 
                               \ \ / / _ \| | | | \ \      / /_ _| \ | | |
@@ -287,13 +287,13 @@ def start_game(username):
 
         if computer.computer_score == 5:
             clear_terminal
-            print(r """                                        [red3]
+            print(r"""[red3]
                                __   __            _
                                \ \ / /__  _   _  | | ___  ___  ___
                                 \ V / _ \| | | | | |/ _ \/ __|/ _ \
                                  | | (_) | |_| | | | (_) \__ \  __/_ _ _
                                  |_|\___/ \__,_| |_|\___/|___/\___(_|_|_)
-                    """)
+            """)
 
             restart_or_exit_game(user_name)
             return False
