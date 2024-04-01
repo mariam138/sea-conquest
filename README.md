@@ -102,6 +102,19 @@ At the end of another round, the player's score will increase by **1**.
 
 ![Screenshot 2024-04-01 at 19 01 09](https://github.com/mariam138/sea-conquest/assets/150139337/8ef2e4cc-2546-44c5-852b-fc2b4b84b8c6)
 
+#### Computer's Guess
+
+When the computer is making it's guess, this message is shown on the screen:
+> It's the Sea Guardians' turn...
+
+If the computer's guess misses, the following message is printed on screen:
+> Whew! That was a close one, but they missed!
+
+The player's board is then updated with a grey **"M"** at the guessed coordinate, for example, as seen at (C7):
+
+![Screenshot 2024-04-01 at 19 13 00](https://github.com/mariam138/sea-conquest/assets/150139337/ce2bbc2b-5427-473b-8663-0ee33b5c8c11)
+
+
 
 ### Logic Flow
 
