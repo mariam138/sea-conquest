@@ -265,13 +265,15 @@ def start_game(username):
             clear_terminal()
             # Banner generated from
             # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=
-            print(r"""[bright_green]
+            print(r """
+                              [bright_green]
                               __   _____  _   _  __        _____ _   _ _ 
                               \ \ / / _ \| | | | \ \      / /_ _| \ | | |
                                \ V / | | | | | |  \ \ /\ / / | ||  \| | |
                                 | || |_| | |_| |   \ V  V /  | || |\  |_|
                                 |_| \___/ \___/     \_/\_/  |___|_| \_(_)
-            """)
+                    """)
+
             restart_or_exit_game(user_name)
             return False
 
