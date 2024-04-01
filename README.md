@@ -44,6 +44,35 @@ If the user enters **"I"**, the terminal is cleared and the instructions and bac
 
 If the user enters **"Q""** in the above prompt, the above message is displayed. After a delay of 3 seconds, the terminal is cleared and the starting page is loaded again.
 
+### Game Setup
+
+If the user enters **"S"**, then a set up page is displayed.
+
+![Screenshot 2024-04-01 at 17 18 19](https://github.com/mariam138/sea-conquest/assets/150139337/0ac03c00-0577-4251-9335-4c5d09267e75)
+
+A grid is printed with the letter coordinates on the top, and the number coordinates to the left. The user is then told how many of each ship they have, and the length of each ship ie how many coordinates it will take up on the board. 
+
+The user is then told they will start placing their ships and is told which ship they are placing. They are first asked to enter a letter, then a number, followed by which direction they want their ship placed.
+
+![Screenshot 2024-04-01 at 17 21 02](https://github.com/mariam138/sea-conquest/assets/150139337/e1cc1cec-2770-4050-bea9-5c51960f391d)
+
+If the ship fits onto the board and does not go beyond the grid boundaries, the ship is then printed onto the board with it's designated colour. The user is then prompted to place their second ship onto the board. This process continues until all ships have been placed.
+
+![Screenshot 2024-04-01 at 17 23 41](https://github.com/mariam138/sea-conquest/assets/150139337/01b3b141-4a4c-4f6d-adeb-8d2717ed0381)
+
+If the ship does not fit onto the board, the user is alerted and asked to place the ship again.
+
+![Screenshot 2024-04-01 at 17 25 15](https://github.com/mariam138/sea-conquest/assets/150139337/d3ba9f68-c2a8-4b76-b3b4-ab57484c9e3a)
+
+If the ship overlaps with another ship on the board, the user is alerted and asked to place the ship again.
+
+![Screenshot 2024-04-01 at 17 27 03](https://github.com/mariam138/sea-conquest/assets/150139337/139e4d3a-bc29-4aab-ac49-d959fecd5fff)
+
+Once all ships have been placed, the player is able to view the final board setup before the game starts.
+
+![Screenshot 2024-04-01 at 17 28 13](https://github.com/mariam138/sea-conquest/assets/150139337/e6498245-cdd5-40eb-bf2d-dbd68762c464)
+
+
 ### Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
