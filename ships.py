@@ -70,6 +70,7 @@ class Ships:
                     # Creates empty list to append the ships coordinates into
                     ship_coords = []
                     for i in range(self.length):
+                        breakpoint()
                         if board.board[row][col + i] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
@@ -92,6 +93,7 @@ class Ships:
                 else:
                     ship_coords = []
                     for i in range(self.length):
+                        breakpoint()
                         if board.board[row + i][col] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")

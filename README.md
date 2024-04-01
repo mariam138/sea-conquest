@@ -107,6 +107,36 @@ To fix this, I separated out the nested if/else statements and added True/False 
         player_board[comp_row_guess][comp_col_guess] = "X"
         `
     This allowed the player board to be updated when the computer made a hit.
+    ADD ABOUT MAKING SEPARATE INSTANCES YOU FOOL
+
+10. During testing the placement of the ships once the game had been complete, I found that ships could still overlap eachother. My original code for validating the ship placement was as below:
+
+        `elif direction == "h":
+                if (self.length + col) > (board.dimensions + 1):
+                    print("The ship doesn't fit. Please try again.")
+                    continue
+                else:
+                    # Creates empty list to append the ships coordinates into
+                    ship_coords = []
+                    for i in range(self.length):
+                        breakpoint()
+                        if board.board[row][col + i] != "~":
+                            print("The ship overlaps with another", end=" ")
+                            print("ship. Please try again.")
+                            time.sleep(2)
+                            clear_terminal()
+                            board.print_board()
+                            break
+                        else:
+                            for i in range(self.length):
+                                board.board[row][col + i] = f"[{self.colour}]S"
+                                ship_coords.append((row, col + i))
+                            self.ship_coords[self.name] = ship_coords
+                        clear_terminal()
+                        board.print_board()
+                        return board
+        `
+    Using the **breakpoint()** debugging function, I found that the validation would only check the very first coordinate of the player's desired ship placement, ie **board.board[row][col + i]** OR **board.board[row + i][col]** where **i = 0**.
 
 ## Deployment
 
