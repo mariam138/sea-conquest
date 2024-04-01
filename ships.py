@@ -91,10 +91,9 @@ class Ships:
                         for coord in ship_coords:
                             board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
                         self.ship_coords[self.name] = ship_coords
-                        
-                    clear_terminal()
-                    board.print_board()
-                    return board.board
+                        clear_terminal()
+                        board.print_board()
+                        break
             elif direction == "v":
                 if (self.length + row) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
