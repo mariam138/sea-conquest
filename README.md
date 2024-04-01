@@ -132,6 +132,17 @@ Then the computer's score is increased by 1 on the screen.
 
 ![Screenshot 2024-04-01 at 19 21 01](https://github.com/mariam138/sea-conquest/assets/150139337/5774c661-afbc-48d6-a9e5-3071a8c5b7f1)
 
+#### Player Wins or Loses
+
+If the player loses, then a banner is printed out telling them that they have lost:
+
+![Screenshot 2024-04-01 at 19 50 23](https://github.com/mariam138/sea-conquest/assets/150139337/b195a602-9cf4-443e-bcd2-e3e7318f92be)
+
+
+If the player wins, then a banner is printed out telling them they have won:
+
+
+
 ### Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
