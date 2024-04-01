@@ -100,14 +100,7 @@ To fix this, I separated out the nested if/else statements and added True/False 
                     break
         `
 
-    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. To fix this, I made sure that the player_board itself was accessed directly:
-
-        `if comp_guess in player_coords:
-        print("The computer has made a hit!")
-        player_board[comp_row_guess][comp_col_guess] = "X"
-        `
-    This allowed the player board to be updated when the computer made a hit.
-    ADD ABOUT MAKING SEPARATE INSTANCES YOU FOOL
+    Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. I realised that originally, I had only made one set of instances from the **Ships** class, and used those same instances to create a list for **player_ships** and **computer_ships**. So when the computer was making a hit, it was then accessing its own ships rather than the player's. Creating separate instances for the computer ships and the player ships fixed this bug, updating the boards correctly.
 
 10. During testing the placement of the ships once the game had been complete, I found that ships could still overlap eachother. My original code for validating the ship placement was as below:
 
