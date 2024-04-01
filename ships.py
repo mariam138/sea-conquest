@@ -73,7 +73,7 @@ class Ships:
                         if board.board[row][col + i] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
-                            time.sleep(1)
+                            time.sleep(2)
                             clear_terminal()
                             board.print_board()
                             break
@@ -95,6 +95,9 @@ class Ships:
                         if board.board[row + i][col] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
+                            time.sleep(2)
+                            clear_terminal()
+                            board.print_board()
                             break
                         else:
                             for i in range(self.length):
