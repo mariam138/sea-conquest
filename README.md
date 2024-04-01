@@ -26,6 +26,12 @@ Sea Conquest is a browser-based game created in Python. This game is based on th
 
 ## Features
 
+### Starting Page
+
+![Screenshot 2024-04-01 at 17 10 51](https://github.com/mariam138/sea-conquest/assets/150139337/33a0387a-4247-452b-8c91-a62c2f0eff08)
+
+When the programme is first run, a "starting page" is displayed, with a banner of the game's title. The user is asked to enter their name and welcomes them to the game. The user is then given a choice to either read the instructions, start the game, or leave the game.
+
 ### Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
