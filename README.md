@@ -180,7 +180,7 @@ I then made a separate flow chart for the main logic of the game.
 
 ![main-game-logic](https://github.com/mariam138/sea-conquest/assets/150139337/4a02615f-e6d3-44ec-bd82-cadec0e1f3de)
 
-Throughout the game, there will be the option for the user to leave the game and go back to the home page. This will be when user input is required for the user's guess. 
+Initially, I wanted to set up the board as a 10 x 10 grid. However, for ease of coding the grid, I settled on an 8 x 8 grid instead. Throughout the game, there will be the option for the user to leave the game and go back to the home page. This will be when user input is required for the user's guess. 
 
 These logic flow diagrams are what I have used to base the code of the game on.
 
