@@ -102,6 +102,9 @@ At the end of another round, the player's score will increase by **1**.
 
 ![Screenshot 2024-04-01 at 19 01 09](https://github.com/mariam138/sea-conquest/assets/150139337/8ef2e4cc-2546-44c5-852b-fc2b4b84b8c6)
 
+If the player attempts to make a guess that they have already made, they recieve the following warning message before being prompted to make another guess:
+> You've already guessed that, commander! Let's try again, shall we?
+
 #### Computer's Guess
 
 When the computer is making it's guess, this message is shown on the screen:
