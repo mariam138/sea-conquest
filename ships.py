@@ -71,21 +71,17 @@ class Ships:
                     ship_coords = []
                     all_cells_empty = True
                     for i in range(self.length):
-                        print("i =", i)
                         cell = board.board[row][col + i]
-                        print(cell)
                         if cell != "~":
                             all_cells_empty = False
-                            print("The ship overlaps with another", end=" ")
-                            print("ship. Please try again.")
+                            print("The ship overlaps with another "
+                                  "ship. Please try again.")
                             time.sleep(2)
                             clear_terminal()
                             board.print_board()
                             break
                         else:
-                            # for i in range(self.length):
                             ship_coords.append((row, col + i))
-                            # continue
                     if all_cells_empty:
                         for coord in ship_coords:
                             board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
@@ -103,9 +99,7 @@ class Ships:
                     ship_coords = []
                     all_cells_empty = True
                     for i in range(self.length):
-                        print("i =", i)
                         cell = board.board[row + i][col]
-                        print(cell)
                         if cell != "~":
                             all_cells_empty = False
                             print("The ship overlaps with another", end=" ")
@@ -115,9 +109,7 @@ class Ships:
                             board.print_board()
                             break
                         else:
-                            # for i in range(self.length):
                             ship_coords.append((row + i, col))
-                            # continue
                     if all_cells_empty:
                         for coord in ship_coords:
                             board.board[coord[0]][coord[1]] = f"[{self.colour}]S"

@@ -110,7 +110,7 @@ class Board:
                     print("Are you leaving us Commander?")
                     stay_leave = input("Type 'Y' to quit, or 'N' to stay:\n").upper()
                     if stay_leave == 'Y':
-                        print("We'll be waiting for you.")
+                        print("We'll be waiting for you...")
                         time.sleep(2)
                         exit()
                     elif stay_leave == 'N':
