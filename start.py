@@ -309,8 +309,8 @@ def game_start_prompt():
 
     while True:
         print("Would you like to read the instructions or start playing?")
-        print("Type 'I' for instructions or 'S' to start the game.")
-        print("Type 'Q' to quit the game.")
+        print("Type 'I' for instructions or 'S' to start the game. "
+              "Type 'Q' to quit the game.")
         try:
             start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
             if (start_choice != 'i' and start_choice != 's'
