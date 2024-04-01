@@ -52,7 +52,8 @@ class Ships:
         overlap with other ships placed.
         """
         print("You will now place your ships.")
-        while True:
+        ship_fits = True
+        while ship_fits:
             print(f"Placing [dodger_blue3]{self.name}....\n")
             print("Please enter your starting co-ordinate")
             col = board.convert_coord_to_index()
@@ -71,24 +72,25 @@ class Ships:
                     ship_coords = []
                     for i in range(self.length):
                         breakpoint()
-                        print("i is", i)
-                        board.board[row][col + i]
-                        print(board.board[row][col + i])
-                    if board.board[row][col + i] != "~":
-                        print("The ship overlaps with another", end=" ")
-                        print("ship. Please try again.")
-                        time.sleep(2)
-                        clear_terminal()
-                        board.print_board()
-                        continue
-                    else:
-                        for i in range(self.length):
+                        print("i =", i)
+                        cell = board.board[row][col + i]
+                        print(cell)
+                        if cell != "~":
+                            print("The ship overlaps with another", end=" ")
+                            print("ship. Please try again.")
+                            time.sleep(2)
+                            clear_terminal()
+                            board.print_board()
+                            ship_fits = False
+                        else:
+                            # for i in range(self.length):
                             board.board[row][col + i] = f"[{self.colour}]S"
                             ship_coords.append((row, col + i))
-                        self.ship_coords[self.name] = ship_coords
+                            # continue
+                    self.ship_coords[self.name] = ship_coords
                     clear_terminal()
                     board.print_board()
-                    return board
+                    return board.board
             elif direction == "v":
                 if (self.length + row) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
