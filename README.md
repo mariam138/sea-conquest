@@ -78,6 +78,8 @@ When the game is started, a blank grid is printed alongsdide the player's grid t
 
 ![Screenshot 2024-04-01 at 18 45 12](https://github.com/mariam138/sea-conquest/assets/150139337/fa80a8cf-37ef-43ca-84cc-153e917577bb)
 
+#### Player's Guess
+
 If the player's guess is a **miss**, they are shown the message:
  > "Argh, we missed... We'll get them in the next shot, Commander."
 
@@ -92,6 +94,13 @@ If the player's guess is a **hit**, they are shown the message:
 After the computer's turn, the computer's blank board is then updated with an **"X"** in the colour of the ship that has been hit.
 
 ![Screenshot 2024-04-01 at 18 57 18](https://github.com/mariam138/sea-conquest/assets/150139337/18b312eb-237a-4d68-8617-7b093609da6a)
+
+If the player is able to sink the computer's ship, the following message is shown:
+> Excellent work, Commander! We sunk the Sea Guardian's [Ship Name]!
+
+At the end of another round, the player's score will increase by **1**.
+
+![Screenshot 2024-04-01 at 19 01 09](https://github.com/mariam138/sea-conquest/assets/150139337/8ef2e4cc-2546-44c5-852b-fc2b4b84b8c6)
 
 
 ### Logic Flow
