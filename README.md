@@ -141,7 +141,13 @@ If the player loses, then a banner is printed out telling them that they have lo
 
 If the player wins, then a banner is printed out telling them they have won:
 
+![Screenshot 2024-04-01 at 20 57 45](https://github.com/mariam138/sea-conquest/assets/150139337/54352b32-0402-49c4-997a-54087ab55268)
 
+At the end of either outcome, the player is asked if they would like to quit or start again. If the player chooses to start again, the following message is printed:
+> You've got heart, Commander [Player Name]!
+> Let's battle the Sea Guardians again!
+
+Then the user is brought back to the game setup page where they will be asked to place their ships again.
 ### Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
