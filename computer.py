@@ -165,18 +165,26 @@ def computer_shot(player_board, player_coords, player_ships):
     """
     global computer_score
     global used_comp_guesses
-    # Initialises previous_hit to None
     global previous_hit
-    # previous_hit = None
- 
+
 
     while True:
         # Initialises the column and row guesses
         comp_col_guess = random_column_coord()
         comp_row_guess = random_row_coord(player_board)
         comp_guess = comp_row_guess, comp_col_guess
+        # Creates a dictionary which is reverse of the dict in random_column_coord()
+        number_to_letter_dict = {
+        1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6:"F", 7: "G", 8:"H"
+        }
+        if comp_col_guess in number_to_letter_dict:
+            print(f"The [bright_red]computer[/bright_red] guessed" 
+                  f"({number_to_letter_dict.get(comp_col_guess)},"
+                  f"{comp_row_guess})...\n")
+            time.sleep(1)
         # Create empty list to store target hits
         target_hits = []
+
 
         while True:
             if previous_hit:

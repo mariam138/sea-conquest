@@ -67,6 +67,7 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     time.sleep(2)
                     clear_terminal()
+                    board.print_board()
                     continue
                 else:
                     # Creates empty list to append the ships coordinates into
@@ -97,6 +98,7 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     time.sleep(2)
                     clear_terminal()
+                    board.print_board()
                     continue
                 else:
                     # Creates empty list to append the ships coordinates into
