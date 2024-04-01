@@ -155,7 +155,22 @@ Otherwise, if the user wants to quit the game, the following is printed onto the
 > Us Ocean Voyagers will be waiting for you!
 
 After 3 seconds, the terminal is cleared and the game's logo banner appears on the screen again.
-### Logic Flow
+
+#### Quit During Game Play
+
+At any point where the user is asked to enter a letter coordinate, either to place ships or to make a guess, they are also given the option to enter **"Q"**. The following prompt is shown on screen:
+
+![Screenshot 2024-04-01 at 21 05 31](https://github.com/mariam138/sea-conquest/assets/150139337/8c42e1f8-0bf2-4c2a-922f-ed48d2a0dcc9)
+
+If the user enters **"N"**, then the game play continues after a few seconds pause.
+
+![Screenshot 2024-04-01 at 21 07 12](https://github.com/mariam138/sea-conquest/assets/150139337/50c86d44-f454-41b2-9aea-64f1f85206a2)
+
+Otherwise, if the user enters **"Y"**, then the game will exit. The user is then prompted to press the **"Run Program"** button at the top of the page if they want to start the game again.
+
+![Screenshot 2024-04-01 at 21 08 23](https://github.com/mariam138/sea-conquest/assets/150139337/d7877ca4-fe0e-4466-aeef-1e49128d173a)
+
+## Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
 
