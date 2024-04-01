@@ -30,7 +30,7 @@ Sea Conquest is a browser-based game created in Python. This game is based on th
 
 ![Screenshot 2024-04-01 at 17 10 51](https://github.com/mariam138/sea-conquest/assets/150139337/33a0387a-4247-452b-8c91-a62c2f0eff08)
 
-When the programme is first run, a "starting page" is displayed, with a banner of the game's title. The user is asked to enter their name and welcomes them to the game. The user is then given a choice to either read the instructions, start the game, or leave the game.
+When the programme is first run, a "starting page" is displayed, with a banner of the game's title. The user is asked to enter their name, where username validation occurs as the game asks only for letters. If any numbers or special characters are entered, an error message appears telling the user that the input is invalid. The user will then be prompted againt to enter a name. Once a valid name has been given, the game will welcome the user. The user is then given a choice to either read the instructions, start the game, or leave the game.
 
 ### Instructions
 
@@ -184,10 +184,6 @@ Throughout the game, there will be the option for the user to leave the game and
 
 These logic flow diagrams are what I have used to base the code of the game on.
 
-### Start Page
-
-The start of the game prints out a logo with the game's name "Sea Conquest." Immediately afterwords, the game asks the user for their name. Username validation occurs, as the game asks only for letters. If any numbers or special characters are entered, an error message appears telling the user that the input is invalid. The user will then be prompted againt to enter a name. Once a valid name has been given, the game will welcome the user.
-
 ### Future Features
 
 ## Testing
@@ -340,6 +336,6 @@ The project was deployed to Heroku using the following steps:
 - The background image used behind the terminal is by **upklyak** from [FreePik](https://www.freepik.com/free-vector/pirate-ship-moored-island-with-treasure-night_15754757.htm)
 
 ## Acknowledgements
-- Thank you to John from CI Tutoring who suggested I use an external link for the background image
+- Thank you to John from CI Tutoring who suggested I use an external link for the background image.
 - Thank you to my mentor Matt Bodden for his support and advice throughout this project.
-- Thank you to my boyfriend Samu for running and testing this game for me to give user feedback
+- Thank you to my boyfriend Samu for running and testing this game for me to give user feedback, and also for being my number 1 supporter throughout.
