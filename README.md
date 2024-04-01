@@ -36,13 +36,13 @@ When the programme is first run, a "starting page" is displayed, with a banner o
 
 ![Screenshot 2024-04-01 at 17 13 26](https://github.com/mariam138/sea-conquest/assets/150139337/1ef4ea43-8ccb-4336-b14a-e185a892edb6)
 
-If the user enters **I**, the terminal is cleared and the instructions and background story are displayed. The user is then given the same prompt to either start the game, quit the game or read the instructions again.
+If the user enters **"I"**, the terminal is cleared and the instructions and background story are displayed. The user is then given the same prompt to either start the game, quit the game or read the instructions again.
 
 ### Quit Game
 
 ![Screenshot 2024-04-01 at 17 15 15](https://github.com/mariam138/sea-conquest/assets/150139337/4950e3dd-bfe8-492a-b0b5-c9f224b2ca76)
 
-
+If the user enters **"Q""** in the above prompt, the above message is displayed. After a delay of 3 seconds, the terminal is cleared and the starting page is loaded again.
 
 ### Logic Flow
 
