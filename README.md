@@ -86,19 +86,19 @@ To fix this, I separated out the nested if/else statements and added True/False 
 
 9. While testing the game play of the computer and player taking turns, I found that whenever the computer would make a hit on the player's ships, it wouldn't always mark that hit on the player board as an **'X'** as intended. However, any miss would be updated on the player board as a **'M'**. The code was as follows:
 
-    `if comp_guess in player_coords:
-        print("The computer has made a hit!")
-        breakpoint()
-        for ship in ships:
-            print(ship.ship_coords)
-            if comp_guess in ship.ship_coords:
-                board[comp_row_guess][comp_col_guess] = "X"
-                ship.health -= 1
-                if ship.health == 0:
-                    computer_score += 1
-                    print(f"The computer has sunk {ship.name}")
-                break
-    `
+        `if comp_guess in player_coords:
+            print("The computer has made a hit!")
+            breakpoint()
+            for ship in ships:
+                print(ship.ship_coords)
+                if comp_guess in ship.ship_coords:
+                    board[comp_row_guess][comp_col_guess] = "X"
+                    ship.health -= 1
+                    if ship.health == 0:
+                        computer_score += 1
+                        print(f"The computer has sunk {ship.name}")
+                    break
+        `
 
     Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. To fix this, I made sure that the player_board itself was accessed directly:
 
