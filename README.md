@@ -186,6 +186,8 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 ### Future Features
 
+- The first feature I would like to implement is allowing the user to decide on the dimensions of the board when starting the game. As I have created a Board class, this would not be difficult to implement. However, I would limit the user to the size of board that they could choose, between the dimensions of 6 x 6 and 15 x 15. For the 6 x 6 board, I would potentially remove a ship so as to not cluster the ship. As for the larger boards above 10 x 10, I would add an extra ship for the player to place.
+
 ## Testing
 
 ### Ongoing Testing
