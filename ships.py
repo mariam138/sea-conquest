@@ -95,6 +95,8 @@ class Ships:
             elif direction == "v":
                 if (self.length + row) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
+                    time.sleep(2)
+                    clear_terminal()
                     continue
                 else:
                     # Creates empty list to append the ships coordinates into
