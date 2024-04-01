@@ -200,44 +200,48 @@ I would run the game in my local terminal as well to check outputs. If I spotted
 
 1. At the start of the game after entering the name, I wanted to give the user a choice of either immediately starting the game or reading the instructions first. To do this, I set up and if/elif statement:
 
-    ` if start_choice == "I" or "i":
-        clear_terminal()
-        display_instructions()
-    elif start_choice == "S" or "s":
-        clear_terminal()
-        print("Hello") `
-    
+        `if start_choice == "I" or "i":
+            clear_terminal()
+            display_instructions()
+        elif start_choice == "S" or "s":
+            clear_terminal()
+            print("Hello") 
+
     However, when testing in my local terminal, this didn't seem to work as typing any letter would show the instructions regardless. To fix this bug, I instead put the code into a 'try except' block:
 
-    ` try:
-    start_choice = input("Enter 'I' or 'S': ").lower()
-    if start_choice != 'i' and start_choice != 's':
-        raise Exception
-    elif start_choice == 'i':
-        clear_terminal()
-        display_instructions()
-    elif start_choice == "s":
-        clear_terminal()
-        print("Hello")
-  except Exception:
-    print('That is not a valid input. Please try again.')
-    `
+        ` try:
+            start_choice = input("Enter 'I' or 'S': ").lower()
+            if start_choice != 'i' and start_choice != 's':
+                raise Exception
+            elif start_choice == 'i':
+                clear_terminal()
+                display_instructions()
+            elif start_choice == "s":
+                clear_terminal()
+                print("Hello")
+            except Exception:
+                print('That is not a valid input. Please try again.')
+        `
 
     This then fixed the issue of the instructions showing regardless of the letter input.
 
-2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. Although I used the commant `pip3 freeze > requirements.txt` to make sure all my dependencies were in place before deployment, the **rich** module did not seem to add. Therefore, I manually added it into the .txt file. This fixed the issue and the app deployed properly.
+2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. Although I used the command `pip3 freeze > requirements.txt` to make sure all my dependencies were in place before deployment, the **rich** module did not seem to add. Therefore, I manually added it into the .txt file. This fixed the issue and the app deployed properly.
 
 3. In my **game_start_prompt()** function, I have set up a while loop which only breaks when a valid choice has been entered for either starting the game, reading the instructions or quitting the game. When I had set this up initially, I tested out the loop with several valid and invalid inputs before allowing the loop to break. I found that occasionally, when I had looped a few times, when entering **"S"** to start the game, the print statement which asks the user to select a choice would still appear underneath when it should not. I fixed this bug by adding a simple **"break"** statement if the user chooses to quit the game, as originally I had not. 
 
 4. When creating the board in the **board.py** module, I had initially set up the function to create the board as a nested list of the coordinates but using print statements. When I ran this through **Python Tutor**, each value when creating the board would show as **"None"** rather than either the number/letter coordinates or the "~" symbol. To fix this, I instead made separate functions for creating the board and then printing out the board. After running this through **Python Tutor** again, each list element showed their value rather than **"None"**.
 
 5. After setting up my two validation functions in the Board class for the coordinates (**convert_coord_to_index** and **validate_number_coord**) and adding these into the game_start() function, a bug occurred with the **validate_number_coord** method. If anything but a number was entered, rather than having an error message saying that it wasn't valid, it would trigger the **game_start_prompt** method again.
-![Screenshot 2024-03-16 at 23 02 35](https://github.com/mariam138/sea-conquest/assets/150139337/b38e6eda-326a-4ade-af24-6968f3477d2a)
-After checking the **validate_number_coord** function separately in the *board* module, there was a **ValueError: invalid literal for int() with base 10: ' '**. This is when the method was set up to convert the input into an integer. When the conversion was removed, a **TypeError** was thrown instead, stating that **'<=' not supported between instances of 'int' and 'str'**. Originally, I had the **validate_number_coord** as a simple if/elif statement to catch any invalid inputs. The last elif statement was to catch if any input was not numeric, to ask the player to try again. To fix the bug, I put the function code into a **try except** block. For the elif statement that checks if the input is not numeric, I added a **raise** statement for a **ValueError**, which was then handled in the **except** block. This worked, and when running the full game, did not lead to the game_prompt() function being called again.
+
+    ![Screenshot 2024-03-16 at 23 02 35](https://github.com/mariam138/sea-conquest/assets/150139337/b38e6eda-326a-4ade-af24-6968f3477d2a)
+
+    After checking the **validate_number_coord** function separately in the *board* module, there was a **ValueError: invalid literal for int() with base 10: ' '**. This is when the method was set up to convert the input into an integer. When the conversion was removed, a **TypeError** was thrown instead, stating that **'<=' not supported between instances of 'int' and 'str'**. Originally, I had the **validate_number_coord** as a simple if/elif statement to catch any invalid inputs. The last elif statement was to catch if any input was not numeric, to ask the player to try again. To fix the bug, I put the function code into a **try except** block. For the elif statement that checks if the input is not numeric, I added a **raise** statement for a **ValueError**, which was then handled in the **except** block. This worked, and when running the full game, did not lead to the game_prompt() function being called again.
 
 6. After creating the function to randomly place the computer's ships onto the board, I used print statements to make sure it was working properly. However, I found that, even though I had used a similar method to place the player's ships, some ships would still overlap when placed randomly.
-![Screenshot 2024-03-20 at 17 18 38](https://github.com/mariam138/sea-conquest/assets/150139337/85d2262c-b9e7-4b06-8bb9-23a09d619309)
-To fix this, I separated out the nested if/else statements and added True/False flags for whether the ship fits and doesn't overlap. If the ship fits on the board, but overlaps with another ship, **ship_fits** is **False**. The code will then repeat until the whole ship fits, so **ship_fits** remains **True**. Once **True**, then, depending on whether the direction was randomly chosen as horizontal or vertical, the ship would be placed onto the board. 
+
+    ![Screenshot 2024-03-20 at 17 18 38](https://github.com/mariam138/sea-conquest/assets/150139337/85d2262c-b9e7-4b06-8bb9-23a09d619309)
+
+    To fix this, I separated out the nested if/else statements and added True/False flags for whether the ship fits and doesn't overlap. If the ship fits on the board, but overlaps with another ship, **ship_fits** is **False**. The code will then repeat until the whole ship fits, so **ship_fits** remains **True**. Once **True**, then, depending on whether the direction was randomly chosen as horizontal or vertical, the ship would be placed onto the board. 
 
 7. When testing the game in the terminal, I found that once I had the user set up their ships on their board, once again the **game_start_prompt** function would be called, rather than the **computer.main()** function to create the computer's board. I used Python's built in debugger, **pdb**, and added a **breakpoint** in the code right above where **computer.main()** was called. Stepping through the code line by line, it showed that I did not have the correct arguments being passed through the *computer.main()** and **computer_place_ships** functions. After fixing this, the bug was resolved and the **game_start_prompt** function was no longer being called.
 
