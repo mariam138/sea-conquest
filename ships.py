@@ -77,7 +77,7 @@ class Ships:
                     if board.board[row][col + i] != "~":
                         print("The ship overlaps with another", end=" ")
                         print("ship. Please try again.")
-                        time.sleep(5)
+                        time.sleep(2)
                         clear_terminal()
                         board.print_board()
                         continue
@@ -96,19 +96,20 @@ class Ships:
                 else:
                     ship_coords = []
                     for i in range(self.length):
-                        # breakpoint()
-                        if board.board[row + i][col] != "~":
-                            print("The ship overlaps with another", end=" ")
-                            print("ship. Please try again.")
-                            time.sleep(2)
-                            clear_terminal()
-                            board.print_board()
-                            break
-                        else:
-                            for i in range(self.length):
-                                board.board[row + i][col] = f"[{self.colour}]S"
-                                ship_coords.append((row + i, col))
-                            self.ship_coords[self.name] = ship_coords
+                       cell = board.board[row + i][col]
+                       print(cell)
+                    if board.board[row + i][col] != "~":
+                        print("The ship overlaps with another", end=" ")
+                        print("ship. Please try again.")
+                        time.sleep(2)
                         clear_terminal()
                         board.print_board()
-                        return board
+                        continue
+                    else:
+                        for i in range(self.length):
+                            board.board[row + i][col] = f"[{self.colour}]S"
+                            ship_coords.append((row + i, col))
+                        self.ship_coords[self.name] = ship_coords
+                    clear_terminal()
+                    board.print_board()
+                    return board

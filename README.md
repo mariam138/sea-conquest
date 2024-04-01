@@ -119,7 +119,6 @@ To fix this, I separated out the nested if/else statements and added True/False 
                     # Creates empty list to append the ships coordinates into
                     ship_coords = []
                     for i in range(self.length):
-                        breakpoint()
                         if board.board[row][col + i] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
