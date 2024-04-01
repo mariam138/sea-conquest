@@ -74,21 +74,21 @@ class Ships:
                         print("i is", i)
                         board.board[row][col + i]
                         print(board.board[row][col + i])
-                        if board.board[row][col + i] != "~":
-                            print("The ship overlaps with another", end=" ")
-                            print("ship. Please try again.")
-                            time.sleep(2)
-                            clear_terminal()
-                            board.print_board()
-                            break
-                        else:
-                            for i in range(self.length):
-                                board.board[row][col + i] = f"[{self.colour}]S"
-                                ship_coords.append((row, col + i))
-                            self.ship_coords[self.name] = ship_coords
+                    if board.board[row][col + i] != "~":
+                        print("The ship overlaps with another", end=" ")
+                        print("ship. Please try again.")
+                        time.sleep(5)
                         clear_terminal()
                         board.print_board()
-                        return board
+                        continue
+                    else:
+                        for i in range(self.length):
+                            board.board[row][col + i] = f"[{self.colour}]S"
+                            ship_coords.append((row, col + i))
+                        self.ship_coords[self.name] = ship_coords
+                    clear_terminal()
+                    board.print_board()
+                    return board
             elif direction == "v":
                 if (self.length + row) > (board.dimensions + 1):
                     print("The ship doesn't fit. Please try again.")
@@ -96,7 +96,7 @@ class Ships:
                 else:
                     ship_coords = []
                     for i in range(self.length):
-                        breakpoint()
+                        # breakpoint()
                         if board.board[row + i][col] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
