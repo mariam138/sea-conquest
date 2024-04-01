@@ -114,6 +114,13 @@ The player's board is then updated with a grey **"M"** at the guessed coordinate
 
 ![Screenshot 2024-04-01 at 19 13 00](https://github.com/mariam138/sea-conquest/assets/150139337/ce2bbc2b-5427-473b-8663-0ee33b5c8c11)
 
+If the computer's guess hits one of the player's ships, the following message is printed on screen:
+> Argh! The Sea Guardians got us!
+> They hit our [Ship Name]!
+
+The player's board is then updated with a red **"X"** at the location of the hit. For example below, at coordinate (F3), the hit is marked witha  red cross:
+
+![Screenshot 2024-04-01 at 19 16 55](https://github.com/mariam138/sea-conquest/assets/150139337/538f9416-e48d-484c-8a06-d7aa3120ac57)
 
 
 ### Logic Flow
