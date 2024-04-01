@@ -10,6 +10,20 @@ Sea Conquest is a browser-based game created in Python. This game is based on th
 
 ## User Stories
 
+### User's goals:
+
+- As the user, I want to be able to play a logic game
+- As the user, I want to know the number of ships I have sank
+- As the user, I want the ability to leave the game at any point
+- As the user, I want to have full control on where I place my ships
+- As the user, I want a visual representation of where my ships are placed and where my shots have landed
+
+### Site Owner's goals:
+
+- As the site owner, I want to create a game which allows single player use of the user against the computer
+- As the site owner, I want to create grids where the player is able to see where their ships are marked
+- As the site owner, I want to create a blank grid which hides the positions of the computer's ships
+
 ## Features
 
 ### Logic Flow
