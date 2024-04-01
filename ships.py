@@ -2,6 +2,7 @@
 from board import Board
 from clear import clear_terminal
 from rich import print
+import time
 
 
 class Ships:
@@ -72,6 +73,9 @@ class Ships:
                         if board.board[row][col + i] != "~":
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
+                            time.sleep(1)
+                            clear_terminal()
+                            board.print_board()
                             break
                         else:
                             for i in range(self.length):
