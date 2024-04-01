@@ -122,6 +122,12 @@ The player's board is then updated with a red **"X"** at the location of the hit
 
 ![Screenshot 2024-04-01 at 19 16 55](https://github.com/mariam138/sea-conquest/assets/150139337/538f9416-e48d-484c-8a06-d7aa3120ac57)
 
+If the computer is able to sink the player's ship entirely, the following message is printed:
+> Rats! The Sea Guardians have sunk our [Ship Name]...
+
+Then the computer's score is increased by 1 on the screen.
+
+![Screenshot 2024-04-01 at 19 21 01](https://github.com/mariam138/sea-conquest/assets/150139337/5774c661-afbc-48d6-a9e5-3071a8c5b7f1)
 
 ### Logic Flow
 
