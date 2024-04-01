@@ -71,7 +71,6 @@ class Ships:
                     ship_coords = []
                     all_cells_empty = True
                     for i in range(self.length):
-                        breakpoint()
                         print("i =", i)
                         cell = board.board[row][col + i]
                         print(cell)
@@ -93,6 +92,7 @@ class Ships:
                         self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
+                        return board
                         break
             elif direction == "v":
                 if (self.length + row) > (board.dimensions + 1):
@@ -103,7 +103,6 @@ class Ships:
                     ship_coords = []
                     all_cells_empty = True
                     for i in range(self.length):
-                        breakpoint()
                         print("i =", i)
                         cell = board.board[row + i][col]
                         print(cell)
@@ -125,4 +124,5 @@ class Ships:
                         self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
+                        return board
                         break
