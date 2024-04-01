@@ -78,7 +78,18 @@ When the game is started, a blank grid is printed alongsdide the player's grid t
 
 ![Screenshot 2024-04-01 at 18 45 12](https://github.com/mariam138/sea-conquest/assets/150139337/fa80a8cf-37ef-43ca-84cc-153e917577bb)
 
+If the player's guess is a **miss**, they are shown the message:
+ > "Argh, we missed... We'll get them in the next shot, Commander."
 
+ ![Screenshot 2024-04-01 at 18 52 22](https://github.com/mariam138/sea-conquest/assets/150139337/d2e75b8e-b0fc-4647-bb91-ab1484012425)
+
+ After the computer takes its turn, the computer's blank board is updated with an **"M"** in grey on the board.
+
+ ![Screenshot 2024-04-01 at 18 52 52](https://github.com/mariam138/sea-conquest/assets/150139337/5f1a4a7d-7720-4891-8d8e-2675e4538dd8)
+
+
+If the player's guess is a **hit**, they are shown the message:
+> Nice shot, Commander! You got their [Ship Name]!
 
 ### Logic Flow
 
