@@ -335,6 +335,7 @@ The project was deployed to Heroku using the following steps:
 - The code to clear the python terminal was adapted from [Coding Ninjas](https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python)
 - The code to use the enumerate function for the ships list was adapted from [Real Python](https://realpython.com/python-enumerate/)
 - The code to create the dunder method "__getitem__" to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
+- The code to create the dunder method "__setitem__" to be used alongside the above "__getitem__"" method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
 - The background image used behind the terminal is by **upklyak** from [FreePik](https://www.freepik.com/free-vector/pirate-ship-moored-island-with-treasure-night_15754757.htm)
 
 ## Acknowledgements
