@@ -190,6 +190,8 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 - Another feature I would like to implement is telling the user what coordinates the computer has guessed. 
 
+- In the future, I would like to make it harder to play against the computer. This would be done by introducing algorithms that have been studied for the game Battle Ships, and implementing it into the code. Although I have already implemented code that allows the computer to make more targeted guesses if it hits a ship, it is still relatively easy to defeat the computer.
+
 
 
 ## Testing
