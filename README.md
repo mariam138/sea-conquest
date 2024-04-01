@@ -148,6 +148,13 @@ At the end of either outcome, the player is asked if they would like to quit or 
 > Let's battle the Sea Guardians again!
 
 Then the user is brought back to the game setup page where they will be asked to place their ships again.
+
+Otherwise, if the user wants to quit the game, the following is printed onto the terminal:
+
+> You've worked hard, Commander [Player Name].
+> Us Ocean Voyagers will be waiting for you!
+
+After 3 seconds, the terminal is cleared and the game's logo banner appears on the screen again.
 ### Logic Flow
 
 Before starting to create the game, I made some logic flow diagrams of how I wanted the basic structure of the game to work. The first flow diagram I made was the basic logic of the start of the game. First I wanted the user to input their name, which would have input validation. The game would not move on until valid input is present. Once a valid name is entered, the user is given the choice of either reading the instructions or jumping straight into the game. If the user chooses to read the instructions, they are then given the choice to either continue to the game or go back to the start page.
