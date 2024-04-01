@@ -99,22 +99,30 @@ class Ships:
                     print("The ship doesn't fit. Please try again.")
                     continue
                 else:
+                    # Creates empty list to append the ships coordinates into
                     ship_coords = []
+                    all_cells_empty = True
                     for i in range(self.length):
-                       cell = board.board[row + i][col]
-                       print(cell)
-                    if board.board[row + i][col] != "~":
-                        print("The ship overlaps with another", end=" ")
-                        print("ship. Please try again.")
-                        time.sleep(2)
+                        breakpoint()
+                        print("i =", i)
+                        cell = board.board[row + i][col]
+                        print(cell)
+                        if cell != "~":
+                            all_cells_empty = False
+                            print("The ship overlaps with another", end=" ")
+                            print("ship. Please try again.")
+                            time.sleep(2)
+                            clear_terminal()
+                            board.print_board()
+                            break
+                        else:
+                            # for i in range(self.length):
+                            ship_coords.append((row + i, col))
+                            # continue
+                    if all_cells_empty:
+                        for coord in ship_coords:
+                            board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
+                        self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
-                        continue
-                    else:
-                        for i in range(self.length):
-                            board.board[row + i][col] = f"[{self.colour}]S"
-                            ship_coords.append((row + i, col))
-                        self.ship_coords[self.name] = ship_coords
-                    clear_terminal()
-                    board.print_board()
-                    return board
+                        break
