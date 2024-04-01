@@ -52,8 +52,7 @@ class Ships:
         overlap with other ships placed.
         """
         print("You will now place your ships.")
-        ship_fits = True
-        while ship_fits:
+        while True:
             print(f"Placing [dodger_blue3]{self.name}....\n")
             print("Please enter your starting co-ordinate")
             col = board.convert_coord_to_index()
@@ -70,24 +69,29 @@ class Ships:
                 else:
                     # Creates empty list to append the ships coordinates into
                     ship_coords = []
+                    all_cells_empty = True
                     for i in range(self.length):
                         breakpoint()
                         print("i =", i)
                         cell = board.board[row][col + i]
                         print(cell)
                         if cell != "~":
+                            all_cells_empty = False
                             print("The ship overlaps with another", end=" ")
                             print("ship. Please try again.")
                             time.sleep(2)
                             clear_terminal()
                             board.print_board()
-                            ship_fits = False
+                            break
                         else:
                             # for i in range(self.length):
-                            board.board[row][col + i] = f"[{self.colour}]S"
                             ship_coords.append((row, col + i))
                             # continue
-                    self.ship_coords[self.name] = ship_coords
+                    if all_cells_empty:
+                        for coord in ship_coords:
+                            board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
+                        self.ship_coords[self.name] = ship_coords
+                        
                     clear_terminal()
                     board.print_board()
                     return board.board
