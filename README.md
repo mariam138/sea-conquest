@@ -135,7 +135,9 @@ To fix this, I separated out the nested if/else statements and added True/False 
                         board.print_board()
                         return board
         `
-    Using the **breakpoint()** debugging function, I found that the validation would only check the very first coordinate of the player's desired ship placement, ie **board.board[row][col + i]** OR **board.board[row + i][col]** where **i = 0**.
+    Using the **breakpoint()** debugging function, I found that the validation would only check the very first coordinate of the player's desired ship placement, ie **board.board[row][col + i]** OR **board.board[row + i][col]** where **i = 0**. So unless the very first coordinate was not an empty cell, the ship would be placed on the board regardless.
+
+    To fix this, I refactored the code to firstly allow the for loop to check all cells on the board **before** being able to place the ships. I added a boolean flag - **all_empty_cells = True** at the start of the loop. If any cells were found not empty, the flag would change to **False** and the loop breaks. Once the loop finishes all iterations of checking if the cells are empty and **all_empty_cells** remains **True**, then the ship would be placed onto the board. I then added a **break** statement at the end of these validation checks, so that the loop would be broken once a ship was placed successfully, and the for loop in the **game_setup()** function would move onto the next ship. The same logic of using the flag was used for both placing ships horizontally and vertically.
 
 ## Deployment
 
