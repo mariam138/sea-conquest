@@ -192,15 +192,13 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 - In the future, I would like to make it harder to play against the computer. This would be done by introducing algorithms that have been studied for the game Battle Ships, and implementing it into the code. Although I have already implemented code that allows the computer to make more targeted guesses if it hits a ship, it is still relatively easy to defeat the computer.
 
-
-
 ## Testing
 
 ### Ongoing Testing
 
 Throughout the creation of the game, I would check my code using [Python Tutor](https://pythontutor.com/) to ensure that my code was working as I wanted it to. For example, to create the while loop at the start of the game which validates the user's name on input.
 
-I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (ie, python3 board.py). Sometimes I would also use Python's built in **breakpoint()** function, which helped me step through certain bugs step by step and finding the specific error causing the bug.
+I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (ie, python3 board.py). Sometimes I would also use Python's built in **breakpoint()** function, which helped me go through certain bugs step by step and finding the specific error causing the bug.
 
 ### Manual Testing
 
