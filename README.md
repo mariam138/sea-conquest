@@ -72,6 +72,9 @@ Once all ships have been placed, the player is able to view the final board setu
 
 ![Screenshot 2024-04-01 at 17 28 13](https://github.com/mariam138/sea-conquest/assets/150139337/e6498245-cdd5-40eb-bf2d-dbd68762c464)
 
+### Start of the Game
+
+
 
 ### Logic Flow
 
