@@ -295,6 +295,19 @@ To fix this, I separated out the nested if/else statements and added True/False 
 
     To fix this, I refactored the code to firstly allow the for loop to check all cells on the board **before** being able to place the ships. I added a boolean flag - **all_empty_cells = True** at the start of the loop. If any cells were found not empty, the flag would change to **False** and the loop breaks. Once the loop finishes all iterations of checking if the cells are empty and **all_empty_cells** remains **True**, then the ship would be placed onto the board. I then added a **break** statement at the end of these validation checks, so that the loop would be broken once a ship was placed successfully, and the for loop in the **game_setup()** function would move onto the next ship. The same logic of using the flag was used for both placing ships horizontally and vertically.
 
+## Technologies
+
+Throughout my project, I used a few Python libraries, both in-built and third party.
+
+- Python's built-in *Random* library was imported into my project. This was used mainly for the computer for several functions:
+    - To produce random coordinates for placing the ship
+    - To randomly decide whether the ship should be placed horizontally or vertically during ship placement
+    - To make random guesses when aiming at the player's ships
+    - When making more targeted hits, to randomly choose one out of the four produced target coordinates
+- Another module that I used was the *Time* module. This was mainly used to delay lines of code being executed. For example, when the computer is about to take a hit, I use **time.sleep(2)** to delay the random generation of a target for 2 seconds, to appear slightly more human like.
+- To create the **clear_terminal()** function, I imported the built-in Python module *OS*. This allows the terminal to be cleared regardless of the user's local operating system.
+- I imported the third-party module *Rich* to allow printing to the terminal in colour. I have used it to highlight certain keywords, the player's username, etc. I have also used it to give each ship instance a unique colour, so that it prints to the board in the colour given. This helps make the game look more visually appealing, while being easier for the user to look at also.
+
 ## Deployment
 
 The project was deployed to Heroku using the following steps:

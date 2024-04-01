@@ -4,7 +4,9 @@ import random
 from board import Board
 # To create the different ships
 from ships import Ships
+# To create delays in executing code
 import time
+# To print to the terminal in colour
 from rich import print
 
 computer_score = 0
