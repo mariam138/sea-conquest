@@ -74,6 +74,10 @@ Once all ships have been placed, the player is able to view the final board setu
 
 ### Start of the Game
 
+When the game is started, a blank grid is printed alongsdide the player's grid that shows their placed ships. In between the grids, the computer and player's scores are shown. The scores both start at 0 as it represents the number of ships that have been sunk. The player will always get the first turn in the game, and is prompted to make their first guess.
+
+![Screenshot 2024-04-01 at 18 45 12](https://github.com/mariam138/sea-conquest/assets/150139337/fa80a8cf-37ef-43ca-84cc-153e917577bb)
+
 
 
 ### Logic Flow
