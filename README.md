@@ -8,7 +8,7 @@
 
 ## Introduction
 
-Sea Conquest is a browser-based logic game created in Python. It is a single player game, which plays against the "computer", based on the classic *Battle Ships* game. The user is part of the **Ocean Voyagers** crew, battling the **Sea Guardians** with the aim of sinking the enemy **Sea Guardians** ships.
+Sea Conquest is a browser-based logic game created in Python. It is a single player game, which plays against the "computer". **"Sea Conquest"** is based on the classic *Battle Ships* game. The user is part of the **Ocean Voyagers** crew, battling the **Sea Guardians** with the aim of sinking the enemy **Sea Guardians'** ships.
 
 ## User Stories
 
@@ -28,7 +28,7 @@ Sea Conquest is a browser-based logic game created in Python. It is a single pla
 
 ## Design
 
-I wanted to display the project with some more colour, rather than the original template of a white background. To make the game more visually appealing, I first centred the terminal and the "Run Program" button using **flex** properties. I then added an animated pirate ship background, with a colour scheme involving blues and purples. Lastly, I changed the colour of the "Run Program" button to a green. I did this so that the button would stand out, but still be in harmony with the colour scheme of the background image.
+I wanted to display the project with some more colour, rather than the original template of a white background. To make the game more visually appealing, I first centred the terminal and the "Run Program" button using **CSS flex** properties. I then added an animated pirate ship background, with a colour scheme of blues and purples. Lastly, I changed the colour of the "Run Program" button to a green. I did this so that the button would stand out, but still be in harmony with the colour scheme of the background image.
 
 ## Features
 
@@ -36,7 +36,9 @@ I wanted to display the project with some more colour, rather than the original 
 
 ![Screenshot 2024-04-03 at 13 28 14](https://github.com/mariam138/sea-conquest/assets/150139337/5a3061c8-90cc-47f9-9044-fb7a5ad138f4)
 
-When the programme is first run, a "starting page" is displayed, with a banner of the game's title. The user is asked to enter their name, where username validation occurs as the game asks only for letters. If any numbers or special characters are entered, an error message appears telling the user that the input is invalid. The game also asks for a maximum length of 28 characters. If anything longer is given, the user will be asked to enter a new shorter name. This is because of the layout of the two boards which print side by side when the game is started. Anything longer will not fit between the two boards, causing the player board to not print correctly. The user will then be prompted againt to enter a name. Once a valid name has been given, the game will welcome the user. The user is then given a choice to either read the instructions, start the game, or leave the game.
+When the programme is first run, a *"starting page"* is displayed, with a banner of the game's title. The user is asked to enter their name. Here I have introduced validation, as the game asks only for letters. If any numbers or special characters are entered, an error message appears telling the user that the input is invalid. The game also asks for a maximum length of 28 characters. If anything longer is given, the user will be asked to enter a new shorter name. The user will then be prompted again to enter a name. Once a valid name has been given, the game will welcome the user. The user is then given a choice to either read the instructions, start the game, or leave the game.
+
+The name length is only allowed to be 28 characters long because of the layout of the two boards which print side by side when the game starts. Anything longer will not fit between the two boards, causing the player board to not print correctly.
 
 ### Instructions
 
@@ -144,12 +146,9 @@ If the player loses, then a banner is printed out telling them that they have lo
 
 ![Screenshot 2024-04-01 at 19 50 23]![Screenshot 2024-04-03 at 16 53 04](https://github.com/mariam138/sea-conquest/assets/150139337/671cbd1d-f1da-45a4-9ec3-ea09892dd757)
 
-
-
 If the player wins, then a banner is printed out telling them they have won:
 
-![Screenshot 2024-04-01 at 20 57 45]![Screenshot 2024-04-03 at 16 43 36](https://github.com/mariam138/sea-conquest/assets/150139337/aa95dc42-1cd2-49a9-8ec6-928f1685b1cb)
-
+![Screenshot 2024-04-03 at 16 43 36](https://github.com/mariam138/sea-conquest/assets/150139337/aa95dc42-1cd2-49a9-8ec6-928f1685b1cb)
 
 At the end of either outcome, the player is asked if they would like to quit or start again. If the player chooses to start again, the following message is printed:
 > You've got heart, Commander [Player Name]!
