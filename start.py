@@ -205,8 +205,8 @@ def restart_or_exit_game(username):
                 raise Exception
             elif end_choice == "s":
                 print()
-                print(f"You've got heart, Commander {username}! "
-                      f"Let's battle the [bright_red]Sea Guardians"
+                print(f"You've got heart, Commander [gold3]{username}[/gold3]!"
+                      f" Let's battle the [bright_red]Sea Guardians"
                       "[/bright_red] again!")
                 time.sleep(2.5)
                 clear_terminal()
@@ -214,7 +214,7 @@ def restart_or_exit_game(username):
                 return False
             elif end_choice == "q":
                 print()
-                print(f"You've worked hard, Commander {username}.")
+                print(f"You've worked hard, Commander [gold3]{username}.")
                 print("Us [gold3]Ocean Voyagers[/gold3] will be", end=" ")
                 print("waiting for you!")
                 time.sleep(2.5)
@@ -241,7 +241,7 @@ def start_game(username):
     global user_board
     user_board = player_board.board
 
-    print(f"It's our turn first, Commander {username}!")
+    print(f"It's our turn first, Commander [gold3]{username}[/gold3]!")
     print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
@@ -252,7 +252,7 @@ def start_game(username):
     while True:
         # Will only print this line after the first loop
         if not first_iteration:
-            print(f"It's our turn again, Commander {username}!")
+            print(f"It's our turn again, Commander [gold3]{username}[/gold3]!")
         else:
             first_iteration = False
 
