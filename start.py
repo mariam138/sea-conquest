@@ -115,23 +115,28 @@ def display_instructions():
     print("[purple4]Ocean Voyagers vs Sea Guardians")
     print("Tensions between the rival [bright_red]Sea Guardians[/bright_red]"
           " and the [gold3]Ocean Voyagers[/gold3](that's us!)")
-    print("have reached a boiling point. We have to take back what is our rightful sea!")
+    print("have reached a boiling point. We have to take back what"
+          "is our rightful sea!")
     print("As the commander of our naval forces, the "
           "[gold3]Ocean Voyagers[/gold3] are putting")
-    print("their trust in you to defeat the [bright_red]Sea Guardians[/bright_red].")
+    print("their trust in you to defeat the "
+          "[bright_red]Sea Guardians[/bright_red].")
     print("Get ready to lead the [gold3]Ocean Voyagers[/gold3] to victory!\n")
     print("[purple4]Instructions")
     print("Both you and the enemy will have a grid where your ships shall be "
           "placed.") 
     print("The objective of the game is to sink all of the"
           " [bright_red]Sea Guardian's[/bright_red]")
-    print("ships before they sink ours. We are not able to see the enemy ships,")
-    print("nor will they see ours. Starting with you, you will take the first turn")
+    print("ships before they sink ours. We are not able to see the" 
+          "enemy ships,")
+    print("nor will they see ours. Starting with you, you will take "
+          "the first turn")
     print("in trying to sink the enemy's ships. The "
-          "[bright_red]Sea Guardians[/bright_red]") 
+          "[bright_red]Sea Guardians[/bright_red]")
     print("will shout if we have [red3]hit[/red3] one of their fleet"
           " or if we have [yellow1]missed[/yellow1].")
-    print("Once all the coordinates of a ship have been hit, it will [red3]sink[/red3].")
+    print("Once all the coordinates of a ship have been hit, it will"
+          "[red3]sink[/red3].")
     print("To win the game, we must sink the enemy's ships first.")
     print("Are you ready for the challenge, commander?\n")
 
@@ -143,21 +148,14 @@ def game_setup():
     game_board.create_board()
     game_board.print_board()
 
-    # global player_ships
-    # # Place each ship instance into a list for looping
-    # global computer_ships
+    # Makes the player_ships list accessible within the function
     global player_ships
-
     # List to store all ship coords after placing all ships onto board
     global all_ship_coords
-
-    # global player_board
-    # player_board = []
+    # Makes the player_board global to update it for each ship placement
     global player_board
+
     # Iterates over each ship in the list and performs the while loop
-    # Once each iteration has been successfully and all ships
-    # Have been placed on the board, the for loop stores a copy
-    # Of this board into player_board ready to be used for the game
     # Code to use enumerate function adapted from:
     # https://realpython.com/python-enumerate/
     for index, ship in enumerate(player_ships):
