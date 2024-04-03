@@ -17,6 +17,9 @@ used_comp_guesses = []
 previous_hit = None
 # Initialise letter_choices list at module level
 letter_choices = ["A", "B", "C", "D", "E", "F", "G", "H"]
+letter_coord_dict = {
+    "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8
+}
 
 
 def random_column_coord():
@@ -27,15 +30,31 @@ def random_column_coord():
     will be chosen as random as the column coordinate. The letter
     will be chosen using the built-in random module.
     """
-    letter_coord_dict = {
-        "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8
-    }
+    global letter_coord_dict
+    global letter_choices
     # Randomly picks a letter and stores it into a variable
     computer_col_coord = random.choice(letter_choices)
     # Sets the assigned value of the dictionary key to a variable
     if computer_col_coord in letter_coord_dict:
         computer_col = letter_coord_dict[computer_col_coord]
     return computer_col
+
+def print_comp_guess(dictionary, value):
+    """
+    Loops through the keys and corresponding values in the
+    letter_dict_coord dictionary. If the value that is passed
+    through matches a value in the dictionary, then the key is returned.
+    This is used to print to the user the coordinates of the computer's
+    guess. The code to loop through the dictionary's items
+    is adapted from:
+    https://www.altcademy.com/blog/how-to-print-a-dictionary-in-python/\
+    #:~:text=You%20can%20also%20print%20the,key%2Dvalue%20pairs%20as%20tuples.
+    """
+
+    for key, val in dictionary.items():
+        if val == value:
+            return key
+    return None
 
 
 def random_row_coord(board):
@@ -185,6 +204,11 @@ def computer_shot(player_board, player_coords, player_ships):
         # Create empty list to store target hits
         target_hits = []
 
+        column = print_comp_guess(letter_coord_dict, comp_col_guess)
+        print(f"The computer guessed ([deep_sky_blue1]{column}"
+              f"[/deep_sky_blue1], {comp_row_guess})")
+        time.sleep(1)
+
         while True:
             if previous_hit:
                 # Create the target hits based on the previous hit
@@ -266,7 +290,7 @@ def computer_shot(player_board, player_coords, player_ships):
                         time.sleep(1.5)
                         print(f"Rats! The [bright_red]Sea Guardians"
                               f"[/bright_red] have sunk our [{ship.colour}]"
-                              f"{ship.name}[/{ship.colour}]...")
+                              f" {ship.name}[/{ship.colour}]...")
                     break
             return comp_col_guess, comp_row_guess
         # Updates board with an "M" if the computer misses
