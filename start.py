@@ -252,7 +252,7 @@ def start_game(username):
     print("Take your best shot for the", end=" ")
     print("[gold3]Ocean Voyagers[/gold3]!\n")
 
-    # Sets var to true so that the print statement below
+    # Sets variable to true so that the print statement below
     # only prints after the first loop
     first_iteration = True
 
@@ -269,9 +269,11 @@ def start_game(username):
             )
         time.sleep(2)
 
+        # Game ends if the user sinks all 5 ships
+        # User is then asked if they want to play again or leave
         if game.user_score == 5:
             clear_terminal()
-            # Banner generated from
+            # Banner generated from:
             # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=
             print(r"""
                               [bright_green]
@@ -286,6 +288,7 @@ def start_game(username):
             return False
 
         clear_terminal()
+        # Game continues to computer's turn if user score isn't 5
         game.print_blank_and_user_boards(blank_board, user_board, user_name)
         print("It's the [bright_red]Sea Guardians'[/bright_red] turn...")
         time.sleep(2)
@@ -293,6 +296,8 @@ def start_game(username):
         time.sleep(2)
         clear_terminal()
 
+        # Ends game if the computer reaches a score of 5
+        # Again asks user if they want to play again or leave
         if computer.computer_score == 5:
             clear_terminal
             print(r"""[red3]
