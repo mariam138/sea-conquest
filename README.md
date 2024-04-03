@@ -407,3 +407,5 @@ The project was deployed to Heroku using the following steps:
 - Thank you to John from CI Tutoring who suggested I use an external link for the background image.
 - Thank you to my mentor Matt Bodden for his support and advice throughout this project.
 - Thank you to my boyfriend Samu for running and testing this game for me to give user feedback, and also for being my number 1 supporter throughout.
+
+Click [here](#sea-conquest) to return to the top of the page.
