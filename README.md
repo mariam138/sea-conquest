@@ -2,7 +2,10 @@
 
 ![Screenshot of the website's responsiveness](https://github.com/mariam138/sea-conquest/assets/150139337/8a112e38-a0c5-47cb-bb17-a3db7252f205)
 
-Visit the live site [here!](https://sea-conquest-b465976776fd.herokuapp.com/)
+<p style="text-align: center;">
+    <a href="https://sea-conquest-b465976776fd.herokuapp.com/">Visit the live site here!</a>
+</p>
+
 
 ## Introduction
 
