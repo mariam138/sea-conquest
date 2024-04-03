@@ -169,6 +169,9 @@ def game_setup():
         all_ship_coords.extend(ship.ship_coords.values())
 
     # Flattens out the above nested list into one list
+    # Code adapted from:
+    # https://realpython.com/python-flatten-list/
+    # using-a-comprehension-to-flatten-a-list-of-lists
     all_ship_coords = [
         coord for sublist in all_ship_coords for coord in sublist
         ]
