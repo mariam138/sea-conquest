@@ -123,7 +123,8 @@ class Board:
                 # Creates separate while loop for if the user chooses to leave
                 while True:
                     print("Are you leaving us Commander?")
-                    stay_leave = input("Type 'Y' to quit, or 'N' to stay:\n").upper()
+                    stay_leave = input(
+                        "Type 'Y' to quit, or 'N' to stay:\n").upper()
                     # Exits the program if the user enters "Y"
                     if stay_leave == 'Y':
                         print("You've let us down Commander...")
@@ -134,7 +135,8 @@ class Board:
                     # Goes back to the game if the user enters "N"
                     # By breaking the inner while loop
                     elif stay_leave == 'N':
-                        print("We knew you weren't a quitter! Now, where were we...\n")
+                        print("We knew you weren't a quitter! "
+                              "Now, where were we...\n")
                         time.sleep(2)
                         break
                     # Continues loop if user enters anything other than "Y"
@@ -164,7 +166,7 @@ class Board:
                     row = row_coord
                     return row
                     return False
-                # Loop repeats if a number outside the board dimensions is entered
+                # Loop repeats if a num outside the board dimensions is entered
                 elif (row_coord < 1) or (row_coord > self.dimensions):
                     print("That is not a valid coordinate. Please try again.")
                 # Raises a value error if any non-numeric input occurs
