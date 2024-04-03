@@ -23,7 +23,7 @@ class Ships:
         self.length = length
         self.colour = colour
         self.health = length
-        # Empty list which the ship's coordinates will be stored
+        # Empty dictionary which the ship's coordinates will be stored
         # once placed on the board
         self.ship_coords = {}
 
@@ -41,9 +41,13 @@ class Ships:
             "Submarine": 2
         }
 
+        # Stores the keys and values into separate lists
         ship_names = ship_length.keys()
         ship_lengths = ship_length.values()
+
         print("You will have 1 Battleship, 2 Destroyers and 2 Submarines.\n")
+        # Allows looping over two lists at the same time
+        # To print the name and length of each ship
         for name, length in zip(ship_names, ship_lengths):
             print(f"The {name} has a length of {length}.")
         print("\n")
