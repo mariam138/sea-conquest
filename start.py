@@ -326,19 +326,23 @@ def game_start_prompt():
         print("Would you like to read the instructions or start playing?")
         print("Type 'I' for instructions or 'S' to start the game. "
               "Type 'Q' to quit the game.")
+        # Expects an error from invalid user input
         try:
             start_choice = input("Enter 'I', 'S' or 'Q':\n").lower()
             if (start_choice != 'i' and start_choice != 's'
                and start_choice != 'q'):
                 raise Exception
+            # Displays the instructiions
             elif start_choice == 'i':
                 clear_terminal()
                 display_instructions()
+            # Starts the game with the game setup
             elif start_choice == "s":
                 time.sleep(1)
                 clear_terminal()
                 game_setup()
                 return False
+            # Quits game and returns back to 'starting page'
             elif start_choice == "q":
                 print()
                 print("Goodbye for now commander, us", end=" ")
@@ -347,6 +351,7 @@ def game_start_prompt():
                 clear_terminal()
                 main()
                 return False
+        # In case of invalid input, user will be asked to try again
         except Exception:
             print("That is not a valid input. Please try again.\n")
 
