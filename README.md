@@ -413,6 +413,7 @@ The project was deployed to Heroku using the following steps:
 - The code to create the dunder method **__ setitem __** to be used alongside the above **__ getitem __** method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
 - The code for the **__ name __** special method to run the program is from [Bro Code on YouTube](https://www.youtube.com/watch?v=OBabwRH0XUo)
 - The code to flatten a nested list is adapted from [Real Python](https://realpython.com/python-flatten-list/#using-a-comprehension-to-flatten-a-list-of-lists)
+- The code to loop through the items in a dictionary to print out the computer guess is adapted from [altcademy](https://www.altcademy.com/blog/how-to-print-a-dictionary-in-python/#:~:text=You%20can%20also%20print%20the,key%2Dvalue%20pairs%20as%20tuples.)
 
 ### Media
 
