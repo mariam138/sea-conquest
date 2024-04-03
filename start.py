@@ -72,7 +72,8 @@ def get_user_name():
       """
     while True:
         print("Type your name below.")
-        print("Please use only letters.\n")
+        print("Please use only letters. " 
+              "The maximum length is 28 characters.\n")
         # Allows the username to be accessible outside the function
         global user_name
         user_name = input("Enter your name:\n")
