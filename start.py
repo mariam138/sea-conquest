@@ -13,23 +13,22 @@ import computer
 # Imports game module to use its methods
 import game
 
-# All ship instances to be used in the game
+# All player ship instances to be used in the game
 player_battleship = Ships("Battleship", 4, "bright_magenta", 4)
 player_destroyer_one = Ships("Destroyer 1", 3, "green4", 3)
 player_destroyer_two = Ships("Destroyer 2", 3, "dark_olive_green1", 3)
 player_submarine_one = Ships("Submarine 1", 2, "blue3", 2)
 player_submarine_two = Ships("Submarine 2", 2, "purple4", 2)
 
+# All computer ship instances to be used in the game
 comp_battleship = Ships("Battleship", 4, "bright_magenta", 4)
 comp_destroyer_one = Ships("Destroyer 1", 3, "green4", 3)
 comp_destroyer_two = Ships("Destroyer 2", 3, "dark_olive_green1", 3)
 comp_submarine_one = Ships("Submarine 1", 2, "blue3", 2)
 comp_submarine_two = Ships("Submarine 2", 2, "purple4", 2)
 
-# Player and computer have same ships but having separate
-# Lists allows them to be accessed separately when needed
-# Specifically in computer_shot() and player_shot()
-# So that the correct player's ships decrease in health
+# All player's ship instances and computer's ships instances are placed
+# Into separate lists to be used as arguments in functions for the game
 player_ships = [
     player_battleship, player_destroyer_one, player_destroyer_two,
     player_submarine_one, player_submarine_two
@@ -39,6 +38,7 @@ computer_ships = [
     comp_submarine_one, comp_submarine_two
 ]
 
+# Initialises varibales as empty lists to be used in the functions below
 player_board = []
 all_ship_coords = []
 all_comp_ship_coords = []
