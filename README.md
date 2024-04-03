@@ -58,7 +58,7 @@ If the user enters **"S"**, then a set up page is displayed.
 
 ![Screenshot 2024-04-01 at 17 18 19](https://github.com/mariam138/sea-conquest/assets/150139337/0ac03c00-0577-4251-9335-4c5d09267e75)
 
-A grid is printed with the letter coordinates on the top, and the number coordinates to the left. The user is then told how many of each ship they have, and the length of each ship ie how many coordinates it will take up on the board. 
+A grid is printed with the letter coordinates on the top, and the number coordinates to the left. The user is then told how many of each ship they have, and the length of each ship, ie. how many coordinates it will take up on the board. 
 
 The user is then told they will start placing their ships and is told which ship they are placing. They are first asked to enter a letter, then a number, followed by which direction they want their ship placed.
 
@@ -82,7 +82,7 @@ Once all ships have been placed, the player is able to view the final board setu
 
 ### Start of the Game
 
-When the game is started, a blank grid is printed alongsdide the player's grid that shows their placed ships. In between the grids, the computer and player's scores are shown. The scores both start at 0 as it represents the number of ships that have been sunk. The player will always get the first turn in the game, and is prompted to make their first guess.
+When the game is started, a blank grid is printed alongside the player's grid that shows their placed ships. In between the grids, the computer and player's scores are shown. The scores both start at 0 as it represents the number of ships that have been sunk. The player will always get the first turn in the game, and is prompted to make their first guess.
 
 ![Screenshot 2024-04-01 at 18 45 12](https://github.com/mariam138/sea-conquest/assets/150139337/fa80a8cf-37ef-43ca-84cc-153e917577bb)
 
@@ -129,7 +129,7 @@ If the computer's guess hits one of the player's ships, the following message is
 > Argh! The Sea Guardians got us!
 > They hit our [Ship Name]!
 
-The player's board is then updated with a red **"X"** at the location of the hit. For example below, at coordinate (F3), the hit is marked witha  red cross:
+The player's board is then updated with a red **"X"** at the location of the hit. For example below, at coordinate (F3), the hit is marked with a red cross:
 
 ![Screenshot 2024-04-01 at 19 16 55](https://github.com/mariam138/sea-conquest/assets/150139337/538f9416-e48d-484c-8a06-d7aa3120ac57)
 
@@ -144,7 +144,7 @@ Then the computer's score is increased by 1 on the screen.
 
 If the player loses, then a banner is printed out telling them that they have lost:
 
-![Screenshot 2024-04-01 at 19 50 23]![Screenshot 2024-04-03 at 16 53 04](https://github.com/mariam138/sea-conquest/assets/150139337/671cbd1d-f1da-45a4-9ec3-ea09892dd757)
+![Screenshot 2024-04-03 at 16 53 04](https://github.com/mariam138/sea-conquest/assets/150139337/671cbd1d-f1da-45a4-9ec3-ea09892dd757)
 
 If the player wins, then a banner is printed out telling them they have won:
 
@@ -154,7 +154,7 @@ At the end of either outcome, the player is asked if they would like to quit or 
 > You've got heart, Commander [Player Name]!
 > Let's battle the Sea Guardians again!
 
-Then the user is brought back to the game setup page where they will be asked to place their ships again.
+Then the user is brought back to the game setup page where they will be asked to place their ships once again.
 
 Otherwise, if the user wants to quit the game, the following is printed onto the terminal:
 
@@ -205,7 +205,7 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 Throughout the creation of the game, I would check my code using [Python Tutor](https://pythontutor.com/) to ensure that my code was working as I wanted it to. For example, to create the while loop at the start of the game which validates the user's name on input.
 
-I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (ie, python3 board.py). Sometimes I would also use Python's built in **breakpoint()** function, which helped me go through certain bugs step by step and finding the specific error causing the bug.
+I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (eg, *python3 board.py*). Often I would also use Python's built in **breakpoint()** function, which helped me go through certain bugs step by step to find the specific error causing the bug.
 
 ### Manual Testing
 
@@ -218,16 +218,16 @@ Once the project was complete, I underwent manual testing on each feature of the
 | Enter a name                                                                                                     | Game greets user with their name                                                                                              | Entering a name when the game is first loaded                                           | Pass          |
 | Length of name being entered                                                                                     | Game will ask user to input a shorter name if it exceeds 28 characters                                                        | Enter a name above 28 characters                                                        | Pass          |
 | Characters being entered for the name                                                                            | Game will ask user to input a new name if any non-alphabetical character is entered                                           | Enter any special and numerical characters for the username                             | Pass          |
-| Loading instructions                                                                                             | User will be shown the instructions after entering “I” as the input                                                           | By entering both a lowercase and uppercase “I” when prompted                            | Pass          |
-| Exiting the game                                                                                                 | The game will display a message saying goodbye, then after a delay, reload the start page with the banner                     | By entering both a lowercase and uppercase “Q” when prompted                            | Pass          |
-| Starting the game                                                                                                | After a one second delay, the terminal will clear and display an empty board, prompting the user to start placing their ships | By entering both a lowercase and uppercase “S” when prompted                            | Pass          |
-| Handling of invalid user input when the user is asked to either start or quit the game, or read the instructions | The user will be told an invalid input has occurred and to try again, if anything other than “S”, “I” or “Q” is entered       | By entering any character that is not “S”, “I” or “Q”, eg numbers or special characters | Pass          |
+| Loading instructions                                                                                             | User will be shown the instructions after entering “I” as the input                                                           | By entering either a lowercase or uppercase “I” when prompted                            | Pass          |
+| Exiting the game                                                                                                 | The game will display a message saying goodbye, then after a delay, reload the start page with the banner                     | By entering either a lowercase or uppercase “Q” when prompted                            | Pass          |
+| Starting the game                                                                                                | After a one second delay, the terminal will clear and display an empty board, prompting the user to start placing their ships | By entering either a lowercase or uppercase “S” when prompted                            | Pass          |
+| Handling of invalid user input when the user is asked to either start/ quit the game, or read the instructions | The user will be told an invalid input has occurred and to try again, if anything other than “S”, “I” or “Q” is entered       | By entering any character that is not “S”, “I” or “Q”, eg numbers or special characters | Pass          |
 
 #### Game Setup
 
 | Feature being tested                                 | Expected Outcome                                                                                                                                                                                      | How was this tested?                                                                      | Pass or Fail? |
 | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------- |
-| Loading of the game setup page                       | Blank board is displayed, the number of each type of ship is displayed and their corresponding lengths                                                                                                | Entering “S” on the starting page when prompted                                           | Pass          |
+| Loading of the game setup page                       | Blank board is displayed, the number of each type of ship is displayed with their corresponding lengths                                                                                                | Entering “S” on the starting page when prompted                                           | Pass          |
 | Placement of ships                                   | The start of the ship is being placed in the coordinate that the user has given                                                                                                                       | Enter a letter and number for the coordinate                                              | Pass          |
 | Placement of ships                                   | The ship is being placed horizontally if user chooses to                                                                                                                                              | Enter “h” when asked which direction the user would like their ship placed                | Pass          |
 | Placement of ships                                   | The ship is being placed vertically if user chooses to                                                                                                                                                | Enter “v” when asked which direction the user would like their ship placed                | Pass          |
@@ -265,9 +265,9 @@ Once the project was complete, I underwent manual testing on each feature of the
 
 ### Bugs
 
-1. At the start of the game after entering the name, I wanted to give the user a choice of either immediately starting the game or reading the instructions first. To do this, I set up and if/elif statement:
+1. At the start of the game after entering the name, I wanted to give the user a choice of either immediately starting the game or reading the instructions first. To do this, I set up an *if/elif* statement:
 
-        `if start_choice == "I" or "i":
+        if start_choice == "I" or "i":
             clear_terminal()
             display_instructions()
         elif start_choice == "S" or "s":
@@ -276,7 +276,7 @@ Once the project was complete, I underwent manual testing on each feature of the
 
     However, when testing in my local terminal, this didn't seem to work as typing any letter would show the instructions regardless. To fix this bug, I instead put the code into a 'try except' block:
 
-        ` try:
+         try:
             start_choice = input("Enter 'I' or 'S': ").lower()
             if start_choice != 'i' and start_choice != 's':
                 raise Exception
@@ -292,7 +292,7 @@ Once the project was complete, I underwent manual testing on each feature of the
 
     This then fixed the issue of the instructions showing regardless of the letter input.
 
-2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **ModuleNotFoundError"** saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. Although I used the command `pip3 freeze > requirements.txt` to make sure all my dependencies were in place before deployment, the **rich** module did not seem to add. Therefore, I manually added it into the .txt file. This fixed the issue and the app deployed properly.
+2. Upon initial deployment after building the start screen of the game, the game would not load in the terminal due to a **"ModuleNotFoundError"**, saying that the **"rich"** module was not named. I had initially installed the **rich** module using the git terminal, which came up with the message saying the requirement was already satisfied. Although I used the command `pip3 freeze > requirements.txt` to make sure all my dependencies were in place before deployment, the **rich** module did not seem to add. Therefore, I manually added it into the requirements.txt file. This fixed the issue and the app deployed properly.
 
 3. In my **game_start_prompt()** function, I have set up a while loop which only breaks when a valid choice has been entered for either starting the game, reading the instructions or quitting the game. When I had set this up initially, I tested out the loop with several valid and invalid inputs before allowing the loop to break. I found that occasionally, when I had looped a few times, when entering **"S"** to start the game, the print statement which asks the user to select a choice would still appear underneath when it should not. I fixed this bug by adding a simple **"break"** statement if the user chooses to quit the game, as originally I had not. 
 
@@ -302,7 +302,7 @@ Once the project was complete, I underwent manual testing on each feature of the
 
     ![Screenshot 2024-03-16 at 23 02 35](https://github.com/mariam138/sea-conquest/assets/150139337/b38e6eda-326a-4ade-af24-6968f3477d2a)
 
-    After checking the **validate_number_coord** function separately in the *board* module, there was a **ValueError: invalid literal for int() with base 10: ' '**. This is when the method was set up to convert the input into an integer. When the conversion was removed, a **TypeError** was thrown instead, stating that **'<=' not supported between instances of 'int' and 'str'**. Originally, I had the **validate_number_coord** as a simple if/elif statement to catch any invalid inputs. The last elif statement was to catch if any input was not numeric, to ask the player to try again. To fix the bug, I put the function code into a **try except** block. For the elif statement that checks if the input is not numeric, I added a **raise** statement for a **ValueError**, which was then handled in the **except** block. This worked, and when running the full game, did not lead to the game_prompt() function being called again.
+    After checking the **validate_number_coord** function separately in the *board* module, there was a **ValueError: invalid literal for int() with base 10: ' '**. This is when the method was set up to convert the input into an integer. When the conversion was removed, a **TypeError** was thrown instead, stating that **'<=' not supported between instances of 'int' and 'str'**. Originally, I had the **validate_number_coord** as a simple *if/elif* statement to catch any invalid inputs. The last elif statement was to catch if any input was not numeric, to ask the player to try again. To fix the bug, I put the function code into a **try except** block. For the elif statement that checks if the input is not numeric, I added a **raise** statement for a **ValueError**, which was then handled in the **except** block. This worked, and when running the full game, did not lead to the game_prompt() function being called again.
 
 6. After creating the function to randomly place the computer's ships onto the board, I used print statements to make sure it was working properly. However, I found that, even though I had used a similar method to place the player's ships, some ships would still overlap when placed randomly.
 
@@ -312,11 +312,11 @@ Once the project was complete, I underwent manual testing on each feature of the
 
 7. When testing the game in the terminal, I found that once I had the user set up their ships on their board, once again the **game_start_prompt** function would be called, rather than the **computer.main()** function to create the computer's board. I used Python's built in debugger, **pdb**, and added a **breakpoint** in the code right above where **computer.main()** was called. Stepping through the code line by line, it showed that I did not have the correct arguments being passed through the *computer.main()** and **computer_place_ships** functions. After fixing this, the bug was resolved and the **game_start_prompt** function was no longer being called.
 
-8. During the creation of the function **player_shot** which lets the user take a shot at the computer's ships, I found that when printing **all_comp_ship_coords**, it also had the coordinates of the ships the user places. After using breakpoints in my code from **computer.main()**, it appeared that the **ship.ship_coords** list was not being initialised for each placement. After adding *"ship.ship_coords = []"* into the **computer_place__ships()**, this fixed this bug of all the ships being appended into what was supposed to be the list containing only the computer's ships coordinates.
+8. During the creation of the function **player_shot** which lets the user take a shot at the computer's ships, I found that when printing **all_comp_ship_coords**, it also had the coordinates of the ships the user places. After using breakpoints in my code from **computer.main()**, it appeared that the **ship.ship_coords** list was not being initialised for each placement. After adding *"ship.ship_coords = []"* into the **computer_place_ships** function, this fixed this bug of all the ships being appended into what was supposed to be the list containing only the computer's ships coordinates.
 
 9. While testing the game play of the computer and player taking turns, I found that whenever the computer would make a hit on the player's ships, it wouldn't always mark that hit on the player board as an **'X'** as intended. However, any miss would be updated on the player board as a **'M'**. The code was as follows:
 
-        `if comp_guess in player_coords:
+        if comp_guess in player_coords:
             print("The computer has made a hit!")
             breakpoint()
             for ship in ships:
@@ -328,7 +328,7 @@ Once the project was complete, I underwent manual testing on each feature of the
                         computer_score += 1
                         print(f"The computer has sunk {ship.name}")
                     break
-        `
+        
 
     Using the **breakpoint()** debugging function and print statements in my code, it seemed that the **ship.ship_coords** was actually referring to the computer's ship coordinates, and not the player's ship coordinates. This was why the board was not always updated with an **'X'**. I realised that originally, I had only made one set of instances from the **Ships** class, and used those same instances to create a list for **player_ships** and **computer_ships**. So when the computer was making a hit, it was then accessing its own ships rather than the player's. Creating separate instances for the computer ships and the player ships fixed this bug, updating the boards correctly.
 
@@ -372,7 +372,9 @@ Throughout my project, I used a few Python libraries, both in-built and third pa
     - To make random guesses when aiming at the player's ships
     - When making more targeted hits, to randomly choose one out of the four produced target coordinates
 - Another module that I used was the *Time* module. This was mainly used to delay lines of code being executed. For example, when the computer is about to take a hit, I use **time.sleep(2)** to delay the random generation of a target for 2 seconds, to appear slightly more human like.
+
 - To create the **clear_terminal()** function, I imported the built-in Python module *OS*. This allows the terminal to be cleared regardless of the user's local operating system.
+
 - I imported the third-party module *Rich* to allow printing to the terminal in colour. I have used it to highlight certain keywords, the player's username, etc. I have also used it to give each ship instance a unique colour, so that it prints to the board in the colour given. This helps make the game look more visually appealing, while being easier for the user to look at also.
 
 ## Deployment
@@ -381,7 +383,7 @@ The project was deployed to Heroku using the following steps:
 
 1. Sign in to Heroku and access the dashboard
 2. In the top right corner, click the "New" dropdown menu and then click "Create new app"
-3. Choose a name for your app, then change your region accordingly (for me, it was Europe)
+3. Choose a name for your app, then change your region accordingly (I chose Europe)
 4. Click "Create app"
 5. On the next page that loads after clicking "Create app", click "Settings" in the top navigation bar
 6. Click on "Reveal Config Vars"
