@@ -72,7 +72,7 @@ def get_user_name():
       """
     while True:
         print("Type your name below.")
-        print("Please use only letters. " 
+        print("Please use only letters. "
               "The maximum length is 28 characters.\n")
         # Allows the username to be accessible outside the function
         global user_name
@@ -124,10 +124,10 @@ def display_instructions():
     print("Get ready to lead the [gold3]Ocean Voyagers[/gold3] to victory!\n")
     print("[purple4]Instructions")
     print("Both you and the enemy will have a grid where your ships shall be "
-          "placed.") 
+          "placed.")
     print("The objective of the game is to sink all of the"
           " [bright_red]Sea Guardian's[/bright_red]")
-    print("ships before they sink ours. We are not able to see the" 
+    print("ships before they sink ours. We are not able to see the"
           "enemy ships,")
     print("nor will they see ours. Starting with you, you will take "
           "the first turn")
@@ -277,7 +277,7 @@ def start_game(username):
             # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=
             print(r"""
                               [bright_green]
-                 __   _____  _   _  __        _____ _   _ _ 
+                 __   _____  _   _  __        _____ _   _ _
                  \ \ / / _ \| | | | \ \      / /_ _| \ | | |
                   \ V / | | | | | |  \ \ /\ / / | ||  \| | |
                    | || |_| | |_| |   \ V  V /  | || |\  |_|
