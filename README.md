@@ -142,7 +142,8 @@ Then the computer's score is increased by 1 on the screen.
 
 If the player loses, then a banner is printed out telling them that they have lost:
 
-![Screenshot 2024-04-01 at 19 50 23](https://github.com/mariam138/sea-conquest/assets/150139337/b195a602-9cf4-443e-bcd2-e3e7318f92be)
+![Screenshot 2024-04-01 at 19 50 23]![Screenshot 2024-04-03 at 16 53 04](https://github.com/mariam138/sea-conquest/assets/150139337/671cbd1d-f1da-45a4-9ec3-ea09892dd757)
+
 
 
 If the player wins, then a banner is printed out telling them they have won:
