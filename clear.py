@@ -1,6 +1,7 @@
 # Import os module for use in the clear_terminal function
 import os
 
+
 def clear_terminal():
     """
     Function to clear the terminal when called
