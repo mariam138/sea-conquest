@@ -150,8 +150,11 @@ def generate_target_hits(previous_hit):
     from the previous hit. Then this function will be called
     to choose a random choice from the 4 target hits.
     This will then become the computer's next target.
+    This allows a slightly more human-behaviour to be emulated.
     """
+    # Stores the row and column as the previous hit
     row, col = previous_hit
+    # Four new directions are created based on the previous hit
     return [
                 (row + 1, col),
                 (row - 1, col),
