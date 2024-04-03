@@ -15,6 +15,8 @@ computer_score = 0
 used_comp_guesses = []
 # Initialises to None
 previous_hit = None
+# Initialise letter_choices list at module level
+letter_choices = ["A", "B", "C", "D", "E", "F", "G", "H"]
 
 
 def random_column_coord():
@@ -28,7 +30,6 @@ def random_column_coord():
     letter_coord_dict = {
         "A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8
     }
-    letter_choices = ["A", "B", "C", "D", "E", "F", "G", "H"]
     # Randomly picks a letter and stores it into a variable
     computer_col_coord = random.choice(letter_choices)
     # Sets the assigned value of the dictionary key to a variable
