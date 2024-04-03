@@ -130,12 +130,16 @@ def player_shot(board, username, computer_coords, ships):
         col_guess = board.convert_coord_to_index()
         row_guess = board.validate_number_coord()
         user_guess = (row_guess, col_guess)
+        # If the user enters a previously made guess, they will be prompted
+        # to enter a new guess
         if user_guess in used_guesses:
             print("You've already guessed that, commander!", end=" ")
             print("Let's try again, shall we?\n")
             continue
+        # Checks if the user's guess is in one of the computer's ship coords
         elif user_guess in computer_coords:
             print("Nice shot, Commander!")
+            # Adds the guess to the used_guesses list to prevent repeats
             used_guesses.append(user_guess)
             # Iterates through each ship in the player_ships list
             for ship in ships:
@@ -144,8 +148,10 @@ def player_shot(board, username, computer_coords, ships):
                 if user_guess in ship.ship_coords:
                     print(f"You got their [{ship.colour}]"
                           f"{ship.name}[/{ship.colour}]!\n")
+                    # Updates the board with an X in the ship's colour
                     board[row_guess][col_guess] = f"[{ship.colour}]X"
                     ship.health -= 1
+                    # Updates the user's score if they sink a ship
                     if ship.health == 0:
                         user_score += 1
                         time.sleep(1.5)
@@ -154,10 +160,11 @@ def player_shot(board, username, computer_coords, ships):
                               f" [{ship.colour}]{ship.name}[/{ship.colour}]!")
                     break
             return row_guess, col_guess
+        # Updates board with an M and adds the guess to used_guesses
+        # If the player guess is a miss
         elif user_guess not in computer_coords:
             print("Argh, we missed... We'll"
                   " get them in the next shot, Commander.")
             used_guesses.append(user_guess)
             board[row_guess][col_guess] = "[grey46]M"
             return row_guess, col_guess
-
