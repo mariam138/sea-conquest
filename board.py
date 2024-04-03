@@ -15,6 +15,7 @@ class Board:
         # Creates an empty list to print out the board and append to
         self.board = []
 
+    # This list of coordinates will be appended to the board and printed out
     horizontal_coords = [" ", "A", "B", "C", "D", "E", "F", "G", "H"]
 
     def __getitem__(self, index):
@@ -47,16 +48,25 @@ class Board:
         Prints the horizontal_coords as a string for the horizontal heading
         row, then loops through a range starting at 1 and ending at
         self.dimensions + 1 to print the numbers for the vertical coordinates.
-        Each number is then followed  by the ~ symbol times the dimensions
-        number that has been entered. Using the nested for loop creates the
-        game board to be used.
+        Each number is then followed  by the ~ symbol multiplied by the
+        dimensions number that has been entered. Using the nested for loop
+        creates the game board to be used.
         """
+
+        # Appends list of horizontal coordinates as the top row of the board
         self.board.append(self.horizontal_coords)
 
+        # Loops through the board dimensions starting at 1
+        # So that it doesnt start with the letter coordinates row
         for i in range(1, self.dimensions + 1):
+            # Creates a list where the first item is a string of the
+            # 'i' variable
             row = [str(i)]
+            # Loops through and adds a ~ to each row
+            # The loop continues based on the dimensions given
             for _ in range(self.dimensions):
                 row.append("~")
+            # Each row is then appended to the board
             self.board.append(row)
         return self.board
 
