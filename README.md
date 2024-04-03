@@ -147,7 +147,8 @@ If the player loses, then a banner is printed out telling them that they have lo
 
 If the player wins, then a banner is printed out telling them they have won:
 
-![Screenshot 2024-04-01 at 20 57 45](https://github.com/mariam138/sea-conquest/assets/150139337/54352b32-0402-49c4-997a-54087ab55268)
+![Screenshot 2024-04-01 at 20 57 45]![Screenshot 2024-04-03 at 16 43 36](https://github.com/mariam138/sea-conquest/assets/150139337/aa95dc42-1cd2-49a9-8ec6-928f1685b1cb)
+
 
 At the end of either outcome, the player is asked if they would like to quit or start again. If the player chooses to start again, the following message is printed:
 > You've got heart, Commander [Player Name]!
