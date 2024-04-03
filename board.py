@@ -137,8 +137,11 @@ class Board:
                         print("We knew you weren't a quitter! Now, where were we...\n")
                         time.sleep(2)
                         break
+                    # Continues loop if user enters anything other than "Y"
+                    # or "N"
                     elif (stay_leave != 'Y') and (stay_leave != 'N'):
-                        print("I didn't quite catch that Commander! Let's try that again.")
+                        print("I didn't quite catch that Commander! "
+                              "Let's try that again.")
                         continue
             else:
                 print("That is not a valid coordinate. Please try again.")
@@ -146,7 +149,7 @@ class Board:
     def validate_number_coord(self):
         """
         This method will ask the user to input a row coordinate.
-        It will validate whether the number inputted is within
+        It will validate whether the number input is within
         the board dimensions. If not, the user is asked to try again.
         """
         while True:
@@ -156,12 +159,15 @@ class Board:
                 row_coord = (
                     int(input("Please enter a row coordinate as a number:\n"))
                 )
+                # Breaks loop if the number is within the board dimensions
                 if (1 <= row_coord <= self.dimensions):
                     row = row_coord
                     return row
                     return False
+                # Loop repeats if a number outside the board dimensions is entered
                 elif (row_coord < 1) or (row_coord > self.dimensions):
                     print("That is not a valid coordinate. Please try again.")
+                # Raises a value error if any non-numeric input occurs
                 elif row_coord.isnumeric() is False:
                     raise ValueError
             except ValueError:
