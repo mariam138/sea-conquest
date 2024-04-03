@@ -7,7 +7,7 @@ import time
 # Imports the computer module to use its methods
 import computer
 
-
+# Sets the user score to 0 initially
 user_score = 0
 # Creates an empty list to store the previous guesses in
 used_guesses = []
@@ -23,10 +23,11 @@ def print_blank_and_user_boards(blank_board, player_board, username):
     # Makes the scores global so that they can be accessed in a
     # Different function later on in the module
     global computer_score
-    # computer_score = 0
     global user_score
-    # user_score = 0
 
+    # Sets the width between the boards as a set number
+    # This is used to calculate the space that should be printed between
+    # Each board and the usernames
     width_between_boards = 30
     total_width = (
         width_between_boards - (len(username) + len(str(user_score) + "/5"))
@@ -86,9 +87,11 @@ def print_blank_and_user_boards(blank_board, player_board, username):
             for cell in current_row:
                 print(cell, end=" ")
             print(" " * ((total_width // 2) - 1), end=" ")
+            # Takes away 1 space if the length of the username is even
             if total_width % 2 == 0:
                 print(f"[gold3]{username}[/gold3]:"
                       f" {user_score}/5", end=" " * ((total_width // 2)-1))
+            # Prints the username as is if the length is odd
             else:
                 print(f"[gold3]{username}[/gold3]:"
                       f" {user_score}/5", end=" " * (total_width // 2))
