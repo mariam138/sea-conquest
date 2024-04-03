@@ -6,10 +6,9 @@
     <a href="https://sea-conquest-b465976776fd.herokuapp.com/">Visit the live site here!</a>
 </p>
 
-
 ## Introduction
 
-Sea Conquest is a browser-based game created in Python. This game is based on the classic *BattleShips* game. The user is part of the **Ocean Voyagers** crew, battling the **Sea Guardians** with the aim of sinking the enemy **Sea Guardians** ships.
+Sea Conquest is a browser-based logic game created in Python. It is a single player game, which plays against the "computer", based on the classic *Battle Ships* game. The user is part of the **Ocean Voyagers** crew, battling the **Sea Guardians** with the aim of sinking the enemy **Sea Guardians** ships.
 
 ## User Stories
 
