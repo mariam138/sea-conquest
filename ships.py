@@ -15,6 +15,8 @@ class Ships:
     1 x Battleship (length = 4)
     2 x Destroyer (length = 3)
     2 x Submarine (length = 2)
+    Each ship also has a health which corresponds to their length,
+    and also will have their own colours for printing purposes.
     """
     def __init__(self, name, length, colour, health):
         self.name = name
