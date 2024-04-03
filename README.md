@@ -207,9 +207,13 @@ Throughout the creation of the game, I would check my code using [Python Tutor](
 
 I would run the game in my local terminal as well to check outputs. If I spotted any bugs, I would try to run the modules separately (eg, *python3 board.py*). Often I would also use Python's built in **breakpoint()** function, which helped me go through certain bugs step by step to find the specific error causing the bug.
 
+### Validation
+
+Each module was ran through Code Institute's [PEP8 Linter](https://pep8ci.herokuapp.com/#) and have all returned with zero errors. I have also checked the code using the pre-installed *pycodestyle* module and zero errors were found.
+
 ### Manual Testing
 
-Once the project was complete, I underwent manual testing on each feature of the game, using the deployed app on **Heroku**. All tests and their outcomes are outlined below. Each module was ran through Code Institute's [PEP8 Linter](https://pep8ci.herokuapp.com/#) and have all returned with zero errors.
+Once the project was complete, I underwent manual testing on each feature of the game, using the deployed app on **Heroku**. All tests and their outcomes are outlined below.
 
 #### Starting Page
 
