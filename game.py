@@ -1,7 +1,10 @@
 # Imports the Board class to use its methods
 from board import Board
+# Imports rich module to allow printing in colour
 from rich import print
+# Imports time module to allow delays before executing code
 import time
+# Imports the computer module to use its methods
 import computer
 
 

@@ -405,9 +405,9 @@ The project was deployed to Heroku using the following steps:
 
 - The code to clear the python terminal was adapted from [Coding Ninjas](https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python)
 - The code to use the enumerate function for the ships list was adapted from [Real Python](https://realpython.com/python-enumerate/)
-- The code to create the dunder method "__getitem__" to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
-- The code to create the dunder method "__setitem__" to be used alongside the above "__getitem__"" method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
-- The code for the **__name___** special method to run the program is from [Bro Code on YouTube](https://www.youtube.com/watch?v=OBabwRH0XUo)
+- The code to create the dunder method **__ getitem __** to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
+- The code to create the dunder method **__ setitem __** to be used alongside the above **__ getitem __** method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
+- The code for the **__ name __** special method to run the program is from [Bro Code on YouTube](https://www.youtube.com/watch?v=OBabwRH0XUo)
 
 ### Media
 
