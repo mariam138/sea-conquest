@@ -189,25 +189,27 @@ def computer_shot(player_board, player_coords, player_ships):
                 # Create the target hits based on the previous hit
                 target_hits = generate_target_hits(previous_hit)
                 new_comp_guess = random.choice(target_hits)
-                # Let the computer guess be a random choice from the target hits
+                # Lets computer guess be a random choice from the target hits
                 # If the comp_guess is larger than the board dimensions
                 # ie doesnt fit, reguess again
                 if ((player_board.dimensions) >= new_comp_guess[0] > 0) and (
-                (player_board.dimensions) >= new_comp_guess[1] > 0) and (
-                    new_comp_guess not in used_comp_guesses):
+                 (player_board.dimensions) >= new_comp_guess[1] > 0) and (
+                 new_comp_guess not in used_comp_guesses):
                     if new_comp_guess in player_coords:
-                        print("Argh! The [bright_red]Sea Guardians[/bright_red] got us!")
+                        print("Argh! The [bright_red]Sea Guardians"
+                              "[/bright_red] got us!")
                         used_comp_guesses.append(new_comp_guess)
                         # Iterates through each ship in the player_ships list
                         for ship in player_ships:
-                            # if the guess is part of one of the ships coordinates
+                            # if guess is part of one of the ships coordinates
                             # the health will decrease by 1.
                             if new_comp_guess in ship.ship_coords[ship.name]:
                                 print(f"They hit our [{ship.colour}]"
-                                    f"{ship.name}[/{ship.colour}]!\n")
-                                player_board[new_comp_guess[0]][new_comp_guess[1]] = "[red1]X"
+                                      f"{ship.name}[/{ship.colour}]!\n")
+                                player_board[new_comp_guess[0]][
+                                    new_comp_guess[1]] = "[red1]X"
                                 ship.health -= 1
-                                # If the computer hits one of the ship's coordinates
+                                # If computer hits one of the ship's coords
                                 # It will append it to this empty list
                                 previous_hit = new_comp_guess
                                 # Increases the computer's score if the comp
@@ -216,9 +218,11 @@ def computer_shot(player_board, player_coords, player_ships):
                                     computer_score += 1
                                     time.sleep(1.5)
                                     previous_hit = None
-                                    print(f"Rats! The [bright_red]Sea Guardians"
-                                        f"[/bright_red] have sunk our [{ship.colour}]"
-                                        f"{ship.name}[/{ship.colour}]...")
+                                    print(f"Rats! The [bright_red]Sea "
+                                          f"Guardians"
+                                          f"[/bright_red] have sunk our"
+                                          f"[{ship.colour}]"
+                                          f"{ship.name}[/{ship.colour}]...")
                                 break
                         return new_comp_guess
                     # Updates the board with an "M" if the target hit misses
@@ -226,7 +230,8 @@ def computer_shot(player_board, player_coords, player_ships):
                         print("Whew! That was a close one, but they missed!")
                         used_comp_guesses.append(new_comp_guess)
                         previous_hit = None
-                        player_board[new_comp_guess[0]][new_comp_guess[1]] = "[grey46]M"
+                        player_board[new_comp_guess[0]][
+                            new_comp_guess[1]] = "[grey46]M"
                         return new_comp_guess
                 # Generates new target hit if the one of the above statements
                 # is not true
