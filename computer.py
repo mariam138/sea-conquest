@@ -39,6 +39,7 @@ def random_column_coord():
         computer_col = letter_coord_dict[computer_col_coord]
     return computer_col
 
+
 def print_comp_guess(dictionary, value):
     """
     Loops through the keys and corresponding values in the
@@ -206,7 +207,7 @@ def computer_shot(player_board, player_coords, player_ships):
 
         column = print_comp_guess(letter_coord_dict, comp_col_guess)
         print(f"The computer guessed ([deep_sky_blue1]{column}"
-              f"[/deep_sky_blue1], {comp_row_guess})")
+              f"[/deep_sky_blue1], {comp_row_guess})...\n")
         time.sleep(1)
 
         while True:

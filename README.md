@@ -118,6 +118,10 @@ If the player attempts to make a guess that they have already made, they recieve
 When the computer is making it's guess, this message is shown on the screen:
 > It's the Sea Guardians' turn...
 
+Then the computer's guess is printed onto the screen.
+
+![Screenshot 2024-04-03 at 21 16 28](https://github.com/mariam138/sea-conquest/assets/150139337/5af87678-d5ea-4478-a4ae-52734194589c)
+
 If the computer's guess misses, the following message is printed on screen:
 > Whew! That was a close one, but they missed!
 
