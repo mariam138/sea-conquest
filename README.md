@@ -209,7 +209,7 @@ I would run the game in my local terminal as well to check outputs. If I spotted
 
 ### Manual Testing
 
-Once the project was complete, I underwent manual testing on each feature of the game, using the deployed app on **Heroku**. All tests and their outcomes are outlined below.
+Once the project was complete, I underwent manual testing on each feature of the game, using the deployed app on **Heroku**. All tests and their outcomes are outlined below. Each module was ran through Code Institute's [PEP8 Linter](https://pep8ci.herokuapp.com/#) and have all returned with zero errors.
 
 #### Starting Page
 
