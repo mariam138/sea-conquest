@@ -9,10 +9,11 @@ import time
 # To print to the terminal in colour
 from rich import print
 
+# Sets computer score to 0 initially
 computer_score = 0
 # Creates empty list to store the computer's guesses
 used_comp_guesses = []
-
+# Initialises to None
 previous_hit = None
 
 
@@ -44,6 +45,7 @@ def random_row_coord(board):
     row. This method will be used both for placing the computers'
     ships and for guessing coordinates in game
     """
+    # Randomly generates a number between 1 and 8
     computer_row = random.randrange(1, board.dimensions + 1)
     return computer_row
 
@@ -67,7 +69,7 @@ def computer_place_ships(ship, board):
     for the user will be used to make sure the ships fit onto
     the board and do not overlap.
     """
-
+    # Initialises each ship's coordinates with an empty list
     ship.ship_coords = []
 
     while True:
@@ -131,9 +133,10 @@ def create_hidden_comp_board(all_comp_ship_coords, ships):
 
     random_board = Board(8)
     random_board.create_board()
-    # Store created random board into variable called computer_board
-    # for game use
+    # Loops through each ship in the list of ships to randomly place them
     for ship in ships:
+        # Stores each ship's coordinates to then be added to a list for all
+        # coordinates
         comp_ship_coords = (
             computer_place_ships(ship, random_board)
         )
