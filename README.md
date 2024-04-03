@@ -401,11 +401,17 @@ The project was deployed to Heroku using the following steps:
 
 ## Credits
 
-- The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
+### Code
+
 - The code to clear the python terminal was adapted from [Coding Ninjas](https://www.codingninjas.com/studio/library/how-to-clear-a-screen-in-python)
 - The code to use the enumerate function for the ships list was adapted from [Real Python](https://realpython.com/python-enumerate/)
 - The code to create the dunder method "__getitem__" to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
 - The code to create the dunder method "__setitem__" to be used alongside the above "__getitem__"" method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
+- The code for the **__name___** special method to run the program is from [Bro Code on YouTube](https://www.youtube.com/watch?v=OBabwRH0XUo)
+
+### Media
+
+- The website used to create the logo art for Sea Conquest was the [Online ASCII Art Creator](https://www.ascii-art-generator.org/)
 - The website used to create the "You Win!" and "You lose..." banners is from [patorjk.com](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=)
 - The background image used behind the terminal is by **upklyak** from [FreePik](https://www.freepik.com/free-vector/pirate-ship-moored-island-with-treasure-night_15754757.htm)
 
