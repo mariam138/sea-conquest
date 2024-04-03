@@ -91,6 +91,8 @@ def validate_user_name(name):
     Validates whether the name entered into the input
     is only alphabetical characters. If characters are
     numerical or special characters, an error message is shown.
+    Also checks for the length of the username. If the length is over
+    28, the user will be warned and asked to enter a shorter name.
     The user is then continuously prompted to enter a new name
     until a valid one is entered.
     """
