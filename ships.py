@@ -112,7 +112,8 @@ class Ships:
                     if all_cells_empty:
                         for coord in ship_coords:
                             # Will print the ship in the designated colour
-                            board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
+                            board.board[
+                                coord[0]][coord[1]] = f"[{self.colour}]S"
                         # Makes the ship coordinates the value in the dict
                         self.ship_coords[self.name] = ship_coords
                         clear_terminal()
@@ -146,7 +147,8 @@ class Ships:
                             ship_coords.append((row + i, col))
                     if all_cells_empty:
                         for coord in ship_coords:
-                            board.board[coord[0]][coord[1]] = f"[{self.colour}]S"
+                            board.board[
+                                coord[0]][coord[1]] = f"[{self.colour}]S"
                         self.ship_coords[self.name] = ship_coords
                         clear_terminal()
                         board.print_board()
