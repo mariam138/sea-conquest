@@ -24,6 +24,10 @@ Sea Conquest is a browser-based game created in Python. This game is based on th
 - As the site owner, I want to create grids where the player is able to see where their ships are marked
 - As the site owner, I want to create a blank grid which hides the positions of the computer's ships
 
+## Design
+
+I wanted to display the project with some more colour, rather than the original template of a white background. To make the game more visually appealing, I first centred the terminal and the "Run Program" button using **flex** properties. I then added an animated pirate ship background, with a colour scheme involving blues and purples. Lastly, I changed the colour of the "Run Program" button to a green. I did this so that the button would stand out, but still be in harmony with the colour scheme of the background image.
+
 ## Features
 
 ### Starting Page
