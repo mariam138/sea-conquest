@@ -244,6 +244,7 @@ Once the project was complete, I underwent manual testing on each feature of the
 | Exit the game (also occurs during game play)         | When prompted to enter a letter coordinate, if the user enters “Q”, the user is asked whether they want to leave the game or not                                                                      | When prompted to enter a letter coordinate, input “Q”                                     | Pass          |
 | Leave or stay in game (also occurs during game play) | If the user enters “Q” when asked to enter a letter coordinate, if they then enter “N” to stay, the game continues where it left off                                                                  | Enter “N” when asked if the user wants to leave or stay                                   | Pass          |
 | Leave or stay in game (also occurs during game play) | If the user enters “Q” when asked to enter a letter coordinate, if they then enter “Y” to stay, the user exits the game and is asked to press the “Run Program” button if they desire to start again. | Enter “Y” when asked if the user wants to leave or stay                                   | Pass          |
+|Leave or stay in game (also occurs duriing game play) | If the user enters anything other than "Y" or "N", the user will be prompted to try again | Enter any character other than "Y" or "N" | Pass
 
 #### Game Play
 

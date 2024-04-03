@@ -94,7 +94,7 @@ class Board:
         When the user is prompted to input a letter coordinate for the game,
         this method converts it into its corresponding index as set up by the
         nested list used to create the board.
-        It then validates that the inputted letter coordinate is in
+        It then validates that the letter the user inputs is in
         the dictionary. If not, the user is asked to try again.
         """
 
@@ -107,7 +107,7 @@ class Board:
         #  Checks if vertical_coord is a key in the letter_coord_dict and if
         # so, "converts" it into its value
         # Also allows the user to quit the game at any desired point
-        # Whenever prompted to enter in a letter coordinate.
+        # Whenever prompted to enter a letter coordinate.
         while True:
             print("To quit the game, enter 'Q'.")
             column_coord = (
@@ -117,17 +117,22 @@ class Board:
             if column_coord in letter_coord_dict:
                 col = letter_coord_dict[column_coord]
                 return col
+                # Breaks the while loop once the input is valid
                 break
             elif column_coord == "Q":
+                # Creates separate while loop for if the user chooses to leave
                 while True:
                     print("Are you leaving us Commander?")
                     stay_leave = input("Type 'Y' to quit, or 'N' to stay:\n").upper()
+                    # Exits the program if the user enters "Y"
                     if stay_leave == 'Y':
                         print("You've let us down Commander...")
                         time.sleep(2)
                         print("To restart the game, press the "
                               "'Run Program' button at the top of the page.")
                         exit()
+                    # Goes back to the game if the user enters "N"
+                    # By breaking the inner while loop
                     elif stay_leave == 'N':
                         print("We knew you weren't a quitter! Now, where were we...\n")
                         time.sleep(2)
