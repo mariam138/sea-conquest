@@ -75,7 +75,10 @@ class Board:
         Prints out the game board that was created, using a nested for loop
         to print a grid to the terminal
         """
+
+        # The enumerate function is used to give an index for each row
         for i, row in enumerate(self.board):
+            # Prints the letter coordinates in blue
             if i == 0:
                 for cell in row:
                     print(f"[deep_sky_blue1]{cell}[/deep_sky_blue1]", end=" ")
