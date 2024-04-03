@@ -1,7 +1,10 @@
 # Imports Board class from board.py module
 from board import Board
+# Imports function to clear the terminal from the clear module
 from clear import clear_terminal
+# Allows printing in colour to the terminal
 from rich import print
+# Allows delays before executing code
 import time
 
 
