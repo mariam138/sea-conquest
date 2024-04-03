@@ -202,6 +202,20 @@ I would run the game in my local terminal as well to check outputs. If I spotted
 
 ### Manual Testing
 
+Once the project was complete, I underwent manual testing on each feature of the game, using the deployed app on **Heroku**. All tests and their outcomes are outlined below.
+
+#### Starting Page
+
+| Feature being tested                                                                                             | Expected Outcome                                                                                                              | How was this tested?                                                                    | Pass or Fail? |
+| ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------- |
+| Enter a name                                                                                                     | Game greets user with their name                                                                                              | Entering a name when the game is first loaded                                           | Pass          |
+| Length of name being entered                                                                                     | Game will ask user to input a shorter name if it exceeds 28 characters                                                        | Enter a name above 28 characters                                                        | Pass          |
+| Characters being entered for the name                                                                            | Game will ask user to input a new name if any non-alphabetical character is entered                                           | Enter any special and numerical characters for the username                             | Pass          |
+| Loading instructions                                                                                             | User will be shown the instructions after entering “I” as the input                                                           | By entering both a lowercase and uppercase “I” when prompted                            | Pass          |
+| Exiting the game                                                                                                 | The game will display a message saying goodbye, then after a delay, reload the start page with the banner                     | By entering both a lowercase and uppercase “Q” when prompted                            | Pass          |
+| Starting the game                                                                                                | After a one second delay, the terminal will clear and display an empty board, prompting the user to start placing their ships | By entering both a lowercase and uppercase “S” when prompted                            | Pass          |
+| Handling of invalid user input when the user is asked to either start or quit the game, or read the instructions | The user will be told an invalid input has occurred and to try again, if anything other than “S”, “I” or “Q” is entered       | By entering any character that is not “S”, “I” or “Q”, eg numbers or special characters | Pass          |
+
 ### Bugs
 
 1. At the start of the game after entering the name, I wanted to give the user a choice of either immediately starting the game or reading the instructions first. To do this, I set up and if/elif statement:
