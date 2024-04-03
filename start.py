@@ -203,9 +203,11 @@ def restart_or_exit_game(username):
               f" [gold3]{username}[/gold3]?")
         print("Enter 'S' to start a new game, or enter 'Q' to exit.")
         try:
+            # Expects an error to occur during user input
             end_choice = input("Enter 'S' or 'Q':\n").lower()
             if (end_choice != "q" and end_choice != "s"):
                 raise Exception
+                # Starts game again from game setup
             elif end_choice == "s":
                 print()
                 print(f"You've got heart, Commander [gold3]{username}[/gold3]!"
@@ -215,6 +217,7 @@ def restart_or_exit_game(username):
                 clear_terminal()
                 game_setup()
                 return False
+            # Leaves game and goes back to 'starting page'
             elif end_choice == "q":
                 print()
                 print(f"You've worked hard, Commander [gold3]{username}.")
@@ -224,6 +227,7 @@ def restart_or_exit_game(username):
                 clear_terminal()
                 main()
                 return False
+        # Handles invalid input and makes user enter a valid input
         except Exception:
             print("That was not a valid input. Please try again.\n")
 
