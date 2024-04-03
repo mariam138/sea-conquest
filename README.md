@@ -408,6 +408,7 @@ The project was deployed to Heroku using the following steps:
 - The code to create the dunder method **__ getitem __** to make the Board class subscriptable is adapted from [KD Nuggets](https://www.kdnuggets.com/2023/03/introduction-getitem-magic-method-python.html)
 - The code to create the dunder method **__ setitem __** to be used alongside the above **__ getitem __** method is adapted from [TutorialsPoint](https://www.tutorialspoint.com/getitem-and-setitem-in-python)
 - The code for the **__ name __** special method to run the program is from [Bro Code on YouTube](https://www.youtube.com/watch?v=OBabwRH0XUo)
+- The code to flatten a nested list is adapted from [Real Python](https://realpython.com/python-flatten-list/#using-a-comprehension-to-flatten-a-list-of-lists)
 
 ### Media
 
