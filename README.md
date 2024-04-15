@@ -199,8 +199,6 @@ These logic flow diagrams are what I have used to base the code of the game on.
 
 - The first feature I would like to implement is allowing the user to decide on the dimensions of the board when starting the game. As I have created a Board class, this would not be difficult to implement. However, I would limit the user to the size of board that they could choose, between the dimensions of 6 x 6 and 15 x 15. For the 6 x 6 board, I would potentially remove a ship so as to not cluster the ship. As for the larger boards above 10 x 10, I would add an extra ship for the player to place.
 
-- Another feature I would like to implement is telling the user what coordinates the computer has guessed. Unfortunately, I ran out of time to be able to implement this feature.
-
 - In the future, I would like to make it harder to play against the computer. This would be done by introducing algorithms that have been studied for the game Battle Ships, and implementing it into the code. Although I have already implemented code that allows the computer to make more targeted guesses if it hits a ship, it is still relatively easy to defeat the computer.
 
 ## Testing
